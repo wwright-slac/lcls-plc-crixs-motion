@@ -1,12 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.14">
   <GVL Name="GVL_DPADDLE" Id="{14852951-363f-4764-8553-afbd56890d2f}">
     <Declaration><![CDATA[VAR_GLOBAL
-	
-	// Number of assembly position states
-	nDPStates			: INT := 9;
-	// Number of motor axes in the assembly
-	nDPAxes				: INT := 3;
 	
 	// Motor axes
 	stDPXMotor : DUT_MotionStage;
@@ -15,7 +10,6 @@
 							
 	// Define axis states for each axis. These are fed to a FB_PositionState manager for each axis
 	// X axis position states
-	nDPXStates :	INT := 3;
 	stDPXPosPark : DUT_PositionState :=		(sName:= 'PARK',
 										 	fPosition := 5.0,
 										 	fDelta:=1.0,
@@ -47,7 +41,6 @@
 
 
 	// Y axis position states
-	nDPYStates : INT := 8;
 	stDPYPosPark : DUT_PositionState :=		(sName:= 'PARK',
 										 	fPosition := 5.0,
 										 	fDelta:=1.0,
@@ -121,8 +114,7 @@
     									 	bLocked:=TRUE,
     									 	bValid:=TRUE);
 											
-	// Z axis position states	
-	nDPZStates : INT := 2;									
+	// Z axis position states						
 	stDPZPosPark : DUT_PositionState :=		(sName:= 'PARK',
 										 	fPosition := 5.0,
 										 	fDelta:=1.0,

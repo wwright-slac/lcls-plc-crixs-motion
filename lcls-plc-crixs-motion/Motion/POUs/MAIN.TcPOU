@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.14">
   <POU Name="MAIN" Id="{9d31a973-0fa1-44e3-ab0d-723399df319b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
@@ -8,6 +8,7 @@ VAR
 	bInit			:	BOOL := FALSE;
 	DPState : INT;
 	arrStates : ARRAY [1..9] OF ENUM_DiagPaddle;
+	bDPaddleOK : BOOL;
 	
 END_VAR
 ]]></Declaration>
@@ -16,25 +17,16 @@ END_VAR
 	bInit := TRUE;
 END_IF
 
-//PRG_DiagnosticPaddle(arrTransitions:=arrDPTransitions,arrOutputs:=arrDPOutputs);
-//FB_AssemblyPositionStateManager(arrOutputs:=arrDPOutputs,
-//								arrTransitions:=arrDPTransitions,
-//								nAxes:=nDPAxes,
-//								nStates:=nDPStates,
-//								arrAxisStates:=arrDPAxisStates,
-//								arrAxes:=arrDPAxes);
-PRG_TST();
+// Add interlock logic to this later
+bDPaddleOK := TRUE;
+PRG_DiagnosticPaddle(xMoveOK:=bDPaddleOK);
 								]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="81" Count="0" />
-      <LineId Id="87" Count="1" />
-      <LineId Id="90" Count="1" />
-      <LineId Id="108" Count="0" />
-      <LineId Id="110" Count="0" />
-      <LineId Id="117" Count="0" />
-      <LineId Id="115" Count="0" />
-      <LineId Id="118" Count="1" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="134" Count="2" />
+      <LineId Id="119" Count="0" />
       <LineId Id="121" Count="0" />
       <LineId Id="116" Count="0" />
     </LineIds>

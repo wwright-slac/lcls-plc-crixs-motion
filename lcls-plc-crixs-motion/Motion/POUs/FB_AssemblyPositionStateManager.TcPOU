@@ -6,6 +6,17 @@
     Handles EPICS moves between multiple states for multiple axes.
     See FB_XXXX for an example.
 *)
+VAR_IN_OUT
+
+	// Array of bMoveEnables to, well, enable based on the assembly state.
+    arrOutputs: ARRAY [*, *] OF DUT_PositionState;
+	// Array of allowed position state transitions. This is the adjacency matrix
+	arrTransitions : ARRAY [*, *] OF BOOL;
+	// Array of all axes in the assembly
+	arrAxes : ARRAY [*] OF DUT_MotionStage;
+	// Array of all assembly states
+	arrAssemblyStates : ARRAY [*] OF STRING;
+END_VAR
 VAR	
 	nAssemblyStates : DINT;
 	nAxes :DINT;
@@ -18,42 +29,8 @@ VAR
 	
 	currState : DINT;
 	nextState : DINT;
-	{attribute 'pytmc' := '
-        pv:
-        io: io
-    '}
-    fbXStateManager: FB_PositionStateManager;
-	{attribute 'pytmc' := '
-        pv:
-        io: io
-    '}
-    fbYStateManager: FB_PositionStateManager;
-	{attribute 'pytmc' := '
-        pv:
-        io: io
-    '}
-    fbZStateManager: FB_PositionStateManager;
 END_VAR
-VAR_IN_OUT
 
-	// Array of bMoveEnables to, well, enable based on the assembly state.
-    arrOutputs: ARRAY [*, *] OF DUT_PositionState;
-	// Array of allowed position state transitions. This is the adjacency matrix
-	arrTransitions : ARRAY [*, *] OF BOOL;
-	// Array of available states for each axis, e.g. [[x_states], [y_states], [z_states]]
-	arrAxisStates : ARRAY [*, *] OF DUT_PositionState;
-	// Array of all axes in the assembly
-	arrAxes : ARRAY [*] OF DUT_MotionStage;
-	// Array of all assembly states
-	arrAssemblyStates : ARRAY [*] OF STRING;
-END_VAR
-VAR_INPUT
-
-
-
-END_VAR
-VAR_OUTPUT
-END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF NOT bInit THEN
@@ -90,19 +67,7 @@ FOR nextState := 1 TO nAssemblyStates DO
 		END_FOR
 	END_IF
 END_FOR
-	
-// for manager in managers loop?
-//fbXStateManager(
-//    stMotionStage := stDPX,
-//    arrStates := arrStates,
-//    setState := enumSet,
-//    bEnable := bEnable,
-//    bError => bError,
-//    nErrorId => nErrorId,
-//    sErrorMessage => sErrorMessage,
-//    bBusy => bBusy,
-//    bDone => bDone,
-//    getState => enumGet); ]]></ST>
+]]></ST>
     </Implementation>
     <LineIds Name="FB_AssemblyPositionStateManager">
       <LineId Id="137" Count="0" />
@@ -117,7 +82,8 @@ END_FOR
       <LineId Id="147" Count="5" />
       <LineId Id="343" Count="0" />
       <LineId Id="346" Count="0" />
-      <LineId Id="155" Count="23" />
+      <LineId Id="155" Count="10" />
+      <LineId Id="417" Count="0" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>
