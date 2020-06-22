@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <DUT Name="E_DPaddle_States" Id="{07548163-261c-42e3-8ddc-39872879b8b1}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_DPaddle_States :
+(
+	parked := 0,
+	diode,
+	L1,
+	L2,
+	L3,
+	L4,
+	R1,
+	R2,
+	R3,
+	R4
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

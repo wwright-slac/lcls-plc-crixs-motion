@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="FB_SIM_MOTOR" Id="{8583a234-1d69-4506-be3c-a0ed673500be}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SIM_MOTOR
+VAR_IN_OUT
+	stSimMotor	:	DUT_SimMotor;
+END_VAR
+VAR_OUTPUT
+	bMoving		:	BOOL := FALSE;
+END_VAR
+VAR
+	fCurrPos	:	LREAL := stSimMotor.fPosition;
+	fReqPos		:	LREAL := stSimMotor.fPosition;
+	fbTimer		:	TON;
+	fTravelTime	:	REAL;
+	STATE		:	DUT_SimMotorStates;
+	xFirstPass	:	BOOL := TRUE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* On first PLC pass, put valve into init state*)
+IF xFirstPass THEN
+	STATE := DUT_SimMotorStates.IDLE;
+	xFirstPass := FALSE;
+END_IF
+
+fReqPos := stSimMotor.fPosition;
+
+CASE STATE OF
+
+	DUT_SimMotorStates.IDLE:
+		bMoving := FALSE;
+		IF fReqPos <> fCurrPos THEN
+			STATE := DUT_SimMotorStates.CHECK;
+		END_IF
+		
+		
+	DUT_SimMotorStates.CHECK:
+		IF fReqPos > fCurrPos THEN // Check OK to move forward
+			IF stSimMotor.bAllEnable OR stSimMotor.bAllForwardEnable THEN
+				STATE := DUT_SimMotorStates.MOVING;
+			ELSE
+				STATE := DUT_SimMotorStates.IDLE;
+			END_IF
+		ELSE IF fReqPos < fCurrPos THEN // Check OK to move backward
+			IF stSimMotor.bAllEnable OR stSimMotor.bAllBackwardEnable THEN
+				STATE := DUT_SimMotorStates.MOVING;
+			ELSE
+				STATE := DUT_SimMotorStates.IDLE;
+			END_IF
+		ELSE // Somthing weird happened; should never get to this state. Just go back to idle. 
+			STATE := DUT_SimMotorStates.IDLE;
+		END_IF
+		END_IF
+	
+	
+	DUT_SimMotorStates.MOVING:
+//		IF stSimMotor.fVelocity = 0.0 THEN
+//			stSimMotor.fVelocity := 1.0; // set velocity to reasonable value; prevent divide by zero
+//		END_IF
+//		fTravelTime := ABS((fReqPos - fCurrPos)/stSimMotor.fVelocity)
+		fbTimer(PT:=T#3S, IN:=TRUE);
+		bMoving := TRUE;
+		
+		IF fbTimer.Q = TRUE THEN // time has elapsed
+			fbTimer.IN := FALSE;
+			stSimMotor.fPosition := fReqPos;
+			fCurrPos := fReqPos;
+			STATE := DUT_SimMotorStates.IDLE;
+		END_IF
+END_CASE
+		
+		]]></ST>
+    </Implementation>
+    <LineIds Name="FB_SIM_MOTOR">
+      <LineId Id="181" Count="2" />
+      <LineId Id="188" Count="0" />
+      <LineId Id="186" Count="0" />
+      <LineId Id="179" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="41" Count="3" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="132" Count="2" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="148" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="135" Count="1" />
+      <LineId Id="138" Count="0" />
+      <LineId Id="141" Count="1" />
+      <LineId Id="139" Count="0" />
+      <LineId Id="144" Count="0" />
+      <LineId Id="150" Count="0" />
+      <LineId Id="145" Count="2" />
+      <LineId Id="143" Count="0" />
+      <LineId Id="151" Count="1" />
+      <LineId Id="137" Count="0" />
+      <LineId Id="153" Count="0" />
+      <LineId Id="60" Count="1" />
+      <LineId Id="128" Count="0" />
+      <LineId Id="155" Count="2" />
+      <LineId Id="154" Count="0" />
+      <LineId Id="159" Count="0" />
+      <LineId Id="173" Count="0" />
+      <LineId Id="166" Count="0" />
+      <LineId Id="162" Count="1" />
+      <LineId Id="174" Count="2" />
+      <LineId Id="164" Count="0" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="160" Count="0" />
+      <LineId Id="158" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

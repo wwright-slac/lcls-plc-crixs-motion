@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <GVL Name="GVL_DPADDLE" Id="{14852951-363f-4764-8553-afbd56890d2f}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	
+	// Number of assembly position states
+	nDPStates			: INT := 9;
+	// Number of motor axes in the assembly
+	nDPAxes				: INT := 3;
+	
+	// Motor axes
+	stDPXMotor : DUT_MotionStage;
+	stDPYMotor : DUT_MotionStage;
+	stDPZMotor : DUT_MotionStage;
+							
+	// Define axis states for each axis. These are fed to a FB_PositionState manager for each axis
+	// X axis position states
+	nDPXStates :	INT := 3;
+	stDPXPosPark : DUT_PositionState :=		(sName:= 'PARK',
+										 	fPosition := 5.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+											fDecel:=1.0,
+    									 	bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	stDPXPosCenter : DUT_PositionState :=	(sName:= 'CENTER',
+										 	fPosition := 10.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+										 	fDecel:=1.0,
+    										bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	stDPXPosKnife : DUT_PositionState :=	(sName:= 'KNIFE',
+										 	fPosition := 15.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+										 	fDecel:=1.0,
+    										bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+											
+
+
+	// Y axis position states
+	nDPYStates : INT := 8;
+	stDPYPosPark : DUT_PositionState :=		(sName:= 'PARK',
+										 	fPosition := 5.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+											fDecel:=1.0,
+    									 	bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	stDPYPosCenter : DUT_PositionState :=	(sName:= 'CENTER',
+										 	fPosition := 10.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+										 	fDecel:=1.0,
+    										bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	stDPYPosDiode : DUT_PositionState :=	(sName:= 'DIODE',
+										 	fPosition := 15.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+											fDecel:=1.0,
+    									 	bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	stDPYPosPinhole : DUT_PositionState :=	(sName:= 'PINHOLE',
+										 	fPosition := 20.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+										 	fDecel:=1.0,
+    										bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	stDPYPosYAG1 : DUT_PositionState :=		(sName:= 'YAG1',
+										 	fPosition := 25.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+										 	fDecel:=1.0,
+    										bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	stDPYPosYAG2 : DUT_PositionState :=		(sName:= 'YAG2',
+										 	fPosition := 30.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+										 	fDecel:=1.0,
+    										bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	stDPYPosYAG3 : DUT_PositionState :=		(sName:= 'YAG3',
+										 	fPosition := 35.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+										 	fDecel:=1.0,
+    										bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	stDPYPosKnife : DUT_PositionState :=	(sName:= 'KNIFE',
+										 	fPosition := 40.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+										 	fDecel:=1.0,
+    										bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+											
+	// Z axis position states	
+	nDPZStates : INT := 2;									
+	stDPZPosPark : DUT_PositionState :=		(sName:= 'PARK',
+										 	fPosition := 5.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+											fDecel:=1.0,
+    									 	bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	stDPZPosCenter : DUT_PositionState :=	(sName:= 'CENTER',
+										 	fPosition := 10.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+										 	fDecel:=1.0,
+    										bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+										 
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
