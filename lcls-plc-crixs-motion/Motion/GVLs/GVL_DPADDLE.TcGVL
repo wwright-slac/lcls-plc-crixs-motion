@@ -133,7 +133,20 @@
     										bMoveOk:=FALSE,
     									 	bLocked:=TRUE,
     									 	bValid:=TRUE);
-										 
+					
+	stDPPark 	: ST_BFSAssemblyState := (iState:=1, bDiscovered:=FALSE, iParent:=0);
+	stDPUp	 	: ST_BFSAssemblyState := (iState:=2, bDiscovered:=FALSE, iParent:=0);	
+	stDPCenter 	: ST_BFSAssemblyState := (iState:=3, bDiscovered:=FALSE, iParent:=0);
+	stDPPinhole : ST_BFSAssemblyState := (iState:=4, bDiscovered:=FALSE, iParent:=0);	
+	stDPDiode 	: ST_BFSAssemblyState := (iState:=5, bDiscovered:=FALSE, iParent:=0);	
+	stDPYag1 	: ST_BFSAssemblyState := (iState:=6, bDiscovered:=FALSE, iParent:=0);	
+	stDPYag2 	: ST_BFSAssemblyState := (iState:=7, bDiscovered:=FALSE, iParent:=0);	
+	stDPYag3 	: ST_BFSAssemblyState := (iState:=8, bDiscovered:=FALSE, iParent:=0);	
+	stDPKnife 	: ST_BFSAssemblyState := (iState:=9, bDiscovered:=FALSE, iParent:=0);	
+
+	arrDPStates : ARRAY [1..9] OF ST_BFSAssemblyState := [stDPPark, stDPUp, stDPCenter, stDPPinhole, stDPDiode,
+														  stDPYag1, stDPYag2, stDPYag3, stDPKnife];
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

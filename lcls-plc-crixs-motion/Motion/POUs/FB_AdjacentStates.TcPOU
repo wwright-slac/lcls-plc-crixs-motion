@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.14">
+  <POU Name="FB_AdjacentStates" Id="{cd2b60a5-5c2c-468e-ae3d-c41c3b9fdc86}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AdjacentStates
+VAR_IN_OUT
+	arrTransitionMatrix : ARRAY [*, *] OF BOOL; // adjacency matrix of allowed transitions
+	arrAdjacentStates : ARRAY [*] OF ST_BFSAssemblyState; // output array of found adjacent states
+	arrStates : ARRAY [*] OF ST_BFSAssemblyState; // array of assembly states
+END_VAR
+VAR_INPUT
+	iRootState : DINT;
+END_VAR
+VAR_OUTPUT
+	nAdjacentStates : DINT;
+END_VAR
+VAR
+	nStates : DINT;
+	iCounter : INT;
+	iState : DINT;
+	iTransition : DINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[iCounter := 0;
+nStates := UPPER_BOUND(arrStates, 1);
+FOR iTransition := 1 TO nStates DO
+	iState := arrStates[iTransition].iState; // pick out the state index of the state in question
+	IF iState <> iRootState THEN // only look at transitions away from root state
+		IF arrTransitionMatrix[iRootState, iTransition] THEN // the transition is allowed
+			iCounter := iCounter + 1;
+			arrAdjacentStates[iCounter] := arrStates[iTransition]; // save this adjacent state
+		END_IF
+	END_IF
+END_FOR
+nAdjacentStates := iCounter;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_AdjacentStates">
+      <LineId Id="32" Count="0" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

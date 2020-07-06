@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.14">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="FB_AssemblyPositionStateManager" Id="{1c44c362-2d86-42b0-87df-a447155dced7}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_AssemblyPositionStateManager
 (*
@@ -35,7 +35,8 @@ END_VAR
     <Implementation>
       <ST><![CDATA[IF NOT bInit THEN
 	bInit := TRUE;
-	nAssemblyStates := UPPER_BOUND(arrAssemblyStates, 1);
+	//nAssemblyStates := UPPER_BOUND(arrAssemblyStates, 1);
+	nAssemblyStates := UPPER_BOUND(arrTransitions, 2); // take from # of columns in transition matrix
 	nAxes := UPPER_BOUND(arrAxes, 1);
 	nOutputs := UPPER_BOUND(arrOutputs, 1);
 END_IF
@@ -71,7 +72,9 @@ END_FOR
     </Implementation>
     <LineIds Name="FB_AssemblyPositionStateManager">
       <LineId Id="137" Count="0" />
-      <LineId Id="412" Count="2" />
+      <LineId Id="412" Count="1" />
+      <LineId Id="448" Count="0" />
+      <LineId Id="414" Count="0" />
       <LineId Id="287" Count="0" />
       <LineId Id="139" Count="2" />
       <LineId Id="143" Count="0" />

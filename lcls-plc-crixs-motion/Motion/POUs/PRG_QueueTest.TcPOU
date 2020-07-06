@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="PRG_QueueTest" Id="{178e8df6-feea-4e4a-b787-9319e10c1557}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_QueueTest
+VAR
+	stQueue : ST_Queue;
+	fbQueue : FB_Queue;
+	
+	bInit : BOOL := FALSE;
+	iResult : DINT;
+	bResult : BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+	fbQueue.Enqueue(1);
+	fbQueue.Enqueue(2);
+	fbQueue.Enqueue(3);
+	fbQueue.Enqueue(4);
+	fbQueue.Enqueue(5);
+	fbQueue.Enqueue(6);
+	fbQueue.Enqueue(7);
+	fbQueue.Enqueue(8);
+	fbQueue.Enqueue(9);
+	fbQueue.Enqueue(10);
+	fbQueue.Enqueue(11);
+	iResult := fbQueue.Dequeue(); // 1
+	iResult := fbQueue.Dequeue();
+	iResult := fbQueue.Dequeue();
+	iResult := fbQueue.Dequeue();
+	iResult := fbQueue.Dequeue(); // 5
+	iResult := fbQueue.Dequeue();
+	iResult := fbQueue.Dequeue();
+	iResult := fbQueue.Dequeue();
+	iResult := fbQueue.Dequeue();
+	iResult := fbQueue.Dequeue(); // 10
+	iResult := fbQueue.Dequeue(); // element 11; should fail
+	]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_QueueTest">
+      <LineId Id="5" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="49" Count="20" />
+      <LineId Id="38" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
