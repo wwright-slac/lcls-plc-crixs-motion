@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="MAIN" Id="{9d31a973-0fa1-44e3-ab0d-723399df319b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	//stTestMotor1	:	DUT_SimMotor;
+	//fbTestMotor		:	FB_SIM_MOTOR;
+	bInit			:	BOOL := FALSE;
+	DPState : INT;
+	arrStates : ARRAY [1..9] OF ENUM_DiagPaddle;
+	bDPaddleOK : BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bInit THEN
+	bInit := TRUE;
+END_IF
+
+// Add interlock logic to this later
+bDPaddleOK := TRUE;
+//PRG_DiagnosticPaddle(xMoveOK:=bDPaddleOK);
+
+//PRG_QueueTest();
+
+//PRG_Test_AdjacentStates();	
+
+PRG_BFS();							]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="81" Count="0" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="134" Count="2" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="121" Count="0" />
+      <LineId Id="148" Count="0" />
+      <LineId Id="147" Count="0" />
+      <LineId Id="159" Count="0" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="171" Count="0" />
+      <LineId Id="170" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

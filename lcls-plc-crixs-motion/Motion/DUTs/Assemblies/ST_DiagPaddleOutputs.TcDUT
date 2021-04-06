@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <DUT Name="ST_DiagPaddleOutputs" Id="{97499d82-a4cf-4f2c-a48b-f2438c003f32}">
+    <Declaration><![CDATA[TYPE ST_DiagPaddleOutputs :
+STRUCT
+	PARK : ARRAY [1..3] OF DUT_PositionState;
+	UP : ARRAY [1..3] OF DUT_PositionState;
+	CENTER : ARRAY [1..3] OF DUT_PositionState;
+	PINHOLE : ARRAY [1..3] OF DUT_PositionState;
+	DIODE : ARRAY [1..3] OF DUT_PositionState;
+	YAG1 : ARRAY [1..3] OF DUT_PositionState;
+	YAG2 : ARRAY [1..3] OF DUT_PositionState;
+	YAG3 : ARRAY [1..3] OF DUT_PositionState;
+	KNIFE : ARRAY [1..3] OF DUT_PositionState;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

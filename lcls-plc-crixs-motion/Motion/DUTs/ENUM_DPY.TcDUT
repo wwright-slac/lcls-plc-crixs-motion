@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <DUT Name="ENUM_DPY" Id="{941a90f3-2df6-4090-8cc4-35adfee37a63}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+// EPICS states enum for use in FB_DPY (diagnostic paddle Y)
+// Remove strict attribute for easier handling
+TYPE ENUM_DPY :
+(
+    UNKNOWN := 0,	// UNKNOWN must be in slot 0 or the FB breaks
+    PARK := 1,		// The parked position for the diagnostic paddle
+    CENTER := 2,	// center positon for the diagnostic paddle. This should be 
+	PINHOLE	:= 3,   // Pinhole position for WFS
+	DIODE :=4,		// Diode position
+	YAG1 := 5,		// Yag 1 position
+	YAG2 := 6,		// Yag 2 position
+	YAG3 := 7,		// Yag 3 position
+	KNIFE := 8 	    // Knife edge position for the diagnostic paddle. Should be the same nominal X positon as the "CENTER"
+				    // position, but will use a different set of soft limits to allow scanning of the knife edge.
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

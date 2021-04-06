@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_DiagnosticPaddle" Id="{3f76d8be-3e41-4f55-8754-d622cb9b3f24}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_DiagnosticPaddle
+(*	Program for the ChemRIXS diagnostic paddle. This program sets up a series of PositionStateManagers to implement
+	the necessary logic to protect the assembly from running into the recirculation system tube and catcher. *)
+	
+	// TODO: Setup position state locks?
+VAR_INPUT
+	xMoveOK : BOOL := FALSE; // External interlock. Applied to bEnable of all PositionStateManagers.
+END_VAR
+VAR
+	bInit : BOOL := FALSE; // Initialization variable
+	iCounter : UDINT; // loop counter
+	
+	// Setup Assembly manager to set bMoveOK for appropriate states
+	fbDPAssemblyManager : FB_AssemblyPositionStatemanager;
+	
+	// Array of axes for protection FB
+	arrDPAxes : ARRAY [1..3] OF DUT_MotionStage := [stDPXMotor, stDPYMotor, stDPZMotor];
+	
+	//  Setup diagnostic paddle adjacency matrix
+	arrDPTransitions : ARRAY [0..9, 1..9] OF BOOL := 	
+    //Park  Up     Center Pinh.  Diode  Yag1   Yag2   Yag3   Knife
+	[FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, // Unknown (This should always be included)
+	 TRUE,  TRUE,  FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, // Park
+	 TRUE,  TRUE,  TRUE,  FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, // Up
+	 TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Center
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Pinhole
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Diode
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Yag1
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Yag2
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Yag3
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE]; // Knife	
+	 
+	// Setup diagnostic paddle output matrix
+	arrDPOutputs		: ARRAY [1..9, 1..3] OF DUT_PositionState :=
+	//X axis		    Y axis			    Z axis		         Assembly state
+	[stDPXPosPark,		stDPYPosPark,		stDPZPosPark,	  // Park
+	 stDPXPosPark, 		stDPYPosCenter,		stDPZPosPark, 	  // Up
+	 stDPXPosCenter, 	stDPYPosCenter,		stDPZPosCenter,   // Center
+	 stDPXPosCenter, 	stDPYPosPinhole,	stDPZPosCenter,   // Pinhole
+	 stDPXPosCenter,	stDPYPosDiode,		stDPZPosCenter,   // Diode
+	 stDPXPosCenter,	stDPYPosYag1,		stDPZPosCenter,   // Yag1
+	 stDPXPosCenter,	stDPYPosYag2,		stDPZPosCenter,   // Yag2
+	 stDPXPosCenter,	stDPYPosYag3,		stDPZPosCenter,   // Yag3
+	 stDPXPosCenter,	stDPYPosKnife,		stDPZPosCenter];  // Knife
+	
+	// TODO: Figure out a way to make this more useful, or remove it. 
+	arrDPStates			: ARRAY[0..9] OF STRING := ['UNKNOWN', 'PARK', 'UP', 'CENTER', 
+													'PINHOLE', 'DIODE', 'YAG1', 'YAG2', 
+													'YAG3',	'KNIFE'];
+					
+	// Array of position states for PositionStateManagers (initialize later)
+	arrDPXStates : ARRAY [1..15] OF DUT_PositionState;
+	arrDPYStates : ARRAY [1..15] OF DUT_PositionState;																  
+	arrDPZStates : ARRAY [1..15] OF DUT_PositionState;
+									
+	// Setup PositionStateManagers and set variables for each axis		
+	// X Axis			
+	// When changed, sets the destination and starts a move
+    {attribute 'pytmc' := '
+        pv: SET
+        io: io
+    '}
+    enumDPXSet: ENUM_DPX; // NOTE: Please copy this pragma exactly on your enumSet			
+	{attribute 'pytmc' := '
+        pv:
+       	io: io
+    '}
+    fbXStateManager: FB_PositionStateManager;
+	
+	// Y axis
+	// When changed, sets the destination and starts a move
+    {attribute 'pytmc' := '
+        pv: SET
+        io: io
+    '}
+    enumDPYSet: ENUM_DPY; // NOTE: Please copy this pragma exactly on your enumSet	
+	{attribute 'pytmc' := '
+        pv:
+        io: io
+    '}
+    fbYStateManager: FB_PositionStateManager;
+	
+	// Z axis
+	// When changed, sets the destination and starts a move
+    {attribute 'pytmc' := '
+        pv: SET
+        io: io
+    '}
+    enumDPZSet: ENUM_DPZ; // NOTE: Please copy this pragma exactly on your enumSet	
+	{attribute 'pytmc' := '
+        pv:
+        io: io
+    '}
+    fbZStateManager: FB_PositionStateManager;
+	
+	arrPosLocks : ARRAY [1..13] OF FB_PositionStateLock;
+	
+END_VAR
+VAR_OUTPUT
+	// Setup PositionStateManager Outputs
+	// X Axis
+	// If TRUE, we are in an error state
+    bDPXError: BOOL; // NOTE: do not pragma these, already has pragma in manager
+    // Error code
+    nDPXErrorId: UDINT;
+    // Message associated with bError = TRUE
+    sDPXErrorMessage: STRING;
+    // If TRUE, we are currently moving between states
+    bDPXBusy: BOOL;
+    // If TRUE, we asked for a move between states, it completed successfully, and there is no ongoing move
+    bDPXDone: BOOL;
+    // The current state readback
+    {attribute 'pytmc' := '
+        pv: GET
+        io: i
+    '}
+    enumDPXGet: ENUM_DPX; // NOTE: Please copy this pragma exactly on your enumGet
+	
+	// Y Axis
+	// If TRUE, we are in an error state
+    bDPYError: BOOL; // NOTE: do not pragma these, already has pragma in manager
+    // Error code
+    nDPYErrorId: UDINT;
+    // Message associated with bError = TRUE
+    sDPYErrorMessage: STRING;
+    // If TRUE, we are currently moving between states
+    bDPYBusy: BOOL;
+    // If TRUE, we asked for a move between states, it completed successfully, and there is no ongoing move
+    bDPYDone: BOOL;
+    // The current state readback
+    {attribute 'pytmc' := '
+        pv: GET
+        io: i
+    '}
+    enumDPYGet: ENUM_DPY; // NOTE: Please copy this pragma exactly on your enumGet
+		
+	// Z Axis
+	// If TRUE, we are in an error state
+    bDPZError: BOOL; // NOTE: do not pragma these, already has pragma in manager
+    // Error code
+    nDPZErrorId: UDINT;
+    // Message associated with bError = TRUE
+    sDPZErrorMessage: STRING;
+    // If TRUE, we are currently moving between states
+    bDPZBusy: BOOL;
+    // If TRUE, we asked for a move between states, it completed successfully, and there is no ongoing move
+    bDPZDone: BOOL;
+    // The current state readback
+    {attribute 'pytmc' := '
+        pv: GET
+        io: i
+    '}
+    enumDPZGet: ENUM_DPZ; // NOTE: Please copy this pragma exactly on your enumGet
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bInit THEN
+	// Init X axis array
+	arrDPXStates[1] := stDPXPosPark;
+	arrDPXStates[2] := stDPXPosCenter;
+	arrDPXStates[3] := stDPXPosKnife;
+	// Init Y axis array
+	arrDPYStates[1] := stDPYPosPark;
+	arrDPYStates[2] := stDPYPosCenter;
+	arrDPYStates[3] := stDPYPosPinhole;
+	arrDPYStates[4] := stDPYPosDiode;
+	arrDPYStates[5] := stDPYPosYag1;
+	arrDPYStates[6] := stDPYPosYag2;
+	arrDPYStates[7] := stDPYPosYag3;
+	arrDPYStates[8] := stDPYPosKnife;
+	// Init Z axis array
+	arrDPZStates[1] := stDPZPosPark;
+	arrDPZStates[2] := stDPZPosCenter;
+	
+	
+	bInit := TRUE;
+END_IF
+
+// Manage the logic between the Diagnostic Paddle axes
+fbDPAssemblyManager(arrOutputs:=arrDPOutputs,
+					arrTransitions:=arrDPTransitions,
+					arrAxes:=arrDPAxes,
+					arrAssemblyStates:=arrDPStates);
+					
+// Update positions based on motion requests
+fbXStateManager(
+    stMotionStage := stDPXMotor,
+    arrStates := arrDPXStates,
+    setState := enumDPXSet,
+    bEnable := xMoveOK,
+    bError => bDPXError,
+    nErrorId => nDPXErrorId,
+    sErrorMessage => sDPXErrorMessage,
+    bBusy => bDPXBusy,
+    bDone => bDPXDone,
+    getState => enumDPXGet); 
+	
+fbYStateManager(
+    stMotionStage := stDPYMotor,
+    arrStates := arrDPYStates,
+    setState := enumDPYSet,
+    bEnable := xMoveOK,
+    bError => bDPYError,
+    nErrorId => nDPYErrorId,
+    sErrorMessage => sDPYErrorMessage,
+    bBusy => bDPYBusy,
+    bDone => bDPYDone,
+    getState => enumDPYGet); 
+	
+fbZStateManager(
+    stMotionStage := stDPZMotor,
+    arrStates := arrDPZStates,
+    setState := enumDPZSet,
+    bEnable := xMoveOK,
+    bError => bDPZError,
+    nErrorId => nDPZErrorId,
+    sErrorMessage => sDPZErrorMessage,
+    bBusy => bDPZBusy,
+    bDone => bDPZDone,
+    getState => enumDPZGet); ]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
