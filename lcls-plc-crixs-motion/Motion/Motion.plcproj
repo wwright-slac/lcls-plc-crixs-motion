@@ -17,34 +17,28 @@
     <LibraryReferences>{84e56759-6288-4e80-a121-5405505f1f9a}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DUTs\DUT_SimMotor.TcDUT">
+    <Compile Include="DUTs\Assemblies\ENUM_DiagPaddle.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\DUT_SimMotorStates.TcDUT">
+    <Compile Include="DUTs\Assemblies\ENUM_DPX.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ENUM_DiagPaddle.TcDUT">
+    <Compile Include="DUTs\Assemblies\ENUM_DPY.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ENUM_DPX.TcDUT">
+    <Compile Include="DUTs\Assemblies\ENUM_DPZ.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ENUM_DPZ.TcDUT">
+    <Compile Include="DUTs\Assemblies\E_DPaddle_States.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ENUM_DPY.TcDUT">
+    <Compile Include="DUTs\Assemblies\ST_DiagPaddleOutputs.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\E_DPaddle_States.TcDUT">
+    <Compile Include="DUTs\EPS\ST_BFSAssemblyState.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ST_BFSAssemblyState.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_DiagPaddleOutputs.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_Queue.TcDUT">
+    <Compile Include="DUTs\EPS\ST_Queue.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\GVL.TcGVL">
@@ -58,43 +52,44 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_AdjacentStates.TcPOU">
+    <Compile Include="POUs\Assemblies\FB_DPX.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_AssemblyPositionStateManager.TcPOU">
+    <Compile Include="POUs\Assemblies\PRG_DiagnosticPaddle.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_BFS.TcPOU">
+    <Compile Include="POUs\EPS\FB_AdjacentStates.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_DPX.TcPOU">
+    <Compile Include="POUs\EPS\FB_AssemblyPositionStateManager.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_Queue.TcPOU">
+    <Compile Include="POUs\EPS\FB_BFS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_SIM_MOTOR.TcPOU">
+    <Compile Include="POUs\EPS\FB_Queue.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\PRG_BFS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\PRG_QueueTest.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\PRG_Test_AdjacentStates.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\PRG_BFS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PRG_DiagnosticPaddle.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PRG_QueueTest.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PRG_Test_AdjacentStates.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
+    <Folder Include="DUTs\EPS" />
+    <Folder Include="DUTs\Assemblies" />
     <Folder Include="GVLs" />
+    <Folder Include="POUs\EPS" />
+    <Folder Include="POUs\Assemblies" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
