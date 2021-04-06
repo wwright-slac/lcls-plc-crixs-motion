@@ -7,7 +7,7 @@
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04622c52" RevisionNo="#x00120050" PortPhys="17219" TimeoutOpenLink1="150" TimeoutOpenLink3="150" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1122-0080 2 port EtherCAT junction (Fast Hot Connect)" Desc="EK1122-0080"/>
-		<Box File="Term 7 (EK1101-0080).xti" Id="7">
+		<Box File="DRL02-EK0 (EK1101-0080).xti" Id="7">
 			<EtherCAT PortABoxInfo="#x03000006"/>
 		</Box>
 	</Box>
