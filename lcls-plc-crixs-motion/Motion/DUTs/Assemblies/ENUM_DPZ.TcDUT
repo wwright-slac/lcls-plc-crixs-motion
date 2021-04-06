@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <DUT Name="ENUM_DPZ" Id="{941b60b8-f45e-4a8e-8b96-a8a816c2949e}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+// EPICS states enum for use in FB_DPX (diagnostic paddle X)
+// Remove strict attribute for easier handling
+TYPE ENUM_DPZ :
+(
+    UNKNOWN := 0, // UNKNOWN must be in slot 0 or the FB breaks
+    PARK := 1,    // The parked position for the diagnostic paddle
+    CENTER := 2  // center positon for the diagnostic paddle. This should be 
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
