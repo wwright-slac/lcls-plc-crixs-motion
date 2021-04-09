@@ -1344,9 +1344,11 @@ External Setpoint Generation:
 	<Axis Id="1" CreateSymbols="true" AxisType="1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
-			<Dynamic AccelerationMaximum="1" DecelerationMaximum="1"/>
+			<Dynamic AccelerationMaximum="1" DecelerationMaximum="1" Acceleration="1" Deceleration="1"/>
 			<Velo Maximum="5"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
+			<ParameterChanged>257</ParameterChanged>
+			<ParameterChanged>258</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
 			<EncPara ScaleFactorNumerator="5e-05" MaxCount="#xffffffff"/>

@@ -1344,7 +1344,15 @@ External Setpoint Generation:
 	<Axis Id="3" CreateSymbols="true" AxisType="1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
+			<Dynamic AccelerationMaximum="1" DecelerationMaximum="1" Acceleration="1" Deceleration="1"/>
+			<Velo Maximum="5"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
+			<ParameterChanged>39</ParameterChanged>
+			<ParameterChanged>257</ParameterChanged>
+			<ParameterChanged>242</ParameterChanged>
+			<ParameterChanged>18</ParameterChanged>
+			<ParameterChanged>258</ParameterChanged>
+			<ParameterChanged>241</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
 			<EncPara MaxCount="#xffffffff"/>
@@ -1385,7 +1393,7 @@ External Setpoint Generation:
 		</Encoder>
 		<Drive Name="Drive" DrvType="24">
 			<DrvPara>
-				<Analog TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
+				<Analog VeloReferenz="10" TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
@@ -1459,6 +1467,7 @@ External Setpoint Generation:
 		</Drive>
 		<Controller Name="Ctrl" CtrType="1">
 			<CtrPara PriorControlFactor="1">
+				<PosDiffControl Range="1"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>

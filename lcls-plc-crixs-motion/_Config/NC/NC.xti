@@ -22,8 +22,8 @@
 		<Axis File="Axis 4 - Objectives X.xti" Id="4"/>
 		<Axis File="Axis 5 - Objectives Y.xti" Id="5"/>
 		<Axis File="Axis 6 - Objectives Z.xti" Id="6"/>
-		<Axis File="Axis 7 - Point Detector Rotation.xti" Id="7"/>
-		<Axis File="Axis 8 - Point Detector Y.xti" Id="8"/>
+		<Axis File="Axis 7 - Point Detector Y.xti" Id="7"/>
+		<Axis File="Axis 8 - Point Detector Rotation.xti" Id="8"/>
 		<Axis File="Axis 9 - Illumination X.xti" Id="9"/>
 		<Axis File="Axis 10 - Illumination Y.xti" Id="10"/>
 		<Axis File="Axis 11 - Illumination Z.xti" Id="11"/>
