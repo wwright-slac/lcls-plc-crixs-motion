@@ -25,7 +25,7 @@ bDPaddleOK := TRUE;
 
 //PRG_Test_AdjacentStates();	
 
-PRG_BFS();							]]></ST>
+//PRG_BFS();							]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
