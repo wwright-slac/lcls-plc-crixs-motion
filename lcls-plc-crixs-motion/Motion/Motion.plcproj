@@ -45,15 +45,7 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
-    <Compile Include="GVLs\GVL_CRYOPUMPS.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
     <Compile Include="GVLs\GVL_DPADDLE.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
-    <Compile Include="GVLs\GVL_ILLUMINATION.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
@@ -77,6 +69,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Assemblies\FB_DPX.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Assemblies\PRG_CRYOPUMPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Assemblies\PRG_DiagnosticPaddle.TcPOU">

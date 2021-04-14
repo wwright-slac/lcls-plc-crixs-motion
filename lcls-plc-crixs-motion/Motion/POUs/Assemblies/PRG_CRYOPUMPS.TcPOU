@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <GVL Name="GVL_CRYOPUMPS" Id="{a76b6273-4d30-48e3-9d87-74c6c6e7ca6a}">
-    <Declaration><![CDATA[{attribute 'qualified_only'}
-VAR_GLOBAL
-	// Motor axes
+  <POU Name="PRG_CRYOPUMPS" Id="{08f2a2dd-a9a9-45ba-9d53-b02f457bbbf3}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_CRYOPUMPS
+VAR
+    // Motor axes
 	stCP1Motor : DUT_MotionStage;
 	stCP2Motor : DUT_MotionStage;
 							
@@ -29,6 +29,10 @@ VAR_GLOBAL
     									 	bMoveOk:=FALSE,
     									 	bLocked:=TRUE,
     									 	bValid:=TRUE);
-END_VAR]]></Declaration>
-  </GVL>
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
 </TcPlcObject>

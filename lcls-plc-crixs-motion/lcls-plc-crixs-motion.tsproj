@@ -1136,123 +1136,6 @@ External Setpoint Generation:
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_ILLUMINATION.stILMXMotor.Axis.NcToPlc</Name>
-							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMXMotor.bLimitForwardEnable</Name>
-							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMXMotor.bLimitBackwardEnable</Name>
-							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMXMotor.bHome</Name>
-							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMXMotor.bHardwareEnable</Name>
-							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMXMotor.nRawEncoderULINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
-							<Type>ULINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMXMotor.nRawEncoderUINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMXMotor.nRawEncoderINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMYMotor.Axis.NcToPlc</Name>
-							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMYMotor.bLimitForwardEnable</Name>
-							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMYMotor.bLimitBackwardEnable</Name>
-							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMYMotor.bHome</Name>
-							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMYMotor.bHardwareEnable</Name>
-							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMYMotor.nRawEncoderULINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
-							<Type>ULINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMYMotor.nRawEncoderUINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMYMotor.nRawEncoderINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMZMotor.Axis.NcToPlc</Name>
-							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMZMotor.bLimitForwardEnable</Name>
-							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMZMotor.bLimitBackwardEnable</Name>
-							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMZMotor.bHome</Name>
-							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMZMotor.bHardwareEnable</Name>
-							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMZMotor.nRawEncoderULINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
-							<Type>ULINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMZMotor.nRawEncoderUINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMZMotor.nRawEncoderINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>GVL_OBJECTIVES.stOBJXMotor.Axis.NcToPlc</Name>
 							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
@@ -1769,33 +1652,6 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_ILLUMINATION.stILMXMotor.Axis.PlcToNc</Name>
-							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMXMotor.bBrakeRelease</Name>
-							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMYMotor.Axis.PlcToNc</Name>
-							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMYMotor.bBrakeRelease</Name>
-							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMZMotor.Axis.PlcToNc</Name>
-							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>GVL_ILLUMINATION.stILMZMotor.bBrakeRelease</Name>
-							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_OBJECTIVES.stOBJXMotor.Axis.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
@@ -1939,6 +1795,9 @@ External Setpoint Generation:
 		<Io>
 			<Device File="Device 1 (EtherCAT).xti" Id="1"/>
 			<Device File="Device 4 (RT-Ethernet Protocol).xti" Id="4"/>
+			<Device File="Device 3 (EtherCAT Automation Protocol).xti" Id="3"/>
+			<Device File="Device 5 (USB).xti" Id="5"/>
+			<Device File="Device 6 (NOV-DP-RAM).xti" Id="6"/>
 		</Io>
 	</Project>
 	<Mappings>
