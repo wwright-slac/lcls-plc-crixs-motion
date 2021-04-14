@@ -49,13 +49,35 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="GVLs\GVL_OBJECTIVES.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_POINTDET.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_QUESTAR.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_SAMPLEDELIVERY.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Assemblies\FB_DPX.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Assemblies\PRG_CRYOPUMPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Assemblies\PRG_DiagnosticPaddle.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Assemblies\PRG_Illumination.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\EPS\FB_AdjacentStates.TcPOU">

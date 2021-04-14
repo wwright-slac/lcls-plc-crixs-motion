@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_Illumination" Id="{8e3cbdf0-4140-4ee5-9eb4-1ef84102a8a6}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_Illumination
+(*	Program for the ChemRIXS illumination system. *)
+VAR_INPUT
+	xMoveOK : BOOL := FALSE; // External interlock. Applied to bEnable of all PositionStateManagers.
+END_VAR
+VAR
+	bInit : BOOL := FALSE; // Initialization variable
+	
+	// Motor axes
+	{attribute 'TcLinkTo' := '.bLimForwardEnable:=TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E14 (EL7041)^STM Status^Status^Digital input 1;
+							  .bLimBackwardEnable:=TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E14 (EL7041)^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+			pv: CRIX:ILLUM:MMS:X
+	'}
+	stILMXMotor : DUT_MotionStage;
+	
+	{attribute 'TcLinkTo' := '.bLimForwardEnable:=;
+							  .bLimBackwardEnable:='}
+	{attribute 'pytmc' := '
+			pv: CRIX:ILLUM:MMS:X
+	'}
+	stILMYMotor : DUT_MotionStage;
+	stILMZMotor : DUT_MotionStage;
+							
+	// Define axis states for each axis. These are fed to a FB_PositionState manager for each axis
+	// X axis position states
+	stILMXPosPark : DUT_PositionState :=   (sName:= 'PARK',
+										 	fPosition := 0.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+											fDecel:=1.0,
+    									 	bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+
+	// Y axis position states
+	stILMYPosPark : DUT_PositionState :=   (sName:= 'PARK',
+										 	fPosition := 0.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+											fDecel:=1.0,
+    									 	bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+											
+	// Z axis position states						
+	stILMZPosPark : DUT_PositionState :=   (sName:= 'PARK',
+										 	fPosition := 0.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+											fDecel:=1.0,
+    									 	bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	
+	fbILMXStage : FB_MotionStage;
+	fbILMYStage : FB_MotionStage;
+	fbILMZStage : FB_MotionStage;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbILMXStage(stMotionStage := stILMXMotor);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
