@@ -101,7 +101,7 @@
     <Compile Include="POUs\EPS\PRG_Test_AdjacentStates.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\MAIN.TcPOU">
+    <Compile Include="POUs\Main.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
