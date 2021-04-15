@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.12" ClassName="CFlbTermDef" SubType="9099">
+	<ImageDatas>
+		<ImageData Id="1000">424de6000000000000007600000028000000100000000e00000001000400000000007000000000000000000000001000000000000000000000000000ff000080000000bfff0000ffff0002029d00c0c0c000ff000000ff00ff000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff0086666555555888888666656060588888863365646458888886336566665888888633656060588888866665676758888881111566665888888133156060588888813315616158888881111566665888888600656060588888806605666658888886006562625888888666656666588888</ImageData>
+	</ImageDatas>
+	<Box Id="7" BoxType="9099">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="1" PdiType="#x0d04" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x044d2c52" RevisionNo="#x00120050" PortPhys="1076" IdentificationAdo="4096" TimeoutOpenLink2="150" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1101-0080 EtherCAT Coupler (2A E-Bus, ID switch, Fast Hot Connect)" Desc="EK1101-0080">
+			<SyncMan>001002000000010004000000000000000000001000000000</SyncMan>
+			<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+			<Pdo Name="ID" Index="#x1a00" Flags="#x0010" SyncMan="0">
+				<Entry Name="ID" Index="#x6000" Sub="#x01">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+		</EtherCAT>
+		<Box File="DRL02-E1 (EL7031).xti" Id="8">
+			<EtherCAT PortABoxInfo="#x01000007"/>
+		</Box>
+		<Box File="DRL02-E2 (EL5042).xti" Id="9">
+			<EtherCAT PortABoxInfo="#x01000008"/>
+		</Box>
+		<Box File="DRL02-E3 (EL7031).xti" Id="10">
+			<EtherCAT PortABoxInfo="#x01000009"/>
+		</Box>
+		<Box File="DRL02-E4 (EL7031).xti" Id="11">
+			<EtherCAT PortABoxInfo="#x0100000a"/>
+		</Box>
+		<Box File="DRL02-E5 (EL5042).xti" Id="12">
+			<EtherCAT PortABoxInfo="#x0100000b"/>
+		</Box>
+		<Box File="DRL02-E6 (EL7031).xti" Id="13">
+			<EtherCAT PortABoxInfo="#x0100000c"/>
+		</Box>
+		<Box File="DRL02-E7 (EL7031).xti" Id="14">
+			<EtherCAT PortABoxInfo="#x0100000d"/>
+		</Box>
+		<Box File="DRL02-E8 (EL5042).xti" Id="15">
+			<EtherCAT PortABoxInfo="#x0100000e"/>
+		</Box>
+		<Box File="DRL02-E9 (EL7031).xti" Id="16">
+			<EtherCAT PortABoxInfo="#x0100000f"/>
+		</Box>
+		<Box File="DRL02-E10 (EL9410).xti" Id="17">
+			<EtherCAT PortABoxInfo="#x01000010"/>
+		</Box>
+		<Box File="DRL02-E11 (EL7031).xti" Id="18">
+			<EtherCAT PortABoxInfo="#x01000011"/>
+		</Box>
+		<Box File="DRL02-E12 (EL5042).xti" Id="19">
+			<EtherCAT PortABoxInfo="#x01000012"/>
+		</Box>
+		<Box File="DRL02-E13 (EL7041).xti" Id="20">
+			<EtherCAT PortABoxInfo="#x01000013"/>
+		</Box>
+		<Box File="DRL02-E14 (EL7041).xti" Id="21">
+			<EtherCAT PortABoxInfo="#x01000014"/>
+		</Box>
+		<Box File="DRL02-E15 (EL7041).xti" Id="22">
+			<EtherCAT PortABoxInfo="#x01000015"/>
+		</Box>
+		<Box File="DRL02-E16 (EL7041).xti" Id="23">
+			<EtherCAT PortABoxInfo="#x01000016"/>
+		</Box>
+		<Box File="DRL02-E17 (EL7031).xti" Id="24">
+			<EtherCAT PortABoxInfo="#x01000017"/>
+		</Box>
+		<Box File="DRL02-E18 (EL5042).xti" Id="25">
+			<EtherCAT PortABoxInfo="#x01000018"/>
+		</Box>
+		<Box File="DRL02-E19 (EL7031).xti" Id="26">
+			<EtherCAT PortABoxInfo="#x01000019"/>
+		</Box>
+		<Box File="DRL02-E20 (EL9410).xti" Id="27">
+			<EtherCAT PortABoxInfo="#x0100001a"/>
+		</Box>
+		<Box File="DRL02-E21 (EL7041).xti" Id="28">
+			<EtherCAT PortABoxInfo="#x0100001b"/>
+		</Box>
+		<Box File="DRL02-E22 (EL5042).xti" Id="29">
+			<EtherCAT PortABoxInfo="#x0100001c"/>
+		</Box>
+		<Box File="DRL02-E23 (EL7041).xti" Id="30">
+			<EtherCAT PortABoxInfo="#x0100001d"/>
+		</Box>
+		<Box File="DRL02-E24 (EL7031).xti" Id="31">
+			<EtherCAT PortABoxInfo="#x0100001e"/>
+		</Box>
+		<Box File="DRL02-E25 (EL5042).xti" Id="32">
+			<EtherCAT PortABoxInfo="#x0100001f"/>
+		</Box>
+		<Box File="DRL02-E26 (EL7031).xti" Id="33">
+			<EtherCAT PortABoxInfo="#x01000020"/>
+		</Box>
+		<Box File="DRL02-E27 (EL7031).xti" Id="34">
+			<EtherCAT PortABoxInfo="#x01000021"/>
+		</Box>
+		<Box File="DRL02-E28 (EL5042).xti" Id="35">
+			<EtherCAT PortABoxInfo="#x01000022"/>
+		</Box>
+		<Box File="DRL02-E29 (EL7031).xti" Id="36">
+			<EtherCAT PortABoxInfo="#x01000023"/>
+		</Box>
+		<Box File="DRL02-E30 (EL7031).xti" Id="37">
+			<EtherCAT PortABoxInfo="#x01000024"/>
+		</Box>
+		<Box File="DRL02-E31 (EL7031).xti" Id="73">
+			<EtherCAT PortABoxInfo="#x01000025"/>
+		</Box>
+		<Box File="DRL02-E32 (EL5042).xti" Id="74">
+			<EtherCAT PortABoxInfo="#x01000049"/>
+		</Box>
+		<Box File="DRL02-E33 (EL7031).xti" Id="75">
+			<EtherCAT PortABoxInfo="#x0100004a"/>
+		</Box>
+		<Box File="DRL02-ECJ0 (EK1122-0080).xti" Id="38">
+			<EtherCAT PortABoxInfo="#x0100004b"/>
+		</Box>
+		<Box File="DRL02-ECJ1 (EK1122).xti" Id="39">
+			<EtherCAT PortABoxInfo="#x02000026"/>
+		</Box>
+		<Box File="DRL02-E31 (EL9011).xti" Id="41">
+			<EtherCAT PortABoxInfo="#x02000027"/>
+		</Box>
+	</Box>
+</TcSmItem>

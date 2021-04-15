@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_BFS" Id="{2134dd5a-788e-4e7f-ad04-2f2cdff14fa8}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_BFS
+VAR
+	arrDPTransitions : ARRAY [0..9, 1..9] OF BOOL := // Note one more row than columns (Unknown state)
+    //Park  Up     Center Pinh.  Diode  Yag1   Yag2   Yag3   Knife
+	[FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, // Unknown (This should always be included)
+	 TRUE,  TRUE,  FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, // Park
+	 TRUE,  TRUE,  TRUE,  FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, // Up
+	 FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Center
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Pinhole
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Diode
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Yag1
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Yag2
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  // Yag3
+	 FALSE, FALSE, TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE]; // Knife	
+	 
+	 arrAdjStates : ARRAY [1..9] OF ST_BFSAssemblyState;
+	 
+	 nStates : DINT := 9;
+	 iRootState : DINT := 8;
+	 
+	 fbAdjacent : FB_AdjacentStates;
+	 
+	 iAdjacentStates : DINT;
+	 
+	stQueue : ST_Queue;
+	fbQueue : FB_Queue;
+	
+	bInit : BOOL := FALSE;
+	iResult : DINT;
+	bResult : BOOL;
+	
+	arrDiscovered : ARRAY [1..9] OF BOOL := [9(FALSE)];
+	
+	arrPath : ARRAY [1..9] OF ST_BFSAssemblyState;
+	
+	iCurrent : DINT;
+	
+	iTarget : DINT;
+	Target : ST_BFSAssemblyState;
+	Root : ST_BFSAssemblyState;
+	
+	iCounter : DINT;
+	
+	fbBFS	:	FB_BFS;
+	
+	arrStates : ARRAY [1..9] OF ST_BFSAssemblyState;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[arrStates[1] := stDPPark;
+arrStates[2] := stDPUp;
+arrStates[3] := stDPCenter;
+arrStates[4] := stDPPinhole;
+arrStates[5] := stDPDiode;
+arrStates[6] := stDPYag1;
+arrStates[7] := stDPYag2;
+arrStates[8] := stDPYag3;
+arrStates[9] := stDPKnife;
+
+Target := stDPYag3;
+Root := stDPPark;
+fbBFS(fbAdjacent:=fbAdjacent,
+	  arrTransitions:=arrDPTransitions,
+	  arrAdjStates:=arrAdjStates,
+	  nAdjacentStates:=iAdjacentStates,
+	  arrStates:=arrStates,
+	  stQueue:=stQueue,
+	  fbQueue:=fbQueue,
+	  RootState:=Root,
+	  arrPath:=arrPath,
+	  Target:=Target);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
