@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <POU Name="MAIN" Id="{9d31a973-0fa1-44e3-ab0d-723399df319b}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM MAIN
+  <POU Name="Main" Id="{9d31a973-0fa1-44e3-ab0d-723399df319b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main
 VAR
 	//stTestMotor1	:	DUT_SimMotor;
 	//fbTestMotor		:	FB_SIM_MOTOR;
