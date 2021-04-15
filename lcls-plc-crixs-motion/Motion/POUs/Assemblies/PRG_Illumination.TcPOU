@@ -10,20 +10,9 @@ VAR
 	bInit : BOOL := FALSE; // Initialization variable
 	
 	// Motor axes
-	
-//	{attribute 'TcLinkTo' := '.bLimForwardEnable:=TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E14 (EL7041)^STM Status^Status^Digital input 1;
-//							  .bLimBackwardEnable:=TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E14 (EL7041)^STM Status^Status^Digital input 2'}
-//	{attribute 'pytmc' := '
-//			pv: CRIX:ILLUM:MMS:X
-//	'}
 
 	stILMXMotor : DUT_MotionStage;
-	
-//	{attribute 'TcLinkTo' := '.bLimForwardEnable:=;
-//							  .bLimBackwardEnable:='}
-//	{attribute 'pytmc' := '
-//			pv: CRIX:ILLUM:MMS:X
-//	'}
+
 	stILMYMotor : DUT_MotionStage;
 	stILMZMotor : DUT_MotionStage;
 							
