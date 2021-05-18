@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <GVL Name="GVL_QUESTAR" Id="{556821e8-1021-4e81-85c0-f4ee820e2aed}">
+  <GVL Name="GVL_Questar" Id="{556821e8-1021-4e81-85c0-f4ee820e2aed}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
 		// Motor axes

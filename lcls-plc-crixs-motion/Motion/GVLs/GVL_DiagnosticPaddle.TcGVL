@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.14">
-  <GVL Name="GVL_DPADDLE" Id="{14852951-363f-4764-8553-afbd56890d2f}">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <GVL Name="GVL_DiagnosticPaddle" Id="{14852951-363f-4764-8553-afbd56890d2f}">
     <Declaration><![CDATA[VAR_GLOBAL
 	
 	// Motor axes

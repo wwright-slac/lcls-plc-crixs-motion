@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <GVL Name="GVL_POINTDET" Id="{2d606824-f2da-4160-a460-fdf32c9c572a}">
+  <GVL Name="GVL_PointDetector" Id="{2d606824-f2da-4160-a460-fdf32c9c572a}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
 		// Motor axes
