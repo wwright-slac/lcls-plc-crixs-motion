@@ -25,7 +25,9 @@ bDPaddleOK := TRUE;
 
 //PRG_Test_AdjacentStates();	
 
-//PRG_BFS();							]]></ST>
+//PRG_BFS();							
+
+PRG_DiagnosticPaddleMotors();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

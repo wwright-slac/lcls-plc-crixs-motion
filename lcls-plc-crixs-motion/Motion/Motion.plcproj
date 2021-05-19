@@ -81,6 +81,9 @@
     <Compile Include="POUs\Assemblies\PRG_DiagnosticPaddle.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Assemblies\PRG_DiagnosticPaddleMotors.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Assemblies\PRG_Illumination.TcPOU">
       <SubType>Code</SubType>
     </Compile>
