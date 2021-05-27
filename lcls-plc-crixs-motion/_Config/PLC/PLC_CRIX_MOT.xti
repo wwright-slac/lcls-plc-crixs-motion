@@ -917,9 +917,9 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Project GUID="{320423E4-504C-4304-8DED-7E40E0A2A352}" Name="Motion" PrjFilePath="..\..\Motion\Motion.plcproj" TmcFilePath="..\..\Motion\Motion.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
+	<Project GUID="{320423E4-504C-4304-8DED-7E40E0A2A352}" Name="PLC_CRIX_MOT" PrjFilePath="..\..\PLC_CRIX_MOT\PLC_CRIX_MOT.plcproj" TmcFilePath="..\..\PLC_CRIX_MOT\PLC_CRIX_MOT.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
 		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Motion\Motion.tmc">
-			<Name>Motion Instance</Name>
+			<Name>PLC_CRIX_MOT Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
@@ -2104,7 +2104,7 @@ External Setpoint Generation:
 		</Instance>
 	</Project>
 	<Mappings>
-		<OwnerA Name="Motion Instance">
+		<OwnerA Name="PLC_CRIX_MOT Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E1 (EL7031)">
 				<Link VarA="PlcTask Inputs^Main.stDPXMotor.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^Main.stDPXMotor.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true" Size="1"/>
