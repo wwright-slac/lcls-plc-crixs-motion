@@ -69,6 +69,10 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="GVLs\Main.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -108,7 +112,7 @@
     <Compile Include="POUs\EPS\PRG_Test_AdjacentStates.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Main.TcPOU">
+    <Compile Include="POUs\PRG_Main.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

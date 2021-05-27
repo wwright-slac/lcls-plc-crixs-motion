@@ -941,6 +941,18 @@ External Setpoint Generation:
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 						</Var>
 						<Var>
+							<Name>PRG_DiagnosticPaddleMotors.fbDPX_Motor.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_DiagnosticPaddleMotors.fbDPY_Motor.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_DiagnosticPaddleMotors.fbDPZ_Motor.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
 							<Name>GVL_Illumination.stILMXMotor.Axis.NcToPlc</Name>
 							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
@@ -1538,137 +1550,137 @@ External Setpoint Generation:
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPXMotor.Axis.NcToPlc</Name>
+							<Name>Main.stDPXMotor.Axis.NcToPlc</Name>
 							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPXMotor.bLimitForwardEnable</Name>
+							<Name>Main.stDPXMotor.bLimitForwardEnable</Name>
 							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPXMotor.bLimitBackwardEnable</Name>
+							<Name>Main.stDPXMotor.bLimitBackwardEnable</Name>
 							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPXMotor.bHome</Name>
+							<Name>Main.stDPXMotor.bHome</Name>
 							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPXMotor.bHardwareEnable</Name>
+							<Name>Main.stDPXMotor.bHardwareEnable</Name>
 							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPXMotor.nRawEncoderULINT</Name>
+							<Name>Main.stDPXMotor.nRawEncoderULINT</Name>
 							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
 							<Type>ULINT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPXMotor.nRawEncoderUINT</Name>
+							<Name>Main.stDPXMotor.nRawEncoderUINT</Name>
 							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPXMotor.nRawEncoderINT</Name>
+							<Name>Main.stDPXMotor.nRawEncoderINT</Name>
 							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPYMotor.Axis.NcToPlc</Name>
+							<Name>Main.stDPYMotor.Axis.NcToPlc</Name>
 							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPYMotor.bLimitForwardEnable</Name>
+							<Name>Main.stDPYMotor.bLimitForwardEnable</Name>
 							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPYMotor.bLimitBackwardEnable</Name>
+							<Name>Main.stDPYMotor.bLimitBackwardEnable</Name>
 							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPYMotor.bHome</Name>
+							<Name>Main.stDPYMotor.bHome</Name>
 							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPYMotor.bHardwareEnable</Name>
+							<Name>Main.stDPYMotor.bHardwareEnable</Name>
 							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPYMotor.nRawEncoderULINT</Name>
+							<Name>Main.stDPYMotor.nRawEncoderULINT</Name>
 							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
 							<Type>ULINT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPYMotor.nRawEncoderUINT</Name>
+							<Name>Main.stDPYMotor.nRawEncoderUINT</Name>
 							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPYMotor.nRawEncoderINT</Name>
+							<Name>Main.stDPYMotor.nRawEncoderINT</Name>
 							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPZMotor.Axis.NcToPlc</Name>
+							<Name>Main.stDPZMotor.Axis.NcToPlc</Name>
 							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPZMotor.bLimitForwardEnable</Name>
+							<Name>Main.stDPZMotor.bLimitForwardEnable</Name>
 							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPZMotor.bLimitBackwardEnable</Name>
+							<Name>Main.stDPZMotor.bLimitBackwardEnable</Name>
 							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPZMotor.bHome</Name>
+							<Name>Main.stDPZMotor.bHome</Name>
 							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPZMotor.bHardwareEnable</Name>
+							<Name>Main.stDPZMotor.bHardwareEnable</Name>
 							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPZMotor.nRawEncoderULINT</Name>
+							<Name>Main.stDPZMotor.nRawEncoderULINT</Name>
 							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
 							<Type>ULINT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPZMotor.nRawEncoderUINT</Name>
+							<Name>Main.stDPZMotor.nRawEncoderUINT</Name>
 							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPZMotor.nRawEncoderINT</Name>
+							<Name>Main.stDPZMotor.nRawEncoderINT</Name>
 							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
 							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_DiagnosticPaddleMotors.fbDPX_Motor.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_DiagnosticPaddleMotors.fbDPY_Motor.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_DiagnosticPaddleMotors.fbDPZ_Motor.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>PRG_DiagnosticPaddleMotors.fbDPX_Motor.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_DiagnosticPaddleMotors.fbDPY_Motor.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_DiagnosticPaddleMotors.fbDPZ_Motor.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
 						<Var>
 							<Name>GVL_Illumination.stILMXMotor.Axis.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
@@ -1817,43 +1829,31 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPXMotor.Axis.PlcToNc</Name>
+							<Name>Main.stDPXMotor.Axis.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPXMotor.bBrakeRelease</Name>
+							<Name>Main.stDPXMotor.bBrakeRelease</Name>
 							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPYMotor.Axis.PlcToNc</Name>
+							<Name>Main.stDPYMotor.Axis.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPYMotor.bBrakeRelease</Name>
+							<Name>Main.stDPYMotor.bBrakeRelease</Name>
 							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPZMotor.Axis.PlcToNc</Name>
+							<Name>Main.stDPZMotor.Axis.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DiagnosticPaddle.stDPZMotor.bBrakeRelease</Name>
+							<Name>Main.stDPZMotor.bBrakeRelease</Name>
 							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
 							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_DiagnosticPaddleMotors.fbDPX_Motor.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_DiagnosticPaddleMotors.fbDPY_Motor.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_DiagnosticPaddleMotors.fbDPZ_Motor.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="8" AreaNo="4">
@@ -1871,6 +1871,39 @@ External Setpoint Generation:
 							<InOut>7</InOut>
 						</Var>
 					</Vars>
+					<UnrestoredVarLinks ImportTime="2021-05-27T09:50:48">
+						<OwnerA Name="InputDst" Prefix="TIPC^Motion^Motion Instance" Type="1">
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E1 (EL7031)">
+								<Link VarA="GVL_DiagnosticPaddle.stDPXMotor.bLimitForwardEnable" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="STM Status^Status^Digital input 1" IdB="11848" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E3 (EL7031)">
+								<Link VarA="GVL_DiagnosticPaddle.stDPYMotor.bLimitForwardEnable" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="STM Status^Status^Digital input 1" IdB="11888" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E4 (EL7031)">
+								<Link VarA="GVL_DiagnosticPaddle.stDPZMotor.bLimitForwardEnable" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="STM Status^Status^Digital input 1" IdB="11914" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1 - Diagnostic Paddle X">
+								<Link VarA="GVL_DiagnosticPaddle.stDPXMotor.Axis.NcToPlc" TypeA="MC.NCTOPLC_AXIS_REF" InOutA="0" GuidA="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" VarB="Outputs^ToPlc" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 2 - Diagnostic Paddle Y">
+								<Link VarA="GVL_DiagnosticPaddle.stDPYMotor.Axis.NcToPlc" TypeA="MC.NCTOPLC_AXIS_REF" InOutA="0" GuidA="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" VarB="Outputs^ToPlc" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 3 - Diagnostic Paddle Z">
+								<Link VarA="GVL_DiagnosticPaddle.stDPZMotor.Axis.NcToPlc" TypeA="MC.NCTOPLC_AXIS_REF" InOutA="0" GuidA="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" VarB="Outputs^ToPlc" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+						<OwnerA Name="OutputSrc" Prefix="TIPC^Motion^Motion Instance" Type="2">
+							<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1 - Diagnostic Paddle X">
+								<Link VarA="GVL_DiagnosticPaddle.stDPXMotor.Axis.PlcToNc" TypeA="MC.PLCTONC_AXIS_REF" InOutA="1" GuidA="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" VarB="Inputs^FromPlc" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 2 - Diagnostic Paddle Y">
+								<Link VarA="GVL_DiagnosticPaddle.stDPYMotor.Axis.PlcToNc" TypeA="MC.PLCTONC_AXIS_REF" InOutA="1" GuidA="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" VarB="Inputs^FromPlc" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 3 - Diagnostic Paddle Z">
+								<Link VarA="GVL_DiagnosticPaddle.stDPZMotor.Axis.PlcToNc" TypeA="MC.PLCTONC_AXIS_REF" InOutA="1" GuidA="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" VarB="Inputs^FromPlc" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
 					<Contexts>
 						<Context>
 							<Id NeedCalleeCall="true">0</Id>
@@ -1901,28 +1934,56 @@ External Setpoint Generation:
 		<MappingInfo Identifier="{08502001-0010-0304-0020-500810000403}" Id="#x02030020" Watchdog="00000000000000000000000000000000"/>
 		<OwnerA Name="TIPC^Motion^Motion Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E1 (EL7031)">
-				<Link VarA="PlcTask Inputs^GVL_DiagnosticPaddle.stDPXMotor.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_DiagnosticPaddle.stDPXMotor.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.stDPXMotor.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.stDPXMotor.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E3 (EL7031)">
-				<Link VarA="PlcTask Inputs^GVL_DiagnosticPaddle.stDPYMotor.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_DiagnosticPaddle.stDPYMotor.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.stDPYMotor.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.stDPYMotor.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E4 (EL7031)">
-				<Link VarA="PlcTask Inputs^GVL_DiagnosticPaddle.stDPZMotor.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_DiagnosticPaddle.stDPZMotor.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.stDPZMotor.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.stDPZMotor.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1 - Diagnostic Paddle X">
-				<Link VarA="PlcTask Inputs^GVL_DiagnosticPaddle.stDPXMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_DiagnosticPaddle.stDPXMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 10 - Illumination Y">
+				<Link VarA="PlcTask Inputs^GVL_Illumination.stILMYMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Illumination.stILMYMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 2 - Diagnostic Paddle Y">
-				<Link VarA="PlcTask Inputs^GVL_DiagnosticPaddle.stDPYMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_DiagnosticPaddle.stDPYMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 11 - Illumination Z">
+				<Link VarA="PlcTask Inputs^GVL_Illumination.stILMZMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Illumination.stILMZMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 3 - Diagnostic Paddle Z">
-				<Link VarA="PlcTask Inputs^GVL_DiagnosticPaddle.stDPZMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_DiagnosticPaddle.stDPZMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 12 - Questar X">
+				<Link VarA="PlcTask Inputs^GVL_Questar.stQSTXMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Questar.stQSTXMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 13 - Questar Y">
+				<Link VarA="PlcTask Inputs^GVL_Questar.stQSTYMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Questar.stQSTYMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 4 - Objectives X">
+				<Link VarA="PlcTask Inputs^GVL_Objectives.stOBJXMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Objectives.stOBJXMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 5 - Objectives Y">
+				<Link VarA="PlcTask Inputs^GVL_Objectives.stOBJYMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Objectives.stOBJYMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 6 - Objectives Z">
+				<Link VarA="PlcTask Inputs^GVL_Objectives.stOBJZMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Objectives.stOBJZMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 7 - Point Detector Y">
+				<Link VarA="PlcTask Inputs^GVL_PointDetector.stPDYMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_PointDetector.stPDYMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 8 - Point Detector Rotation">
+				<Link VarA="PlcTask Inputs^GVL_PointDetector.stPDRotMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_PointDetector.stPDRotMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 9 - Illumination X">
+				<Link VarA="PlcTask Inputs^GVL_Illumination.stILMXMotor.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Illumination.stILMXMotor.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>
