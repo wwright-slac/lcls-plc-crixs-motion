@@ -10,6 +10,43 @@ VAR
 	arrStates : ARRAY [1..9] OF ENUM_DiagPaddle;
 	bDPaddleOK : BOOL;
 	
+		// Motor axes
+    {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:X'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E1 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E1 (EL7031)^STM Status^Status^Digital input 2'}
+	stDPXMotor : DUT_MotionStage;
+	
+	{attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Y'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E3 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E3 (EL7031)^STM Status^Status^Digital input 2'}
+	stDPYMotor : DUT_MotionStage;
+	
+	{attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Z'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E4 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E4 (EL7031)^STM Status^Status^Digital input 2'}
+	stDPZMotor : DUT_MotionStage;
+	
+	stILMXMotor : DUT_MotionStage;
+	stILMYMotor : DUT_MotionStage;
+	stILMZMotor : DUT_MotionStage;
+	
+	stOBJXMotor : DUT_MotionStage;
+	stOBJYMotor : DUT_MotionStage;
+	stOBJZMotor : DUT_MotionStage;
+	
+	stPDRotMotor : DUT_MotionStage;
+	stPDYMotor : DUT_MotionStage;
+	
+	stQSTXMotor : DUT_MotionStage;
+	stQSTYMotor : DUT_MotionStage;
+	
+	stSDSXMotor : DUT_MotionStage;
+	stSDSYMotor : DUT_MotionStage;
+	stSDSZMotor : DUT_MotionStage;
+	stSDSRotMotor : DUT_MotionStage;
+	stSDSShroudMotor : DUT_MotionStage;
+	
+	
 END_VAR
 ]]></Declaration>
     <Implementation>

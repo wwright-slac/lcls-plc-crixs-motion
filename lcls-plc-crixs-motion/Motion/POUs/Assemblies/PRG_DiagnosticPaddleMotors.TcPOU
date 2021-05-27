@@ -9,11 +9,11 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbDPX_Motor(stMotionStage:=stDPXMotor);
+      <ST><![CDATA[fbDPX_Motor(stMotionStage:=PRG_Main.stDPXMotor);
 
-fbDPY_Motor(stMotionStage:=stDPYMotor);
+fbDPY_Motor(stMotionStage:=PRG_Main.stDPYMotor);
 
-fbDPZ_Motor(stMotionStage:=stDPZMotor);
+fbDPZ_Motor(stMotionStage:=PRG_Main.stDPZMotor);
 
 
 ]]></ST>

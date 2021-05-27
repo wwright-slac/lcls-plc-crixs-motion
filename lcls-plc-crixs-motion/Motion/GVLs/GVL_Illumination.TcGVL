@@ -4,10 +4,9 @@
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
 	
-	stILMXMotor : DUT_MotionStage;
+	
 
-	stILMYMotor : DUT_MotionStage;
-	stILMZMotor : DUT_MotionStage;
+
 							
 	// Define axis states for each axis. These are fed to a FB_PositionState manager for each axis
 	// X axis position states
