@@ -1,14 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <GVL Name="GVL_Questar" Id="{556821e8-1021-4e81-85c0-f4ee820e2aed}">
-    <Declaration><![CDATA[{attribute 'qualified_only'}
+  <GVL Name="GVL_Illumination" Id="{2131cdf9-2472-4c34-9c96-7eac2d13e49a}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
-		// Motor axes
+	
+	
+
 
 							
 	// Define axis states for each axis. These are fed to a FB_PositionState manager for each axis
 	// X axis position states
-	stQSTXPosPark : DUT_PositionState :=		(sName:= 'PARK',
+	stILMXPosPark : DUT_PositionState :=   (sName:= 'PARK',
 										 	fPosition := 0.0,
 										 	fDelta:=1.0,
 									     	fVelocity:=5.0,
@@ -19,7 +21,7 @@ VAR_GLOBAL
     									 	bValid:=TRUE);
 
 	// Y axis position states
-	stQSTYPosPark : DUT_PositionState :=		(sName:= 'PARK',
+	stILMYPosPark : DUT_PositionState :=   (sName:= 'PARK',
 										 	fPosition := 0.0,
 										 	fDelta:=1.0,
 									     	fVelocity:=5.0,
@@ -28,7 +30,21 @@ VAR_GLOBAL
     									 	bMoveOk:=FALSE,
     									 	bLocked:=TRUE,
     									 	bValid:=TRUE);
-										
+											
+	// Z axis position states						
+	stILMZPosPark : DUT_PositionState :=   (sName:= 'PARK',
+										 	fPosition := 0.0,
+										 	fDelta:=1.0,
+									     	fVelocity:=5.0,
+    									 	fAccel:=1.0, 
+											fDecel:=1.0,
+    									 	bMoveOk:=FALSE,
+    									 	bLocked:=TRUE,
+    									 	bValid:=TRUE);
+	
+	fbILMXStage : FB_MotionStage;
+	fbILMYStage : FB_MotionStage;
+	fbILMZStage : FB_MotionStage;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
