@@ -42,8 +42,14 @@ VAR_GLOBAL
 	M11 : DUT_MotionStage;
 	//stILMZMotor : DUT_MotionStage;
 
+	{attribute 'pytmc' := 'pv: CRIX:QSTR:MMS:X'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E17 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E17 (EL7031)^STM Status^Status^Digital input 2'}
 	M12 : DUT_MotionStage;
 	//stQSTXMotor : DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: CRIX:QSTR:MMS:Y'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E19 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E19 (EL7031)^STM Status^Status^Digital input 2'}
 	M13 : DUT_MotionStage;
 	//stQSTYMotor : DUT_MotionStage;
 	
