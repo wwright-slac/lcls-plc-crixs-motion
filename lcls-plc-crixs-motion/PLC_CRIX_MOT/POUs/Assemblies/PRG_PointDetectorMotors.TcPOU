@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_PointDetectorMotors" Id="{d5767abe-cb63-4327-af55-d04cea88d494}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_PointDetectorMotors
+VAR
+    fbPDETY_Motor : FB_MotionStage;
+    fbPDETTheta_Motor : FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Main.M7.bHardwareEnable := TRUE;
+fbPDETY_Motor(stMotionStage:=Main.M7);
+
+Main.M8.bHardwareEnable := TRUE;
+fbPDETTheta_Motor(stMotionStage:=Main.M8);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
