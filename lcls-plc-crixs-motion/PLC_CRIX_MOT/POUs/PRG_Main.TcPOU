@@ -27,7 +27,11 @@ bDPaddleOK := TRUE;
 
 //PRG_BFS();							
 
-PRG_DiagnosticPaddleMotors();]]></ST>
+PRG_DiagnosticPaddleMotors();
+
+PRG_QuestarMotors();
+
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
