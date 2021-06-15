@@ -31,7 +31,7 @@ PRG_DiagnosticPaddleMotors();
 
 PRG_QuestarMotors();
 
-]]></ST>
+PRG_PointDetectorMotors();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
