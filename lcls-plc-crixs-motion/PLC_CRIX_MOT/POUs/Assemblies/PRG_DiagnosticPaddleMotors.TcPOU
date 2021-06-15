@@ -12,9 +12,9 @@ END_VAR
       <ST><![CDATA[Main.M1.bHardwareEnable := TRUE;
 fbDPX_Motor(stMotionStage:=Main.M1);
 
-// Deal with bad limit switch on Y stage
-Main.M2.bLimitBackwardEnable := TRUE;
-Main.M2.bLimitForwardEnable := TRUE;
+//// Deal with bad limit switch on Y stage
+//Main.M2.bLimitBackwardEnable := TRUE;
+//Main.M2.bLimitForwardEnable := TRUE;
 Main.M2.bHardwareEnable := TRUE;
 fbDPY_Motor(stMotionStage:=Main.M2);
 
