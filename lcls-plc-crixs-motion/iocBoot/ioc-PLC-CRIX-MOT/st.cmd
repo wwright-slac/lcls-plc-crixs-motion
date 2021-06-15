@@ -179,8 +179,8 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 epicsEnvSet("AXIS_NO",         "7")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:PLC_CRIX_MOT:")
-epicsEnvSet("MOTOR_NAME",      "Axis:7:-:Point:Detector:Y")
+epicsEnvSet("MOTOR_PREFIX",    "CRIX:PDET:MMS:")
+epicsEnvSet("MOTOR_NAME",      "Y")
 epicsEnvSet("DESC",            "Main.M7 / Axis 7 - Point Detector Y")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
@@ -194,8 +194,8 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 epicsEnvSet("AXIS_NO",         "8")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:PLC_CRIX_MOT:")
-epicsEnvSet("MOTOR_NAME",      "Axis:8:-:Point:Detector:Rotation")
+epicsEnvSet("MOTOR_PREFIX",    "CRIX:PDET:MMS:")
+epicsEnvSet("MOTOR_NAME",      "THETA")
 epicsEnvSet("DESC",            "Main.M8 / Axis 8 - Point Detector Rotation")
 epicsEnvSet("EGU",             "Degree")
 epicsEnvSet("PREC",            "3")
@@ -254,8 +254,8 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 epicsEnvSet("AXIS_NO",         "12")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:PLC_CRIX_MOT:")
-epicsEnvSet("MOTOR_NAME",      "Axis:12:-:Questar:X")
+epicsEnvSet("MOTOR_PREFIX",    "CRIX:QSTR:MMS:")
+epicsEnvSet("MOTOR_NAME",      "X")
 epicsEnvSet("DESC",            "Main.M12 / Axis 12 - Questar X")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
@@ -269,8 +269,8 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 epicsEnvSet("AXIS_NO",         "13")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:PLC_CRIX_MOT:")
-epicsEnvSet("MOTOR_NAME",      "Axis:13:-:Questar:Y")
+epicsEnvSet("MOTOR_PREFIX",    "CRIX:QSTR:MMS:")
+epicsEnvSet("MOTOR_NAME",      "Y")
 epicsEnvSet("DESC",            "Main.M13 / Axis 13 - Questar Y")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
