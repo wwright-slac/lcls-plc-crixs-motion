@@ -74,8 +74,15 @@ VAR_GLOBAL
 	//stSDSShroudMotor : DUT_MotionStage;
 (*	
 	M21 : DUT_MotionStage; // Out-coupling y
-	M22 : DUT_MotionStage; // Questar Focus
-	*)
+ *)
+ 
+ (* not needed for now; it has a manual knob
+ // NOTE: Questar is M21, even though Outcoupling Y stage is before it on the DIN rail
+ 	{attribute 'pytmc' := 'pv: CRIX:QSTR:MMS:FOCUS'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E33 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E33 (EL7031)^STM Status^Status^Digital input 2'}
+	M21 : DUT_MotionStage; // Questar Focus
+*)
 	
 	
 END_VAR]]></Declaration>

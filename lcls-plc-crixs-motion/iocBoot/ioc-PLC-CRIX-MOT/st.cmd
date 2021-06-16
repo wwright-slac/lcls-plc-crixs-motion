@@ -57,7 +57,7 @@ cd "$(ADS_IOC_TOP)/db"
 
 epicsEnvSet("MOTOR_PORT",     "PLC_ADS")
 epicsEnvSet("PREFIX",         "PLC:PLC_CRIX_MOT:")
-epicsEnvSet("NUMAXES",        "20")
+epicsEnvSet("NUMAXES",        "21")
 epicsEnvSet("MOVE_POLL_RATE", "200")
 epicsEnvSet("IDLE_POLL_RATE", "1000")
 
