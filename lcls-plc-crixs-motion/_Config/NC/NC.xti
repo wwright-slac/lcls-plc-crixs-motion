@@ -36,7 +36,6 @@
 		<Axis File="Axis 18 - SDS Injector Z.xti" Id="18"/>
 		<Axis File="Axis 19 - SDS Rotation Y.xti" Id="19"/>
 		<Axis File="Axis 20 - SDS Shroud Rotation.xti" Id="20"/>
-		<Axis File="Axis 21 - Out-Coupling Lens Y.xti" Id="21"/>
-		<Axis File="Axis 22 - Questar Focus.xti" Id="22"/>
+		<Axis File="Axis 21 - Questar Focus.xti" Id="21"/>
 	</NC>
 </TcSmItem>

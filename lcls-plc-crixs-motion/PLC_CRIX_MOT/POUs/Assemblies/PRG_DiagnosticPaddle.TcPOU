@@ -11,7 +11,7 @@ VAR_INPUT
 END_VAR
 VAR
 	bInit : BOOL := FALSE; // Initialization variable
-	iCounter : UDINT; // loop counter
+	//iCounter : UDINT; // loop counter
 	
 	// Setup Assembly manager to set bMoveOK for appropriate states
 	fbDPAssemblyManager : FB_AssemblyPositionStatemanager;
@@ -52,9 +52,10 @@ VAR
 													'YAG3',	'KNIFE'];
 					
 	// Array of position states for PositionStateManagers (initialize later)
-	arrDPXStates : ARRAY [1..15] OF DUT_PositionState;
-	arrDPYStates : ARRAY [1..15] OF DUT_PositionState;																  
-	arrDPZStates : ARRAY [1..15] OF DUT_PositionState;
+	arrDPXStates : ARRAY [1..15] OF DUT_PositionState := [stDPXPosPark,stDPXPosCenter,stDPXPosKnife];
+	arrDPYStates : ARRAY [1..15] OF DUT_PositionState := [stDPYPosPark,stDPYPosCenter,stDPYPosPinhole,stDPYPosDiode,stDPYPosYag1,
+														  stDPYPosYag2,stDPYPosYag3,stDPYPosKnife];																  
+	arrDPZStates : ARRAY [1..15] OF DUT_PositionState := [stDPZPosPark,stDPZPosCenter];
 									
 	// Setup PositionStateManagers and set variables for each axis		
 	// X Axis			
@@ -158,24 +159,6 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF NOT bInit THEN
-	// Init X axis array
-	arrDPXStates[1] := stDPXPosPark;
-	arrDPXStates[2] := stDPXPosCenter;
-	arrDPXStates[3] := stDPXPosKnife;
-	// Init Y axis array
-	arrDPYStates[1] := stDPYPosPark;
-	arrDPYStates[2] := stDPYPosCenter;
-	arrDPYStates[3] := stDPYPosPinhole;
-	arrDPYStates[4] := stDPYPosDiode;
-	arrDPYStates[5] := stDPYPosYag1;
-	arrDPYStates[6] := stDPYPosYag2;
-	arrDPYStates[7] := stDPYPosYag3;
-	arrDPYStates[8] := stDPYPosKnife;
-	// Init Z axis array
-	arrDPZStates[1] := stDPZPosPark;
-	arrDPZStates[2] := stDPZPosCenter;
-	
-	
 	bInit := TRUE;
 END_IF
 
