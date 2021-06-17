@@ -1341,7 +1341,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Axis Id="2" CreateSymbols="true" AxisType="1" GroupId="4">
+	<Axis Id="2" CreateSymbols="true" AxisType="1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<Dynamic AccelerationMaximum="1" DecelerationMaximum="1" Acceleration="1" Deceleration="1"/>
@@ -1349,9 +1349,9 @@ External Setpoint Generation:
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
-			<EncPara ScaleFactorNumerator="5e-05" Offset="-6871841.6" MaxCount="#xffffffff">
-				<SoftEndMinControl Range="-1"/>
-				<SoftEndMaxControl Range="80"/>
+			<EncPara ScaleFactorNumerator="5e-05" Offset="-13315.7" MaxCount="#x0fffffff">
+				<SoftEndMinControl Enable="true" Range="-1"/>
+				<SoftEndMaxControl Enable="true" Range="80"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
