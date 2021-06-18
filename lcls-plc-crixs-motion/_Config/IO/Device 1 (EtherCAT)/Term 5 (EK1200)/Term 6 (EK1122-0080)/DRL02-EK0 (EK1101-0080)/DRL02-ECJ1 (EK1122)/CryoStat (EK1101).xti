@@ -18,7 +18,7 @@
 		<Box File="Cryo X (EL7041).xti" Id="85">
 			<EtherCAT PortABoxInfo="#x01000054"/>
 		</Box>
-		<Box File="Cryo Z Enc (EL5042).xti" Id="86">
+		<Box File="Cryo X%_2FCryo Y Enc (EL5042).xti" Id="86">
 			<EtherCAT PortABoxInfo="#x01000055"/>
 		</Box>
 		<Box File="Cryo Y (EL7041).xti" Id="87">
@@ -27,7 +27,7 @@
 		<Box File="Cryo Z (EL7041).xti" Id="88">
 			<EtherCAT PortABoxInfo="#x01000057"/>
 		</Box>
-		<Box File="Term 89 (EL5042).xti" Id="89">
+		<Box File="Cryo Z%_2FCryo rY Enc (EL5042).xti" Id="89">
 			<EtherCAT PortABoxInfo="#x01000058"/>
 		</Box>
 		<Box File="Cryo rY (EL7041).xti" Id="90">
