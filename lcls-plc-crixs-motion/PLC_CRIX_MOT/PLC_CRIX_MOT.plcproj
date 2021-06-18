@@ -82,6 +82,9 @@
     <Compile Include="POUs\Assemblies\PRG_Cryopumps.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Assemblies\PRG_CryoStat.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Assemblies\PRG_DiagnosticPaddle.TcPOU">
       <SubType>Code</SubType>
     </Compile>

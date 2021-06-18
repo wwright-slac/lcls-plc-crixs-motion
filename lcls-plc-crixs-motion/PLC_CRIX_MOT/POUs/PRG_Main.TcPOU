@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="PRG_Main" Id="{9d31a973-0fa1-44e3-ab0d-723399df319b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_Main
 VAR
@@ -31,7 +31,9 @@ PRG_DiagnosticPaddleMotors();
 
 PRG_QuestarMotors();
 
-PRG_PointDetectorMotors();]]></ST>
+PRG_PointDetectorMotors();
+
+PRG_CryoStat();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
