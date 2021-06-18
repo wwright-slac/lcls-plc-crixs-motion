@@ -1324,12 +1324,12 @@ External Setpoint Generation:
 	<Axis Id="25" CreateSymbols="true" AxisType="1" AxisFolder="CryoStat">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
-			<Dynamic AccelerationMaximum="2" DecelerationMaximum="2" Acceleration="2" Deceleration="2" Jerk="2"/>
-			<Velo Maximum="2"/>
+			<Dynamic AccelerationMaximum="1" DecelerationMaximum="2" Acceleration="1" Deceleration="2" Jerk="2"/>
+			<Velo Maximum="1.2"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
-			<EncPara MaxCount="#x0000ffff">
+			<EncPara ScaleFactorNumerator="9.375e-06" MaxCount="#x0000ffff">
 				<Inc RefMode="2" RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
@@ -1399,7 +1399,7 @@ External Setpoint Generation:
 		</Encoder>
 		<Drive Name="Drive" DrvType="24">
 			<DrvPara>
-				<Analog VeloReferenz="20" ScaleFactorActTorque="0.1"/>
+				<Analog VeloReferenz="1.2" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
@@ -1489,7 +1489,7 @@ Drive Status 4 (manually linked):
 		</Drive>
 		<Controller Name="Ctrl" CtrType="1">
 			<CtrPara PriorControlFactor="1">
-				<PosDiffControl Range="0.5"/>
+				<PosDiffControl Enable="false" Range="0.5"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
