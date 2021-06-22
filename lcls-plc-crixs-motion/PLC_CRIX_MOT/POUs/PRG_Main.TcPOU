@@ -33,7 +33,8 @@ PRG_QuestarMotors();
 
 PRG_PointDetectorMotors();
 
-PRG_CryoStat();]]></ST>
+PRG_CryoStat();
+PRG_RCI();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -17,10 +17,15 @@
 			<Name>NC-Task 1 SVB</Name>
 		</SvbTask>
 		<AxisFolder Name="CryoStat"/>
+		<AxisFolder Name="RCI"/>
 		<Axis File="Cryo X.xti" Id="22"/>
 		<Axis File="Cryo Y.xti" Id="23"/>
 		<Axis File="Cryo Z.xti" Id="24"/>
 		<Axis File="Cryo rY.xti" Id="25"/>
+		<Axis File="RCI X.xti" Id="26"/>
+		<Axis File="RCI Y.xti" Id="27"/>
+		<Axis File="RCI Z.xti" Id="28"/>
+		<Axis File="RCI RX.xti" Id="29"/>
 		<Axis File="Axis 1 - Diagnostic Paddle X.xti" Id="1"/>
 		<Axis File="Axis 2 - Diagnostic Paddle Y.xti" Id="2"/>
 		<Axis File="Axis 3 - Diagnostic Paddle Z.xti" Id="3"/>

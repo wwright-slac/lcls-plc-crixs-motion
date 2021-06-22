@@ -33,6 +33,8 @@
 		<Box File="Term 5 (EK1200).xti" Id="5">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
 		</Box>
-		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="2" MaxSwitchFrames="120"/>
+		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="2" MaxSwitchFrames="120">
+			<SyncUnit Name="hot connect" NoDeleteIfUnused="true"/>
+		</EtherCAT>
 	</Device>
 </TcSmItem>

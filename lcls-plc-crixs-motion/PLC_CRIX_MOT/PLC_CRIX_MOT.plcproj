@@ -100,6 +100,9 @@
     <Compile Include="POUs\Assemblies\PRG_QuestarMotors.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Assemblies\PRG_RCI.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\EPS\FB_AdjacentStates.TcPOU">
       <SubType>Code</SubType>
     </Compile>
