@@ -13,5 +13,8 @@
 		<Box File="Camera (EK1101-0080).xti" Id="109">
 			<EtherCAT PortABoxInfo="#x02000052"/>
 		</Box>
+		<Box File="Beamblock (EK1101-0080).xti" Id="118">
+			<EtherCAT PortABoxInfo="#x0200006d"/>
+		</Box>
 	</Box>
 </TcSmItem>
