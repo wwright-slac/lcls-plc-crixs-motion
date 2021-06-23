@@ -1324,12 +1324,13 @@ External Setpoint Generation:
 	<Axis Id="25" CreateSymbols="true" AxisType="1" AxisFolder="CryoStat">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
+			<General UnitName="Degree"/>
 			<Dynamic AccelerationMaximum="1" DecelerationMaximum="2" Acceleration="1" Deceleration="2" Jerk="2"/>
 			<Velo Maximum="1.2"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
-			<EncPara ScaleFactorNumerator="9.375e-06" MaxCount="#x0000ffff">
+			<EncPara ScaleFactorNumerator="9.375e-06" Offset="206" MaxCount="#x0000ffff">
 				<Inc RefMode="2" RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
@@ -1487,9 +1488,10 @@ Drive Status 4 (manually linked):
 				</Var>
 			</Vars>
 		</Drive>
-		<Controller Name="Ctrl" CtrType="1">
+		<Controller Name="Ctrl" CtrType="2">
 			<CtrPara PriorControlFactor="1">
 				<PosDiffControl Enable="false" Range="0.5"/>
+				<PID DeadBandPosition="0.5"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>

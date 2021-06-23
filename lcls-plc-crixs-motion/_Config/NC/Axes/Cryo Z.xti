@@ -1324,14 +1324,15 @@ External Setpoint Generation:
 	<Axis Id="24" CreateSymbols="true" AxisType="1" AxisFolder="CryoStat">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
-			<Velo Maximum="10"/>
+			<Dynamic AccelerationMaximum="10" DecelerationMaximum="10" Acceleration="2" Deceleration="2"/>
+			<Velo Maximum="2"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 			<ParameterChanged>39</ParameterChanged>
 			<ParameterChanged>257</ParameterChanged>
-			<ParameterChanged>259</ParameterChanged>
 			<ParameterChanged>242</ParameterChanged>
-			<ParameterChanged>258</ParameterChanged>
+			<ParameterChanged>259</ParameterChanged>
 			<ParameterChanged>241</ParameterChanged>
+			<ParameterChanged>258</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
 			<EncPara ScaleFactorNumerator="5e-05" MaxCount="#xffffffff">
@@ -1377,9 +1378,10 @@ External Setpoint Generation:
 			</Vars>
 		</Encoder>
 		<Drive Name="Drive" DrvType="24">
-			<DrvPara>
-				<Analog ScaleFactorActTorque="0.1"/>
+			<DrvPara Inverse="true">
+				<Analog VeloReferenz="5" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
+				<ParameterChanged>6</ParameterChanged>
 			</DrvPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
@@ -1466,10 +1468,12 @@ Drive Status 4 (manually linked):
 				</Var>
 			</Vars>
 		</Drive>
-		<Controller Name="Ctrl" CtrType="1">
+		<Controller Name="Ctrl" CtrType="2">
 			<CtrPara PriorControlFactor="1">
 				<PosDiffControl Range="0.5"/>
+				<PID DeadBandPosition="0.5"/>
 				<Observer BandWidth="20"/>
+				<ParameterChanged>269</ParameterChanged>
 			</CtrPara>
 		</Controller>
 		<Vars VarGrpType="1" InsertType="1">
