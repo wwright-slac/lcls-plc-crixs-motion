@@ -1324,7 +1324,15 @@ External Setpoint Generation:
 	<Axis Id="27" CreateSymbols="true" AxisType="1" AxisFolder="RCI">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
+			<Velo Maximum="10"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
+			<ParameterChanged>39</ParameterChanged>
+			<ParameterChanged>257</ParameterChanged>
+			<ParameterChanged>259</ParameterChanged>
+			<ParameterChanged>242</ParameterChanged>
+			<ParameterChanged>18</ParameterChanged>
+			<ParameterChanged>258</ParameterChanged>
+			<ParameterChanged>241</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
 			<EncPara MaxCount="#xffffffff">
@@ -1461,6 +1469,7 @@ Drive Status 4 (manually linked):
 		</Drive>
 		<Controller Name="Ctrl" CtrType="1">
 			<CtrPara PriorControlFactor="1">
+				<PosDiffControl Range="0.3"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
