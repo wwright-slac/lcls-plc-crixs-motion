@@ -1327,12 +1327,11 @@ External Setpoint Generation:
 			<Dynamic AccelerationMaximum="1" DecelerationMaximum="1" Acceleration="1" Deceleration="1"/>
 			<Velo Maximum="1.4"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
-			<ParameterChanged>39</ParameterChanged>
-			<ParameterChanged>257</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
-			<EncPara ScaleFactorNumerator="5e-05" Offset="-310.0149" MaxCount="#xffffffff">
+			<EncPara ScaleFactorNumerator="5e-05" Offset="-215.0149" MaxCount="#xffffffff">
 				<Inc RefSoftSyncMask="#x0000ffff"/>
+				<ParameterChanged>7</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
@@ -1468,7 +1467,6 @@ Drive Status 4 (manually linked):
 				<PosDiffControl Range="0.5"/>
 				<PID PosExtKp="1" DeadBandPosition="0.01"/>
 				<Observer BandWidth="20"/>
-				<ParameterChanged>262</ParameterChanged>
 			</CtrPara>
 		</Controller>
 		<Vars VarGrpType="1" InsertType="1">
