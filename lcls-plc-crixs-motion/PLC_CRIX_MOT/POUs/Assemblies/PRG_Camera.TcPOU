@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_Camera" Id="{a9d2d2be-c021-4aa8-8513-0ed27fa49baa}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_Camera
+VAR
+    fbCAM_Motor_X : FB_MotionStage;
+    fbCAM_Motor_Y : FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Main.M33.bHardwareEnable := TRUE;
+fbCAM_Motor_X(stMotionStage:=Main.M33);
+
+Main.M34.bHardwareEnable := TRUE;
+fbCAM_Motor_Y(stMotionStage:=Main.M34);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

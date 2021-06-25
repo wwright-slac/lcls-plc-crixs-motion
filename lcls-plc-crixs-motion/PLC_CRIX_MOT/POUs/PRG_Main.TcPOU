@@ -34,7 +34,10 @@ PRG_QuestarMotors();
 PRG_PointDetectorMotors();
 
 PRG_CryoStat();
-PRG_RCI();]]></ST>
+PRG_RCI();
+PRG_Camera();
+PRG_Beamblock();
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

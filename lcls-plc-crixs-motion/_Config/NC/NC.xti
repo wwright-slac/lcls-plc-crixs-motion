@@ -18,6 +18,8 @@
 		</SvbTask>
 		<AxisFolder Name="CryoStat"/>
 		<AxisFolder Name="RCI"/>
+		<AxisFolder Name="Beamblock"/>
+		<AxisFolder Name="Camera"/>
 		<Axis File="Cryo X.xti" Id="22"/>
 		<Axis File="Cryo Y.xti" Id="23"/>
 		<Axis File="Cryo Z.xti" Id="24"/>
@@ -26,6 +28,11 @@
 		<Axis File="RCI Y.xti" Id="27"/>
 		<Axis File="RCI Z.xti" Id="28"/>
 		<Axis File="RCI RX.xti" Id="29"/>
+		<Axis File="Beam X.xti" Id="30"/>
+		<Axis File="Beam Y.xti" Id="31"/>
+		<Axis File="Beam Z.xti" Id="32"/>
+		<Axis File="Camera X.xti" Id="33"/>
+		<Axis File="Camera Y.xti" Id="34"/>
 		<Axis File="Axis 1 - Diagnostic Paddle X.xti" Id="1"/>
 		<Axis File="Axis 2 - Diagnostic Paddle Y.xti" Id="2"/>
 		<Axis File="Axis 3 - Diagnostic Paddle Z.xti" Id="3"/>

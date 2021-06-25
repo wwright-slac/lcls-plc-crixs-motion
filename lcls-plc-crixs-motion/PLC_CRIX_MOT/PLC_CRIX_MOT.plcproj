@@ -79,6 +79,12 @@
     <Compile Include="POUs\Assemblies\FB_DPX.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Assemblies\PRG_Beamblock.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Assemblies\PRG_Camera.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Assemblies\PRG_Cryopumps.TcPOU">
       <SubType>Code</SubType>
     </Compile>
