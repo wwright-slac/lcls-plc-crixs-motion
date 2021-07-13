@@ -79,7 +79,16 @@
     <Compile Include="POUs\Assemblies\FB_DPX.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Assemblies\PRG_Beamblock.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Assemblies\PRG_Camera.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Assemblies\PRG_Cryopumps.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Assemblies\PRG_CryoStat.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Assemblies\PRG_DiagnosticPaddle.TcPOU">
@@ -95,6 +104,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Assemblies\PRG_QuestarMotors.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Assemblies\PRG_RCI.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\EPS\FB_AdjacentStates.TcPOU">
