@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_Beamblock" Id="{cad6a7fa-2f2f-4059-8ecf-4abf4749b17e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_Beamblock
+VAR
+    fbBEAM_Motor_X : FB_MotionStage;
+    fbBEAM_Motor_Y : FB_MotionStage;
+    fbBEAM_Motor_Z : FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Main.M30.bHardwareEnable := TRUE;
+fbBEAM_Motor_X(stMotionStage:=Main.M30);
+
+Main.M31.bHardwareEnable := TRUE;
+fbBEAM_Motor_Y(stMotionStage:=Main.M31);
+
+Main.M32.bHardwareEnable := TRUE;
+fbBEAM_Motor_Z(stMotionStage:=Main.M32);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_QuestarMotors" Id="{b808132d-7d95-489d-997e-88ecb08bbdf8}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_QuestarMotors
+VAR
+	fbQSTX_Motor : FB_MotionStage;
+    fbQSTY_Motor : FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Main.M12.bHardwareEnable := TRUE;
+fbQSTX_Motor(stMotionStage:=Main.M12);
+
+Main.M13.bHardwareEnable := TRUE;
+fbQSTY_Motor(stMotionStage:=Main.M13);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

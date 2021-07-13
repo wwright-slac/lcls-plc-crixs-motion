@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="Main" Id="{743c36cb-e5dd-4408-91ed-5169699d82d2}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+
+	// Motor axes
+    {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:X'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E1 (EL7031)^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E1 (EL7031)^STM Status^Status^Digital input 1'}
+	M1 : DUT_MotionStage := (bPowerSelf:=TRUE);
+	//stDPXMotor : DUT_MotionStage;
+	
+	{attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Y'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E3 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E3 (EL7031)^STM Status^Status^Digital input 2'}
+	M2 : DUT_MotionStage := (bPowerSelf:=TRUE);
+	//stDPYMotor : DUT_MotionStage;
+	
+	{attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Z'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E4 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E4 (EL7031)^STM Status^Status^Digital input 2'}
+	M3 : DUT_MotionStage :=(bPowerSelf:=TRUE);
+	//stDPZMotor : DUT_MotionStage;
+	
+	M4: DUT_MotionStage;
+	//stOBJXMotor : DUT_MotionStage;
+	M5 : DUT_MotionStage;
+	//stOBJYMotor : DUT_MotionStage;
+	M6 : DUT_MotionStage;
+	//stOBJZMotor : DUT_MotionStage;
+
+	{attribute 'pytmc' := 'pv: CRIX:PDET:MMS:Y'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E11 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E11 (EL7031)^STM Status^Status^Digital input 2'}	
+	M7 : DUT_MotionStage;
+	//stPDYMotor : DUT_MotionStage;	
+	{attribute 'pytmc' := 'pv: CRIX:PDET:MMS:THETA'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E13 (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E13 (EL7041)^STM Status^Status^Digital input 2'}
+	M8 : DUT_MotionStage;
+	//stPDRotMotor : DUT_MotionStage;
+	
+	M9 : DUT_MotionStage;	
+	//stILMXMotor : DUT_MotionStage;
+	M10 : DUT_MotionStage;
+	//stILMYMotor : DUT_MotionStage;
+	M11 : DUT_MotionStage;
+	//stILMZMotor : DUT_MotionStage;
+
+	{attribute 'pytmc' := 'pv: CRIX:QSTR:MMS:X'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E17 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E17 (EL7031)^STM Status^Status^Digital input 2'}
+	M12 : DUT_MotionStage := (bPowerSelf:=TRUE);
+	//stQSTXMotor : DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: CRIX:QSTR:MMS:Y'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E19 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E19 (EL7031)^STM Status^Status^Digital input 2'}
+	M13 : DUT_MotionStage := (bPowerSelf:=TRUE);
+	//stQSTYMotor : DUT_MotionStage;
+	
+	M14 : DUT_MotionStage; // Cryopump 1
+	M15 : DUT_MotionStage; // Cryopump 2
+	
+	M16 : DUT_MotionStage;
+	//stSDSXMotor : DUT_MotionStage;
+	M17 : DUT_MotionStage;
+	//stSDSYMotor : DUT_MotionStage;
+	M18 : DUT_MotionStage;
+	//stSDSZMotor : DUT_MotionStage;
+	M19 : DUT_MotionStage;
+	//stSDSRotMotor : DUT_MotionStage;
+	M20 : DUT_MotionStage;
+	//stSDSShroudMotor : DUT_MotionStage;
+    {attribute 'pytmc' := 'pv: CRIX:CRYO:MMS:X'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^Cryo X (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^Cryo X (EL7041)^STM Status^Status^Digital input 2'}
+    M22 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //CryoStat X
+    {attribute 'pytmc' := 'pv: CRIX:CRYO:MMS:Y'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^Cryo Y (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^Cryo Y (EL7041)^STM Status^Status^Digital input 2'}
+    M23 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //CryoStat Y
+    {attribute 'pytmc' := 'pv: CRIX:CRYO:MMS:Z'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^Cryo Z (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^Cryo Z (EL7041)^STM Status^Status^Digital input 2'}
+    M24 : DUT_MotionStage:= (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //CryoStat Z
+    {attribute 'pytmc' := 'pv: CRIX:CRYO:MMS:RY'}
+    M25 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //CryoStat rY
+     {attribute 'pytmc' := 'pv: CRIX:RCI:MMS:X'}
+     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^RCI (EK1101-0080)^RCI X (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^RCI (EK1101-0080)^RCI X (EL7041)^STM Status^Status^Digital input 2'}
+    M26 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //RCI X
+     {attribute 'pytmc' := 'pv: CRIX:RCI:MMS:Y'}
+     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^RCI (EK1101-0080)^RCI Y (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^RCI (EK1101-0080)^RCI Y (EL7041)^STM Status^Status^Digital input 2'}
+    M27 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //RCI Y
+     {attribute 'pytmc' := 'pv: CRIX:RCI:MMS:Z'}
+     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^RCI (EK1101-0080)^RCI Z (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^RCI (EK1101-0080)^RCI Z (EL7041)^STM Status^Status^Digital input 2'}
+    M28 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //RCI Z
+     {attribute 'pytmc' := 'pv: CRIX:RCI:MMS:RX'}
+    M29 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //RCI rX
+     {attribute 'pytmc' := 'pv: CRIX:BEAM:MMS:X'}
+     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock X (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock X (EL7041)^STM Status^Status^Digital input 2'}
+    M30 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //BEAM X
+     {attribute 'pytmc' := 'pv: CRIX:BEAM:MMS:Y'}
+     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock Y (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock Y (EL7041)^STM Status^Status^Digital input 2'}
+    M31 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //BEAM Y
+     {attribute 'pytmc' := 'pv: CRIX:BEAM:MMS:Z'}
+     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock Z (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock Z (EL7041)^STM Status^Status^Digital input 2'}
+    M32 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //BEAM Z
+     {attribute 'pytmc' := 'pv: CRIX:CAM:MMS:X'}
+     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 109 (EK1101-0080)^Camera X (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 109 (EK1101-0080)^Camera X (EL7041)^STM Status^Status^Digital input 2'}
+    M33 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //CAM X
+     {attribute 'pytmc' := 'pv: CRIX:CAM:MMS:Y'}
+     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 109 (EK1101-0080)^Camera Y (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 109 (EK1101-0080)^Camera Y (EL7041)^STM Status^Status^Digital input 2'}
+    M34 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //CAM Z
+(*	
+	M21 : DUT_MotionStage; // Out-coupling y
+ *)
+ 
+ (* not needed for now; it has a manual knob
+ // NOTE: Questar is M21, even though Outcoupling Y stage is before it on the DIN rail
+ 	{attribute 'pytmc' := 'pv: CRIX:QSTR:MMS:FOCUS'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E33 (EL7031)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E33 (EL7031)^STM Status^Status^Digital input 2'}
+	M21 : DUT_MotionStage; // Questar Focus
+*)
+	
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

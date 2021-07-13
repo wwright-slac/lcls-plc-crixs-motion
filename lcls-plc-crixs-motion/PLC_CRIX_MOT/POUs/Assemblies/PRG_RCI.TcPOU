@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_RCI" Id="{ecd7cac1-7e14-42e1-b29b-689d17792024}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_RCI
+VAR
+    fbRCI_Motor_X : FB_MotionStage;
+    fbRCI_Motor_Y : FB_MotionStage;
+    fbRCI_Motor_Z : FB_MotionStage;
+    fbRCI_Motor_rX : FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Main.M26.bHardwareEnable := TRUE;
+fbRCI_Motor_X(stMotionStage:=Main.M26);
+
+Main.M27.bHardwareEnable := TRUE;
+fbRCI_Motor_Y(stMotionStage:=Main.M27);
+
+Main.M28.bHardwareEnable := TRUE;
+fbRCI_Motor_Z(stMotionStage:=Main.M28);
+
+Main.M29.bHardwareEnable := TRUE;
+fbRCI_Motor_rX(stMotionStage:=Main.M29);
+Main.M29.bLimitBackwardEnable:=TRUE;
+Main.M29.bLimitForwardEnable:=TRUE;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

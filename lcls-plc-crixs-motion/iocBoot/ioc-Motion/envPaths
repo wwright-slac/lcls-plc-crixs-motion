@@ -1,2 +1,0 @@
-epicsEnvSet("IOC_TOP", "/c/Users/tjohnson/workarea/lcls-plc-crixs-motion/lcls-plc-crixs-motion/iocBoot/ioc-Motion")
-epicsEnvSet("IOC_DATA", "C:\Users\tjohnson/iocData")

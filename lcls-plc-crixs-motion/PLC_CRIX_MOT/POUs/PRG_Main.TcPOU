@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_Main" Id="{9d31a973-0fa1-44e3-ab0d-723399df319b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_Main
+VAR
+	//stTestMotor1	:	DUT_SimMotor;
+	//fbTestMotor		:	FB_SIM_MOTOR;
+	bInit			:	BOOL := FALSE;
+	DPState : INT;
+	arrStates : ARRAY [1..9] OF ENUM_DiagPaddle;
+	bDPaddleOK : BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bInit THEN
+	bInit := TRUE;
+END_IF
+
+// Add interlock logic to this later
+bDPaddleOK := TRUE;
+//PRG_DiagnosticPaddle(xMoveOK:=bDPaddleOK);
+
+//PRG_QueueTest();
+
+//PRG_Test_AdjacentStates();	
+
+//PRG_BFS();							
+
+PRG_DiagnosticPaddleMotors();
+
+PRG_QuestarMotors();
+
+PRG_PointDetectorMotors();
+
+PRG_CryoStat();
+PRG_RCI();
+PRG_Camera();
+PRG_Beamblock();
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

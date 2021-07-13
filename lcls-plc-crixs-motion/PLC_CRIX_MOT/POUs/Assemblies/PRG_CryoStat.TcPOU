@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_CryoStat" Id="{a0ba5752-81fc-458b-b1f7-c5c7a813c6a6}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_CryoStat
+VAR
+    fbCRYO_Motor_X : FB_MotionStage;
+    fbCRYO_Motor_Y : FB_MotionStage;
+    fbCRYO_Motor_Z : FB_MotionStage;
+    fbCRYO_Motor_rY : FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Main.M22.bHardwareEnable := TRUE;
+fbCRYO_Motor_X(stMotionStage:=Main.M22);
+
+Main.M23.bHardwareEnable := TRUE;
+fbCRYO_Motor_Y(stMotionStage:=Main.M23);
+
+Main.M24.bHardwareEnable := TRUE;
+fbCRYO_Motor_Z(stMotionStage:=Main.M24);
+
+Main.M25.bHardwareEnable := TRUE;
+fbCRYO_Motor_rY(stMotionStage:=Main.M25);
+Main.M25.bLimitBackwardEnable:=TRUE;
+Main.M25.bLimitForwardEnable:=TRUE;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

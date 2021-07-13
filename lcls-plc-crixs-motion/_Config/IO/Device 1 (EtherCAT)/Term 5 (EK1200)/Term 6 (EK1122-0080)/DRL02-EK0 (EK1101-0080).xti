@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.12" ClassName="CFlbTermDef" SubType="9099">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CFlbTermDef" SubType="9099">
 	<ImageDatas>
 		<ImageData Id="1000">424de6000000000000007600000028000000100000000e00000001000400000000007000000000000000000000001000000000000000000000000000ff000080000000bfff0000ffff0002029d00c0c0c000ff000000ff00ff000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff0086666555555888888666656060588888863365646458888886336566665888888633656060588888866665676758888881111566665888888133156060588888813315616158888881111566665888888600656060588888806605666658888886006562625888888666656666588888</ImageData>
 	</ImageDatas>
@@ -114,8 +114,11 @@
 		<Box File="DRL02-E33 (EL7031).xti" Id="75">
 			<EtherCAT PortABoxInfo="#x0100004a"/>
 		</Box>
-		<Box File="DRL02-ECJ0 (EK1122-0080).xti" Id="38">
+		<Box File="DRL-02 E34 (EL3174).xti" Id="79">
 			<EtherCAT PortABoxInfo="#x0100004b"/>
+		</Box>
+		<Box File="DRL02-ECJ0 (EK1122-0080).xti" Id="38">
+			<EtherCAT PortABoxInfo="#x0100004f"/>
 		</Box>
 		<Box File="DRL02-ECJ1 (EK1122).xti" Id="39">
 			<EtherCAT PortABoxInfo="#x02000026"/>
