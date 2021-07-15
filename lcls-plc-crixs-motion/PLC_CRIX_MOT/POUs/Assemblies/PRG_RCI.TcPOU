@@ -7,6 +7,24 @@ VAR
     fbRCI_Motor_Y : FB_MotionStage;
     fbRCI_Motor_Z : FB_MotionStage;
     fbRCI_Motor_rX : FB_MotionStage;
+	
+	iMagnetOutINT AT %Q*: INT;
+	iMagnetInINT AT %I*: INT;
+
+    {attribute 'pytmc' := '
+        pv: CRIX:RCI:MAG_SET
+        EGU: V
+    '}
+    fMagnetSet: LREAL;
+	
+	{attribute 'pytmc' := '
+        pv: CRIX:RCI:MAG_GET
+        EGU: V
+    '}
+    fMagnetGet: LREAL;
+
+    fbGetMagnetVoltage: FB_RCI_Analog_Input; // FB_AnalogInput;
+    fbSetMagnetVoltage: FB_RCI_Analog_Output; // FB_AnalogOutput;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -22,7 +40,22 @@ fbRCI_Motor_Z(stMotionStage:=Main.M28);
 Main.M29.bHardwareEnable := TRUE;
 fbRCI_Motor_rX(stMotionStage:=Main.M29);
 Main.M29.bLimitBackwardEnable:=TRUE;
-Main.M29.bLimitForwardEnable:=TRUE;]]></ST>
+Main.M29.bLimitForwardEnable:=TRUE;
+
+fbSetMagnetVoltage(
+    fReal:=fMagnetSet,
+    fSafeMax:=9.999,
+    fSafeMin:=-10,
+    iTermBits:=16,
+    fTermMax:=10,
+    fTermMin:=-10,
+    iRaw=>iMagnetOutINT);
+fbGetMagnetVoltage(
+    iRaw:=iMagnetInINT,
+    iTermBits:=16,
+    fTermMax:=10,
+    fTermMin:=0,
+    fReal=>fMagnetGet);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
