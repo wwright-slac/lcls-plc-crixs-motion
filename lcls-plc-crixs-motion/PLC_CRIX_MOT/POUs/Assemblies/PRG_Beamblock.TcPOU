@@ -6,6 +6,7 @@ VAR
     fbBEAM_Motor_X : FB_MotionStage;
     fbBEAM_Motor_Y : FB_MotionStage;
     fbBEAM_Motor_Z : FB_MotionStage;
+    fbOUTCOUP_Motor_Y : FB_MotionStage;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -16,7 +17,13 @@ Main.M31.bHardwareEnable := TRUE;
 fbBEAM_Motor_Y(stMotionStage:=Main.M31);
 
 Main.M32.bHardwareEnable := TRUE;
-fbBEAM_Motor_Z(stMotionStage:=Main.M32);]]></ST>
+fbBEAM_Motor_Z(stMotionStage:=Main.M32);
+
+Main.M35.bHardwareEnable := TRUE;
+fbOUTCOUP_Motor_Y(stMotionStage:=Main.M35);
+
+
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
