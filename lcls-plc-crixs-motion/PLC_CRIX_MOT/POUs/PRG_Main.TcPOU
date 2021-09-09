@@ -37,6 +37,8 @@ PRG_CryoStat();
 PRG_RCI();
 PRG_Camera();
 PRG_Beamblock();
+PRG_ObjectivesMotors();
+
 ]]></ST>
     </Implementation>
   </POU>
