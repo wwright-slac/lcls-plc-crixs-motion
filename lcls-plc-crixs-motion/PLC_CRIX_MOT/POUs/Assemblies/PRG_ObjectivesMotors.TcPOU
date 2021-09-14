@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_ObjectivesMotors" Id="{fce896c8-30af-4f9f-824f-ad88872a35de}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_ObjectivesMotors
+VAR
+    fbOBJX_Motor : FB_MotionStage;
+    fbOBJY_Motor : FB_MotionStage;
+	fbOBJZ_Motor : FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Main.M4.bHardwareEnable := TRUE;
+fbOBJX_Motor(stMotionStage:=Main.M4);
+
+Main.M5.bHardwareEnable := TRUE;
+fbOBJY_Motor(stMotionStage:=Main.M5);
+
+Main.M6.bHardwareEnable := TRUE;
+fbOBJZ_Motor(stMotionStage:=Main.M6);
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
