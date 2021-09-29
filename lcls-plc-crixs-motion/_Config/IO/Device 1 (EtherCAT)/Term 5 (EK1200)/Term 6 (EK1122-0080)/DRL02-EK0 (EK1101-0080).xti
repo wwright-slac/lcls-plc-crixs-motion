@@ -54,17 +54,29 @@
 		<Box File="DRL02-E13 (EL7041).xti" Id="20">
 			<EtherCAT PortABoxInfo="#x01000013"/>
 		</Box>
-		<Box File="DRL02-E14 (EL7041).xti" Id="21">
+		<Box File="Term 63 (EL7031).xti" Id="63">
 			<EtherCAT PortABoxInfo="#x01000014"/>
 		</Box>
-		<Box File="DRL02-E15 (EL7041).xti" Id="22">
-			<EtherCAT PortABoxInfo="#x01000015"/>
+		<Box File="Term 64 (EL5112).xti" Id="64">
+			<EtherCAT PortABoxInfo="#x0100003f"/>
 		</Box>
-		<Box File="DRL02-E16 (EL7041).xti" Id="23">
-			<EtherCAT PortABoxInfo="#x01000016"/>
+		<Box File="Term 65 (EL1084).xti" Id="65">
+			<EtherCAT PortABoxInfo="#x01000040"/>
+		</Box>
+		<Box File="Term 66 (EL7031).xti" Id="66">
+			<EtherCAT PortABoxInfo="#x01000041"/>
+		</Box>
+		<Box File="Term 67 (EL7031).xti" Id="67">
+			<EtherCAT PortABoxInfo="#x01000042"/>
+		</Box>
+		<Box File="Term 68 (EL1084).xti" Id="68">
+			<EtherCAT PortABoxInfo="#x01000043"/>
+		</Box>
+		<Box File="Term 69 (EL5112).xti" Id="69">
+			<EtherCAT PortABoxInfo="#x01000044"/>
 		</Box>
 		<Box File="DRL02-E17 (EL7031).xti" Id="24">
-			<EtherCAT PortABoxInfo="#x01000017"/>
+			<EtherCAT PortABoxInfo="#x01000045"/>
 		</Box>
 		<Box File="DRL02-E18 (EL5042).xti" Id="25">
 			<EtherCAT PortABoxInfo="#x01000018"/>
@@ -87,8 +99,14 @@
 		<Box File="DRL02-E24 (EL7031).xti" Id="31">
 			<EtherCAT PortABoxInfo="#x0100001e"/>
 		</Box>
-		<Box File="DRL02-E25 (EL5042).xti" Id="32">
+		<Box File="Term 82 (EL1084).xti" Id="82">
 			<EtherCAT PortABoxInfo="#x0100001f"/>
+		</Box>
+		<Box File="Term 91 (EL5112).xti" Id="91">
+			<EtherCAT PortABoxInfo="#x01000052"/>
+		</Box>
+		<Box File="DRL02-E25 (EL5042).xti" Id="32">
+			<EtherCAT PortABoxInfo="#x0100005b"/>
 		</Box>
 		<Box File="DRL02-E26 (EL7031).xti" Id="33">
 			<EtherCAT PortABoxInfo="#x01000020"/>
