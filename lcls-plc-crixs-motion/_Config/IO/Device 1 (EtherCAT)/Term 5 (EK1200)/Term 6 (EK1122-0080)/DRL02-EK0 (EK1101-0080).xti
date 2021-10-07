@@ -141,8 +141,11 @@
 		<Box File="DRL02-ECJ1 (EK1122).xti" Id="39">
 			<EtherCAT PortABoxInfo="#x02000026"/>
 		</Box>
-		<Box File="DRL02-E31 (EL9011).xti" Id="41">
+		<Box File="Term 148 (EK1122).xti" Id="148">
 			<EtherCAT PortABoxInfo="#x02000027"/>
+		</Box>
+		<Box File="DRL02-E31 (EL9011).xti" Id="41">
+			<EtherCAT PortABoxInfo="#x02000094"/>
 		</Box>
 	</Box>
 </TcSmItem>

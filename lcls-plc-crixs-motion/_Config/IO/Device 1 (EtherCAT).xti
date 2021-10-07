@@ -43,6 +43,8 @@
 		</Box>
 		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="2" MaxSwitchFrames="120">
 			<SyncUnit Name="hot connect" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="VLS" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="Catcher" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>
