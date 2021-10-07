@@ -1353,17 +1353,10 @@ External Setpoint Generation:
 			<Dynamic AccelerationMaximum="5" DecelerationMaximum="5" Acceleration="1" Deceleration="1"/>
 			<Velo Maximum="1"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
-			<ParameterChanged>39</ParameterChanged>
-			<ParameterChanged>257</ParameterChanged>
-			<ParameterChanged>242</ParameterChanged>
-			<ParameterChanged>18</ParameterChanged>
-			<ParameterChanged>241</ParameterChanged>
-			<ParameterChanged>258</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
 			<EncPara ScaleFactorNumerator="0.000293" MaxCount="#xffffffff">
 				<Inc RefMode="2"/>
-				<ParameterChanged>35</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
@@ -1525,9 +1518,6 @@ Drive Status 4 (manually linked):
 				<PosDiffControl Range="0.5"/>
 				<PID PosKp="5" PosExtKp="1" DeadBandPosition="0.1"/>
 				<Observer BandWidth="20"/>
-				<ParameterChanged>269</ParameterChanged>
-				<ParameterChanged>262</ParameterChanged>
-				<ParameterChanged>258</ParameterChanged>
 			</CtrPara>
 		</Controller>
 		<Vars VarGrpType="1" InsertType="1">
@@ -1618,25 +1608,17 @@ External Setpoint Generation:
 				<Link VarA="Enc^Inputs^In^nDataIn2" VarB="ENC Status Channel 1^Latch value"/>
 				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Counter overflow" Size="1" OffsA="4"/>
 				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Counter underflow" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Extrapolation stall" Size="1" OffsA="7"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Latch C valid"/>
 				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Latch extern valid" Size="1" OffsA="1"/>
 				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Open circuit" Size="1" OffsA="6"/>
 				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Set counter done" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Status of input status" Size="1" OffsA="5"/>
 				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status Channel 1^Status^Status of input A"/>
 				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status Channel 1^Status^Status of input B" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status Channel 1^Status^Status of input C" Size="1" OffsA="2"/>
 				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status Channel 1^Status^Status of input gate" Size="1" OffsA="3"/>
 				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
 				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control Channel 1^Control^Enable latch C"/>
 				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control Channel 1^Control^Enable latch extern on negative edge" Size="1" OffsA="3"/>
 				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control Channel 1^Control^Enable latch extern on positive edge" Size="1" OffsA="1"/>
 				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control Channel 1^Control^Set counter" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control Channel 1^Control^Set counter on latch C" Size="1" OffsA="7"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl2" VarB="ENC Control Channel 1^Control^Enable latch extern 2 on negative edge" Size="1" OffsA="4"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl2" VarB="ENC Control Channel 1^Control^Enable latch extern 2 on positive edge" Size="1" OffsA="3"/>
 				<Link VarA="Enc^Outputs^Out^nCtrl2" VarB="ENC Control Channel 1^Control^Set counter on latch extern on negative edge" Size="1" OffsA="2"/>
 				<Link VarA="Enc^Outputs^Out^nCtrl2" VarB="ENC Control Channel 1^Control^Set counter on latch extern on positive edge" Size="1" OffsA="1"/>
 				<Link VarA="Enc^Outputs^Out^nCtrl2" VarB="ENC Control Channel 1^Control^Set software gate"/>
