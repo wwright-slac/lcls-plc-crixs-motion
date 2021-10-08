@@ -19,7 +19,7 @@
 		<Box File="Catcher_E4_EL7041.xti" Id="153">
 			<EtherCAT PortABoxInfo="#x01000098"/>
 		</Box>
-		<Box File="Catcher_E5_EL7041.xti" Id="154">
+		<Box File="Catcher_E5_EL5042.xti" Id="154">
 			<EtherCAT PortABoxInfo="#x01000099"/>
 		</Box>
 		<Box File="Term 160 (EL9011).xti" Id="160">

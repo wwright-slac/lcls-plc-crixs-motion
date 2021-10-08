@@ -20,6 +20,7 @@
 		<AxisFolder Name="RCI"/>
 		<AxisFolder Name="Beamblock"/>
 		<AxisFolder Name="Camera"/>
+		<AxisFolder Name="Catcher"/>
 		<Axis File="Cryo X.xti" Id="22"/>
 		<Axis File="Cryo Y.xti" Id="23"/>
 		<Axis File="Cryo Z.xti" Id="24"/>
@@ -33,6 +34,9 @@
 		<Axis File="Beam Z.xti" Id="32"/>
 		<Axis File="Camera X.xti" Id="33"/>
 		<Axis File="Camera Y.xti" Id="34"/>
+		<Axis File="M37-X.xti" Id="37"/>
+		<Axis File="M38-Y.xti" Id="38"/>
+		<Axis File="M39-Z.xti" Id="39"/>
 		<Axis File="Axis 1 - Diagnostic Paddle X.xti" Id="1"/>
 		<Axis File="Axis 2 - Diagnostic Paddle Y.xti" Id="2"/>
 		<Axis File="Axis 3 - Diagnostic Paddle Z.xti" Id="3"/>
