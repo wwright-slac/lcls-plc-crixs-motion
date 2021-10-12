@@ -21,6 +21,7 @@
 		<AxisFolder Name="Beamblock"/>
 		<AxisFolder Name="Camera"/>
 		<AxisFolder Name="Catcher"/>
+		<AxisFolder Name="VLS"/>
 		<Axis File="Cryo X.xti" Id="22"/>
 		<Axis File="Cryo Y.xti" Id="23"/>
 		<Axis File="Cryo Z.xti" Id="24"/>
@@ -37,6 +38,16 @@
 		<Axis File="M37-X.xti" Id="37"/>
 		<Axis File="M38-Y.xti" Id="38"/>
 		<Axis File="M39-Z.xti" Id="39"/>
+		<Axis File="M40-VLS-Slit-Top.xti" Id="40"/>
+		<Axis File="M41-VLS-Slit-Bottom.xti" Id="41"/>
+		<Axis File="M42-VLS-Slit-Right.xti" Id="42"/>
+		<Axis File="M43-VLS-Slit-Left.xti" Id="43"/>
+		<Axis File="M44-VLS-Mirror-Pitch.xti" Id="44"/>
+		<Axis File="M45-VLS-Grating-Pitch.xti" Id="45"/>
+		<Axis File="M45-VLS-Camera-Pitch.xti" Id="46"/>
+		<Axis File="M47-VLS-Camera-Dist.xti" Id="47"/>
+		<Axis File="Axis 48 - Dummy Enc VLS Mirror Pitch.xti" Id="48"/>
+		<Axis File="Axis 49 - Dummy Enc VLS Grating Pitch.xti" Id="49"/>
 		<Axis File="Axis 1 - Diagnostic Paddle X.xti" Id="1"/>
 		<Axis File="Axis 2 - Diagnostic Paddle Y.xti" Id="2"/>
 		<Axis File="Axis 3 - Diagnostic Paddle Z.xti" Id="3"/>

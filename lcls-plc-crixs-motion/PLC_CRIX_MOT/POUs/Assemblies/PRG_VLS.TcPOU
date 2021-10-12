@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_VLS" Id="{89917009-bc34-43cd-b91a-9af045d34f25}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_VLS
+VAR
+	fbVLS_SLITS_TOP : FB_MotionStage;
+	fbVLS_SLITS_BOTTOM : FB_MotionStage;
+	fbVLS_SLITS_RIGHT : FB_MotionStage;
+	fbVLS_SLITS_LEFT: FB_MotionStage;
+    fbVLS_Mirror_P : FB_MotionStage;
+    fbVLS_Grating_P : FB_MotionStage;
+	fbVLS_CAM_P : FB_MotionStage;
+	fbVLS_CAM_D : FB_MotionStage;
+
+	bInit :BOOL:=TRUE;
+	
+	
+	//Dummy axes for encoder interpolation
+	{attribute 'TcLinkTo' := 'TIIB[VLS_EP10_EP7041-3102]^ENC Status compact^Counter value'}
+	MirrorPitch_enc AT%I*:UINT;
+	{attribute 'TcLinkTo' := 'TIIB[VLS_EP11_EP7041-3102]^ENC Status compact^Counter value'}
+	GratingPitch_enc AT%I*:UINT;
+
+	Grating_Pitch  AT%Q*:UINT;
+	Mirror_Pitch  AT%Q*:UINT;
+	
+	rGrating_Pitch :LREAL;
+	rMirror_Pitch :LREAL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF ( bInit) THEN
+	bInit := FALSE;
+	//SLITS
+	Main.M40.bHardwareEnable := TRUE;
+	Main.M40.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+	Main.M40.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+	Main.M41.bHardwareEnable := TRUE;
+	Main.M41.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+	Main.M41.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+	Main.M42.bHardwareEnable := TRUE;
+	Main.M42.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+	Main.M42.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+	Main.M43.bHardwareEnable := TRUE;
+	Main.M43.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+	Main.M43.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+	
+	//Focusing Mirror Pitch
+	Main.M44.bHardwareEnable := TRUE;
+	Main.M44.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+	Main.M44.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+	//Homing routine parameters
+	Main.M44.fHomePosition:= 0;
+	Main.M44.nHomingMode := ENUM_EpicsHomeCmd.HOME_VIA_HIGH;
+	
+	//Grating Pitch
+	Main.M45.bHardwareEnable := TRUE;
+	Main.M45.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+	Main.M45.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+	//Homing routine parameters
+	Main.M45.fHomePosition:= 0;
+	Main.M45.nHomingMode := ENUM_EpicsHomeCmd.HOME_VIA_HIGH;
+	
+	//Cam
+	Main.M46.bHardwareEnable := TRUE;
+	Main.M46.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+	Main.M46.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+	Main.M47.bHardwareEnable := TRUE;
+	Main.M47.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+	Main.M47.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+	//Homing routine parameters
+	Main.M46.fHomePosition:= 0;
+	Main.M46.nHomingMode := ENUM_EpicsHomeCmd.HOME_VIA_HIGH;
+	Main.M47.fHomePosition:= 0;
+	Main.M47.nHomingMode := ENUM_EpicsHomeCmd.HOME_VIA_HIGH;
+END_IF
+
+
+//Calculate the mirror and grating pitch values
+//Mirror Pitch (x)  =   33.85 + 18.09x  - 0.2479x2
+rMirror_Pitch :=33.85 + (18.09*MirrorPitch_enc*0.001(*mm*)  )- (0.2479 * EXPT(MirrorPitch_enc*0.001,2));
+ //convert to output
+MirrorPitch_enc := LREAL_TO_UINT(1000* rMirror_Pitch);
+//Grating Pitch (x) =  22.56 - 16.25x + 0.334x2
+rGrating_Pitch := 22.56 - (16.25*GratingPitch_enc*0.001(*mm*)  )+ (0.334 * EXPT(GratingPitch_enc*0.001,2));
+//convert to output
+Grating_Pitch := LREAL_TO_UINT(1000* rGrating_Pitch);
+
+
+
+fbVLS_SLITS_TOP(stMotionStage:=Main.M40);
+fbVLS_SLITS_BOTTOM(stMotionStage:=Main.M41);
+fbVLS_SLITS_RIGHT(stMotionStage:=Main.M42);
+fbVLS_SLITS_LEFT(stMotionStage:=Main.M43);
+fbVLS_Mirror_P(stMotionStage:=Main.M44);
+fbVLS_Grating_P(stMotionStage:=Main.M45);
+fbVLS_CAM_P(stMotionStage:=Main.M46);
+fbVLS_CAM_D(stMotionStage:=Main.M47);
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

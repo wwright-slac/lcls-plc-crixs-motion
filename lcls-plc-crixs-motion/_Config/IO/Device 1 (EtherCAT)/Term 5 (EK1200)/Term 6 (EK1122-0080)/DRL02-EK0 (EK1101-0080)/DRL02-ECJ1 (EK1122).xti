@@ -22,16 +22,16 @@
 		<Box File="VLS_EP9_EP7041-1002.xti" Id="2">
 			<EtherCAT PortABoxInfo="#x01000001"/>
 		</Box>
-		<Box File="VLS_EP10_ EP7041-3102.xti" Id="43">
+		<Box File="VLS_EP10_EP7041-3102.xti" Id="43">
 			<EtherCAT PortABoxInfo="#x01000002"/>
 		</Box>
-		<Box File="VLS_EP11_ EP7041-3102.xti" Id="44">
+		<Box File="VLS_EP11_EP7041-3102.xti" Id="44">
 			<EtherCAT PortABoxInfo="#x0100002b"/>
 		</Box>
-		<Box File="VLS_EP12_ EP7041-3102.xti" Id="45">
+		<Box File="VLS_EP12_EP7041-3102.xti" Id="45">
 			<EtherCAT PortABoxInfo="#x0100002c"/>
 		</Box>
-		<Box File="VLS_EP13_ EP7041-3102.xti" Id="46">
+		<Box File="VLS_EP13_EP7041-3102.xti" Id="46">
 			<EtherCAT PortABoxInfo="#x0100002d"/>
 		</Box>
 	</Box>
