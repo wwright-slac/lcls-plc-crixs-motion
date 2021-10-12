@@ -152,8 +152,100 @@ VAR_GLOBAL
                               .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E33 (EL7031)^STM Status^Status^Digital input 2'}
 	M21 : DUT_MotionStage; // Questar Focus
 *)
+	//Catcher Axes
+	 {attribute 'pytmc' := 'pv: CRIX:RCC:MMS:X'}
+     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[Catcher_E1_EL7041]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable := TIIB[Catcher_E1_EL7041]^STM Status^Status^Digital input 1'}
+    M37 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //CAM X
+     {attribute 'pytmc' := 'pv:CRIX:RCC:MMS:Y'}
+	 {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[Catcher_E3_EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[Catcher_E3_EL7041]^STM Status^Status^Digital input 2'}
+    M38 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //CAM Z
+     {attribute 'pytmc' := 'pv: CRIX:RCC:MMSS:7'}
+     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[Catcher_E4_EL7041]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable := TIIB[Catcher_E4_EL7041]^STM Status^Status^Digital input 1'}
+    M39 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //OUTCOUP LENS Y
+    
+	 // VLS SLIT TOP
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP6_EP7041-1002]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP6_EP7041-1002]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: CRIX:VLS:MMS:SLTOP
+        field: DESC VLS Slit TOP Blade
+    '}
+    M40: DUT_MotionStage;
+
+	 // VLS SLIT BOTTOM
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7_EP7041-1002]^STM Status^Status^Digital input 2;
+								.bLimitBackwardEnable:=TIIB[VLS_EP7_EP7041-1002]^STM Status^Status^Digital input 1'}
+    {attribute 'pytmc' := '
+        pv: CRIX:VLS:MMS:SLBOTTOM
+        field: DESC VLS Slit BOTTOM Blade
+    '}
+    M41: DUT_MotionStage;
+	
+	// VLS SLIT RIGHT
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP8_EP7041-1002]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP8_EP7041-1002]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: CRIX:VLS:MMS:SLRIGHT
+        field: DESC VLS Slit RIGHT Blade
+    '}
+    M42: DUT_MotionStage;
 	
 	
+	// VLS SLIT LEFT
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP9_EP7041-1002]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP9_EP7041-1002]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: CRIX:VLS:MMS:SLLEFT
+        field: DESC VLS Slit LEFT Blade
+    '}
+    M43: DUT_MotionStage;
+	
+	
+	
+	// VLS Motor 5; focusing mirror
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP10_EP7041-3102]^STM Status^Status^Digital input 2;
+								.bLimitBackwardEnable:=TIIB[VLS_EP10_EP7041-3102]^STM Status^Status^Digital input 1;
+								.nRawEncoderUINT:=TIIB[VLS_EP10_EP7041-3102]^ENC Status compact^Counter value;
+								.bHome:=TIIB[VLS_EP10_EP7041-3102]^ENC Status compact^Status^Status of input C'}
+    {attribute 'pytmc' := '
+        pv:  CRIX:VLS:CAM:MMS:MP
+        field: DESC VLS Focus Mirror
+    '}
+    M44: DUT_MotionStage;
+	
+	// VLS Motor 6; grating
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP11_EP7041-3102]^STM Status^Status^Digital input 2;
+								.bLimitBackwardEnable:=TIIB[VLS_EP11_EP7041-3102]^STM Status^Status^Digital input 1;
+								.nRawEncoderUINT:=TIIB[VLS_EP11_EP7041-3102]^ENC Status compact^Counter value;
+								.bHome:=TIIB[VLS_EP11_EP7041-3102]^ENC Status compact^Status^Status of input C'}
+    {attribute 'pytmc' := '
+        pv:  CRIX:VLS:MMS:GP
+        field: DESC VLS Grating
+    '}
+    M45: DUT_MotionStage;
+	
+	// VLS Motor 7; camera Pitch
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP12_EP7041-3102]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP12_EP7041-3102]^STM Status^Status^Digital input 2;
+								.bHome:=TIIB[VLS_EP12_EP7041-3102]^ENC Status compact^Status^Status of input C'}
+    {attribute 'pytmc' := '
+        pv:  CRIX:VLS:CAM:MMS:PITCH
+        field: DESC VLS Camera Pitch
+    '}
+    M46: DUT_MotionStage;
+	
+	// VLS Motor 8; camera Distance
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP13_EP7041-3102]^STM Status^Status^Digital input 2;
+								.bLimitBackwardEnable:=TIIB[VLS_EP13_EP7041-3102]^STM Status^Status^Digital input 1;
+								.bHome:=TIIB[VLS_EP13_EP7041-3102]^ENC Status compact^Status^Status of input C'}
+    {attribute 'pytmc' := '
+        pv:  CRIX:VLS:CAM:MMS:DIST
+        field: DESC VLS Camera Translation
+    '}
+    M47: DUT_MotionStage;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

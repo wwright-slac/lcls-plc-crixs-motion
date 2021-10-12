@@ -38,6 +38,8 @@ PRG_RCI();
 PRG_Camera();
 PRG_Beamblock();
 PRG_ObjectivesMotors();
+PRG_RCC();
+PRG_VLS();
 
 ]]></ST>
     </Implementation>
