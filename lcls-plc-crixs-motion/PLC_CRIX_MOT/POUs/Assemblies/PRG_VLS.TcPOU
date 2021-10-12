@@ -83,7 +83,7 @@ rMirror_Pitch :=33.85 + (18.09*MirrorPitch_enc*0.001(*mm*)  )- (0.2479 * EXPT(Mi
  //convert to output
 MirrorPitch_enc := LREAL_TO_UINT(1000* rMirror_Pitch);
 //Grating Pitch (x) =  22.56 - 16.25x + 0.334x2
-rGrating_Pitch := 22.56 - (16.25*GratingPitch_enc*0.001(*mm*)  )+ (0.334 * EXPT(GratingPitch_enc*0.001,2));
+rGrating_Pitch := 22.56 - (16.25*Main.M45.stAxisStatus.fActPosition(*mm*)  )+ (0.334 * EXPT(Main.M45.stAxisStatus.fActPosition,2));
 //convert to output
 Grating_Pitch := LREAL_TO_UINT(1000* rGrating_Pitch);
 

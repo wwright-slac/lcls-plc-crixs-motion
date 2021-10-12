@@ -208,6 +208,7 @@ VAR_GLOBAL
 	// VLS Motor 5; focusing mirror
 	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP10_EP7041-3102]^STM Status^Status^Digital input 2;
 								.bLimitBackwardEnable:=TIIB[VLS_EP10_EP7041-3102]^STM Status^Status^Digital input 1;
+								.nRawEncoderUINT:=TIIB[VLS_EP10_EP7041-3102]^ENC Status compact^Counter value;
 								.bHome:=TIIB[VLS_EP10_EP7041-3102]^ENC Status compact^Status^Status of input C'}
     {attribute 'pytmc' := '
         pv:  CRIX:VLS:CAM:MMS:MP
@@ -218,6 +219,7 @@ VAR_GLOBAL
 	// VLS Motor 6; grating
 	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP11_EP7041-3102]^STM Status^Status^Digital input 2;
 								.bLimitBackwardEnable:=TIIB[VLS_EP11_EP7041-3102]^STM Status^Status^Digital input 1;
+								.nRawEncoderUINT:=TIIB[VLS_EP11_EP7041-3102]^ENC Status compact^Counter value;
 								.bHome:=TIIB[VLS_EP11_EP7041-3102]^ENC Status compact^Status^Status of input C'}
     {attribute 'pytmc' := '
         pv:  CRIX:VLS:MMS:GP

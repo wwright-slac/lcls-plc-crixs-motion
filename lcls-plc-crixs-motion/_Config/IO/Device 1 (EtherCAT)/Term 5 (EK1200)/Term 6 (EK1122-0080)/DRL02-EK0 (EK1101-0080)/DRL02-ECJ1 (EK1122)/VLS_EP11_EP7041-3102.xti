@@ -97,7 +97,7 @@
 				<Entry Name="Status__Latch extern valid" Index="#x6000" Sub="#x02">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Status__Set counter done" Index="#x6000" Sub="#x03">
+				<Entry Name="Status__Set counter done" Index="#x6000" Sub="#x03" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
 				<Entry Name="Status__Counter underflow" Index="#x6000" Sub="#x04">
