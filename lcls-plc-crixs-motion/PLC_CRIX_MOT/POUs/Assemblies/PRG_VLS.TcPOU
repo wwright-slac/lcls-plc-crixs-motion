@@ -15,15 +15,6 @@ VAR
 	bInit :BOOL:=TRUE;
 	
 	
-	//Dummy axes for encoder interpolation
-	{attribute 'TcLinkTo' := 'TIIB[VLS_EP10_EP7041-3102]^ENC Status compact^Counter value'}
-	MirrorPitch_enc AT%I*:UINT;
-	{attribute 'TcLinkTo' := 'TIIB[VLS_EP11_EP7041-3102]^ENC Status compact^Counter value'}
-	GratingPitch_enc AT%I*:UINT;
-
-	Grating_Pitch  AT%Q*:UINT;
-	Mirror_Pitch  AT%Q*:UINT;
-	
 	rGrating_Pitch :LREAL;
 	rMirror_Pitch :LREAL;
 	
@@ -45,6 +36,16 @@ END_VAR
 	Main.M43.bHardwareEnable := TRUE;
 	Main.M43.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M43.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+
+	//Homing routine parameters
+	Main.M40.fHomePosition:= 0;
+	Main.M40.nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET;
+	Main.M41.fHomePosition:= 0;
+	Main.M41.nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET;
+	Main.M42.fHomePosition:= 0;
+	Main.M42.nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET;
+	Main.M43.fHomePosition:= 0;
+	Main.M43.nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET;
 	
 	//Focusing Mirror Pitch
 	Main.M44.bHardwareEnable := TRUE;
@@ -79,13 +80,11 @@ END_IF
 
 //Calculate the mirror and grating pitch values
 //Mirror Pitch (x)  =   33.85 + 18.09x  - 0.2479x2
-rMirror_Pitch :=33.85 + (18.09*MirrorPitch_enc*0.001(*mm*)  )- (0.2479 * EXPT(MirrorPitch_enc*0.001,2));
- //convert to output
-MirrorPitch_enc := LREAL_TO_UINT(1000* rMirror_Pitch);
+rMirror_Pitch :=33.85 + (18.09*Main.M44.stAxisStatus.fActPosition(*mm*)  )- (0.2479 * EXPT(Main.M44.stAxisStatus.fActPosition,2));
+
 //Grating Pitch (x) =  22.56 - 16.25x + 0.334x2
 rGrating_Pitch := 22.56 - (16.25*Main.M45.stAxisStatus.fActPosition(*mm*)  )+ (0.334 * EXPT(Main.M45.stAxisStatus.fActPosition,2));
-//convert to output
-Grating_Pitch := LREAL_TO_UINT(1000* rGrating_Pitch);
+
 
 
 

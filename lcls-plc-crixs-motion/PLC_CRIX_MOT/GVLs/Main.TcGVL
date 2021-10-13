@@ -156,15 +156,15 @@ VAR_GLOBAL
 	 {attribute 'pytmc' := 'pv: CRIX:RCC:MMS:X'}
      {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[Catcher_E1_EL7041]^STM Status^Status^Digital input 2;
                               .bLimitBackwardEnable := TIIB[Catcher_E1_EL7041]^STM Status^Status^Digital input 1'}
-    M37 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //CAM X
+    M37 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //RCC X
      {attribute 'pytmc' := 'pv:CRIX:RCC:MMS:Y'}
 	 {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[Catcher_E3_EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[Catcher_E3_EL7041]^STM Status^Status^Digital input 2'}
-    M38 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //CAM Z
-     {attribute 'pytmc' := 'pv: CRIX:RCC:MMSS:7'}
+    M38 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //RCC Y
+     {attribute 'pytmc' := 'pv: CRIX:RCC:MMS:Z'}
      {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[Catcher_E4_EL7041]^STM Status^Status^Digital input 2;
                               .bLimitBackwardEnable := TIIB[Catcher_E4_EL7041]^STM Status^Status^Digital input 1'}
-    M39 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //OUTCOUP LENS Y
+    M39 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //RCC Z
     
 	 // VLS SLIT TOP
 	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP6_EP7041-1002]^STM Status^Status^Digital input 1;
@@ -205,7 +205,7 @@ VAR_GLOBAL
 	
 	
 	
-	// VLS Motor 5; focusing mirror
+	// VLS focusing mirror pitch
 	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP10_EP7041-3102]^STM Status^Status^Digital input 2;
 								.bLimitBackwardEnable:=TIIB[VLS_EP10_EP7041-3102]^STM Status^Status^Digital input 1;
 								.nRawEncoderUINT:=TIIB[VLS_EP10_EP7041-3102]^ENC Status compact^Counter value;
@@ -216,7 +216,7 @@ VAR_GLOBAL
     '}
     M44: DUT_MotionStage;
 	
-	// VLS Motor 6; grating
+	// VLS grating pitch
 	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP11_EP7041-3102]^STM Status^Status^Digital input 2;
 								.bLimitBackwardEnable:=TIIB[VLS_EP11_EP7041-3102]^STM Status^Status^Digital input 1;
 								.nRawEncoderUINT:=TIIB[VLS_EP11_EP7041-3102]^ENC Status compact^Counter value;
@@ -227,7 +227,7 @@ VAR_GLOBAL
     '}
     M45: DUT_MotionStage;
 	
-	// VLS Motor 7; camera Pitch
+	// VLS camera Pitch
 	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP12_EP7041-3102]^STM Status^Status^Digital input 1;
 								.bLimitBackwardEnable:=TIIB[VLS_EP12_EP7041-3102]^STM Status^Status^Digital input 2;
 								.bHome:=TIIB[VLS_EP12_EP7041-3102]^ENC Status compact^Status^Status of input C'}
@@ -237,7 +237,7 @@ VAR_GLOBAL
     '}
     M46: DUT_MotionStage;
 	
-	// VLS Motor 8; camera Distance
+	// VLS camera Distance
 	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP13_EP7041-3102]^STM Status^Status^Digital input 2;
 								.bLimitBackwardEnable:=TIIB[VLS_EP13_EP7041-3102]^STM Status^Status^Digital input 1;
 								.bHome:=TIIB[VLS_EP13_EP7041-3102]^ENC Status compact^Status^Status of input C'}
