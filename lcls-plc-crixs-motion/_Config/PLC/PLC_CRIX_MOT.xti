@@ -1650,13 +1650,6 @@ External Setpoint Generation:
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS.MirrorPitch_enc</Name>
-					<Comment>
-						<![CDATA[Dummy axes for encoder interpolation]]>
-					</Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
 					<Name>PRG_RCI.fbGetMagnetVoltage.iRaw</Name>
 					<Comment>
 						<![CDATA[ Connect this input to the terminal]]>
@@ -2642,10 +2635,6 @@ External Setpoint Generation:
 ]]>
 						</Comment>
 					</SubVar>
-				</Var>
-				<Var>
-					<Name>PRG_VLS.GratingPitch_enc</Name>
-					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Illumination.fbILMXStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -7359,14 +7348,6 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS.Grating_Pitch</Name>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_VLS.Mirror_Pitch</Name>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Illumination.fbILMXStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
@@ -8247,6 +8228,16 @@ External Setpoint Generation:
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2021-10-13T09:12:33">
+				<OwnerA Name="InputDst" Prefix="TIPC^PLC_CRIX_MOT^PLC_CRIX_MOT Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^VLS_EP10_EP7041-3102">
+						<Link VarA="PRG_VLS.MirrorPitch_enc" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="ENC Status compact^Counter value" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^VLS_EP11_EP7041-3102">
+						<Link VarA="PRG_VLS.GratingPitch_enc" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="ENC Status compact^Counter value" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
 				<TaskPouOid Prio="20" OTCID="#x08502001"/>
 			</TaskPouOids>
@@ -8335,14 +8326,12 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M44.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M44.bLimitForwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M44.nRawEncoderUINT" VarB="ENC Status compact^Counter value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_VLS.MirrorPitch_enc" VarB="ENC Status compact^Counter value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^VLS_EP11_EP7041-3102">
 				<Link VarA="PlcTask Inputs^Main.M45.bHome" VarB="ENC Status compact^Status^Status of input C" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M45.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M45.bLimitForwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M45.nRawEncoderUINT" VarB="ENC Status compact^Counter value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_VLS.GratingPitch_enc" VarB="ENC Status compact^Counter value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^VLS_EP12_EP7041-3102">
 				<Link VarA="PlcTask Inputs^Main.M46.bHome" VarB="ENC Status compact^Status^Status of input C" AutoLink="true"/>
