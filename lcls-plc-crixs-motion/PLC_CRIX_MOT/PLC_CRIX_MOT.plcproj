@@ -101,6 +101,9 @@
     <Compile Include="POUs\Assemblies\PRG_Illumination.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Assemblies\PRG_InjectorMotors.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Assemblies\PRG_PointDetectorMotors.TcPOU">
       <SubType>Code</SubType>
     </Compile>
