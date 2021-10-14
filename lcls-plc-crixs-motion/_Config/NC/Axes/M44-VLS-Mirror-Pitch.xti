@@ -1329,10 +1329,10 @@ External Setpoint Generation:
 			<OtherSettings AllowMotionCmdToSlave="true" PulseDistancePos="0.1" PulseDistanceNeg="0.1"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
-			<EncPara ScaleFactorNumerator="2.48046875e-05" MaxCount="#x0000ffff">
-				<SoftEndMinControl Enable="true"/>
-				<SoftEndMaxControl Enable="true" Range="4.59"/>
-				<Inc RefSoftSyncMask="#x0000ffff"/>
+			<EncPara ScaleFactorNumerator="2.5e-05" MaxCount="#x0000ffff">
+				<SoftEndMinControl Enable="true" Range="-3.474"/>
+				<SoftEndMaxControl Enable="true"/>
+				<Inc RefMode="2" RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
@@ -1491,7 +1491,7 @@ Drive Status 4 (manually linked):
 		</Drive>
 		<Controller Name="Ctrl" CtrType="2">
 			<CtrPara PriorControlFactor="1">
-				<PosDiffControl Range="0.1"/>
+				<PosDiffControl Range="0.2"/>
 				<PID DeadBandPosition="0.1"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
