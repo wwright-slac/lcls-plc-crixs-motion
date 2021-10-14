@@ -172,7 +172,7 @@ VAR_GLOBAL
      {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[Catcher_E1_EL7041]^STM Status^Status^Digital input 2;
                               .bLimitBackwardEnable := TIIB[Catcher_E1_EL7041]^STM Status^Status^Digital input 1'}
     M37 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //RCC X
-     {attribute 'pytmc' := 'pv:CRIX:RCC:MMS:Y'}
+     {attribute 'pytmc' := 'pv: CRIX:RCC:MMS:Y'}
 	 {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[Catcher_E3_EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[Catcher_E3_EL7041]^STM Status^Status^Digital input 2'}
     M38 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.ALWAYS); //RCC Y
@@ -226,7 +226,7 @@ VAR_GLOBAL
 								.nRawEncoderUINT:=TIIB[VLS_EP10_EP7041-3102]^ENC Status compact^Counter value;
 								.bHome:=TIIB[VLS_EP10_EP7041-3102]^ENC Status compact^Status^Status of input C'}
     {attribute 'pytmc' := '
-        pv:  CRIX:VLS:CAM:MMS:MP
+        pv:  CRIX:VLS:MMS:MP
         field: DESC VLS Focus Mirror
     '}
     M44: DUT_MotionStage;
