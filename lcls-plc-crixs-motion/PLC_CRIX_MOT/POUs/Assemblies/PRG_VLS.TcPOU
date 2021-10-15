@@ -43,13 +43,13 @@ END_VAR
 
 	//Homing routine parameters
 	Main.M40.fHomePosition:= 0;
-	Main.M40.nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET;
+	Main.M40.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
 	Main.M41.fHomePosition:= 0;
-	Main.M41.nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET;
+	Main.M41.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
 	Main.M42.fHomePosition:= 0;
-	Main.M42.nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET;
+	Main.M42.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
 	Main.M43.fHomePosition:= 0;
-	Main.M43.nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET;
+	Main.M43.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
 	
 	//Focusing Mirror Pitch
 	Main.M44.bHardwareEnable := TRUE;
@@ -66,8 +66,8 @@ END_VAR
 	Main.M45.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M45.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	//Homing routine parameters
-	Main.M45.fHomePosition:= 0;
-	Main.M45.nHomingMode := ENUM_EpicsHomeCmd.HOME_VIA_HIGH;
+	Main.M45.fHomePosition:= -1.74;
+	Main.M45.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
 	
 	//Cam
 	Main.M46.bHardwareEnable := TRUE;
@@ -75,14 +75,14 @@ END_VAR
 	Main.M46.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M46.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	Main.M47.bHardwareEnable := TRUE;
+	Main.M47.bPowerSelf :=TRUE;
 	Main.M47.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M47.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	//Homing routine parameters
 	Main.M46.fHomePosition:= 0.8923;
-	Main.M46.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
-	Main.M47.fHomePosition:= 0;
-	Main.M47.bPowerSelf :=TRUE;
-	Main.M47.nHomingMode := ENUM_EpicsHomeCmd.HOME_VIA_HIGH;
+	Main.M46.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;//0 where it is horizontal
+	Main.M47.fHomePosition:= -15.5;
+	Main.M47.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
 END_IF
 
 
