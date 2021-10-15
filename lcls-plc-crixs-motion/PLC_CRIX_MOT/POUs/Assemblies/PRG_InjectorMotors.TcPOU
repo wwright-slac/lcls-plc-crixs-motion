@@ -8,22 +8,33 @@ VAR
 	fbSDSZ_Motor : FB_MotionStage;
 	fbSDSRY_Motor : FB_MotionStage;
 	fbSDSShroud_Motor : FB_MotionStage;
+	
+	bInit : BOOL := TRUE;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[Main.M16.bHardwareEnable := TRUE;
+      <ST><![CDATA[if (bInit) THEN
+	// X Motor
+	Main.M16.bHardwareEnable := TRUE;
+	Main.M16.nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET;
+	// Y motor
+	Main.M17.bHardwareEnable := TRUE;
+	// Z Motor
+	Main.M18.bHardwareEnable := TRUE;
+	// Y Rotation Motor
+	Main.M19.bHardwareEnable := TRUE;
+	Main.M19.bLimitForwardEnable := TRUE;
+	Main.M19.bLimitBackwardEnable := TRUE;
+	// Shroud Motor
+	Main.M20.bHardwareEnable := TRUE;
+	Main.M20.bLimitForwardEnable := TRUE;
+	Main.M20.bLimitBackwardEnable := TRUE;
+END_IF
+
 fbSDSX_Motor(stMotionStage:=Main.M16);
-
-Main.M17.bHardwareEnable := TRUE;
 fbSDSY_Motor(stMotionStage:=Main.M17);
-
-Main.M18.bHardwareEnable := TRUE;
 fbSDSZ_Motor(stMotionStage:=Main.M18);
-
-Main.M19.bHardwareEnable := TRUE;
 fbSDSRY_Motor(stMotionStage:=Main.M19);
-
-Main.M20.bHardwareEnable := TRUE;
 fbSDSShroud_Motor(stMotionStage:=Main.M20);]]></ST>
     </Implementation>
   </POU>
