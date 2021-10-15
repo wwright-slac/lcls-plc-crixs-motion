@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="Main" Id="{743c36cb-e5dd-4408-91ed-5169699d82d2}">
-    <Declaration><![CDATA[//{attribute 'qualified_only'}
+    <Declaration><![CDATA[	//{attribute 'qualified_only'}
 VAR_GLOBAL
 
 	// Motor axes

@@ -44,7 +44,7 @@
 		<Axis File="M43-VLS-Slit-Left.xti" Id="43"/>
 		<Axis File="M44-VLS-Mirror-Pitch.xti" Id="44"/>
 		<Axis File="M45-VLS-Grating-Pitch.xti" Id="45"/>
-		<Axis File="M45-VLS-Camera-Pitch.xti" Id="46"/>
+		<Axis File="M46-VLS-Camera-Pitch.xti" Id="46"/>
 		<Axis File="M47-VLS-Camera-Dist.xti" Id="47"/>
 		<Axis File="Axis 1 - Diagnostic Paddle X.xti" Id="1"/>
 		<Axis File="Axis 2 - Diagnostic Paddle Y.xti" Id="2"/>
