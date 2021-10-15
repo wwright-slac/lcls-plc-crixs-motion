@@ -25,15 +25,19 @@ END_VAR
 	bInit := FALSE;
 	//SLITS
 	Main.M40.bHardwareEnable := TRUE;
+	Main.M40.bPowerSelf :=TRUE;
 	Main.M40.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M40.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	Main.M41.bHardwareEnable := TRUE;
+	Main.M41.bPowerSelf :=TRUE;
 	Main.M41.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M41.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	Main.M42.bHardwareEnable := TRUE;
+	Main.M42.bPowerSelf :=TRUE;
 	Main.M42.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M42.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	Main.M43.bHardwareEnable := TRUE;
+	Main.M43.bPowerSelf :=TRUE;
 	Main.M43.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M43.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 
@@ -49,6 +53,7 @@ END_VAR
 	
 	//Focusing Mirror Pitch
 	Main.M44.bHardwareEnable := TRUE;
+	Main.M44.bPowerSelf :=TRUE;
 	Main.M44.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M44.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	//Homing routine parameters
@@ -57,6 +62,7 @@ END_VAR
 	
 	//Grating Pitch
 	Main.M45.bHardwareEnable := TRUE;
+	Main.M45.bPowerSelf :=TRUE;
 	Main.M45.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M45.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	//Homing routine parameters
@@ -65,15 +71,17 @@ END_VAR
 	
 	//Cam
 	Main.M46.bHardwareEnable := TRUE;
+	Main.M46.bPowerSelf :=TRUE;
 	Main.M46.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M46.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	Main.M47.bHardwareEnable := TRUE;
 	Main.M47.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M47.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	//Homing routine parameters
-	Main.M46.fHomePosition:= 0;
-	Main.M46.nHomingMode := ENUM_EpicsHomeCmd.HOME_VIA_HIGH;
+	Main.M46.fHomePosition:= 0.8923;
+	Main.M46.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
 	Main.M47.fHomePosition:= 0;
+	Main.M47.bPowerSelf :=TRUE;
 	Main.M47.nHomingMode := ENUM_EpicsHomeCmd.HOME_VIA_HIGH;
 END_IF
 

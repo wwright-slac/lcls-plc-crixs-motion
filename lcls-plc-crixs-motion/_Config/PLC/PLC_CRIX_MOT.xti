@@ -8532,13 +8532,13 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M44.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^Main.M44.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M45-VLS-Camera-Pitch">
-				<Link VarA="PlcTask Inputs^Main.M46.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^Main.M46.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M45-VLS-Grating-Pitch">
 				<Link VarA="PlcTask Inputs^Main.M45.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^Main.M45.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M46-VLS-Camera-Pitch">
+				<Link VarA="PlcTask Inputs^Main.M46.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M46.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M47-VLS-Camera-Dist">
 				<Link VarA="PlcTask Inputs^Main.M47.Axis.NcToPlc" VarB="Outputs^ToPlc"/>

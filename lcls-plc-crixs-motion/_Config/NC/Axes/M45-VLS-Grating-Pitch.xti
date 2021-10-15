@@ -1325,15 +1325,14 @@ External Setpoint Generation:
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<Dynamic AccelerationMaximum="10" DecelerationMaximum="10" Acceleration="4.49102" Deceleration="4.49102" Jerk="20.1692"/>
-			<Velo RefSearch="0.01" RefSync="0.01" SlowManual="0.25" FastManual="0.5" Maximum="0.1"/>
+			<Velo RefSearch="0.05" RefSync="0.01" SlowManual="0.25" FastManual="0.5" Maximum="0.1"/>
 			<OtherSettings AllowMotionCmdToSlave="true" PulseDistancePos="0.5" PulseDistanceNeg="0.5"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
 			<EncPara MaxCount="#x0000ffff">
-				<SoftEndMinControl Range="1.2"/>
-				<SoftEndMaxControl Range="-1.74"/>
+				<SoftEndMinControl Enable="true" Range="1.2"/>
+				<SoftEndMaxControl Enable="true" Range="-1.74"/>
 				<Inc RefMode="2" RefSoftSyncMask="#x0000ffff"/>
-				<ParameterChanged>35</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>

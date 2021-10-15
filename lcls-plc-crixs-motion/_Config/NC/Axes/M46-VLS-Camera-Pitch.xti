@@ -1326,11 +1326,11 @@ External Setpoint Generation:
 		<AxisPara>
 			<General UnitName="Degree"/>
 			<Dynamic AccelerationMaximum="0.2" DecelerationMaximum="0.2" Acceleration="0.89" Deceleration="0.89" Jerk="3.83306"/>
-			<Velo RefSearch="0.05" RefSync="0.05" SlowManual="0.05" FastManual="0.1" Maximum="0.02"/>
+			<Velo RefSearch="0.01" RefSync="0.01" SlowManual="0.05" FastManual="0.1" Maximum="0.02"/>
 			<OtherSettings AllowMotionCmdToSlave="true" PulseDistancePos="1" PulseDistanceNeg="1"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
-			<EncPara ScaleFactorNumerator="1.52e-05" Inverse="true" MaxCount="#x0000ffff">
+			<EncPara ScaleFactorNumerator="5.3515625e-07" Inverse="true" MaxCount="#x0000ffff">
 				<Inc RefMode="3" RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
