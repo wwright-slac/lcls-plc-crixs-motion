@@ -40,6 +40,7 @@ PRG_Beamblock();
 PRG_ObjectivesMotors();
 PRG_RCC();
 PRG_VLS();
+PRG_InjectorMotors();
 
 ]]></ST>
     </Implementation>
