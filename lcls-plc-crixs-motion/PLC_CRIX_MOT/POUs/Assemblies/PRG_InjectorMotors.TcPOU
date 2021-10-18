@@ -8,6 +8,7 @@ VAR
 	fbSDSZ_Motor : FB_MotionStage;
 	fbSDSRY_Motor : FB_MotionStage;
 	fbSDSShroud_Motor : FB_MotionStage;
+	fbSDSZEncoder: FB_MotionStage;
 	
 	bInit : BOOL := TRUE;
 END_VAR
@@ -35,7 +36,8 @@ fbSDSX_Motor(stMotionStage:=Main.M16);
 fbSDSY_Motor(stMotionStage:=Main.M17);
 fbSDSZ_Motor(stMotionStage:=Main.M18);
 fbSDSRY_Motor(stMotionStage:=Main.M19);
-fbSDSShroud_Motor(stMotionStage:=Main.M20);]]></ST>
+fbSDSShroud_Motor(stMotionStage:=Main.M20);
+fbSDSZEncoder(stMotionStage:=Main.M36);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
