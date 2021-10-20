@@ -57,12 +57,20 @@ VAR_GLOBAL
 	M8 : DUT_MotionStage := (bPowerSelf:=TRUE);
 	//stPDRotMotor : DUT_MotionStage;
 	
-	M9 : DUT_MotionStage;
-	//stILMXMotor : DUT_MotionStage;
-	M10 : DUT_MotionStage;
-	//stILMYMotor : DUT_MotionStage;
-	M11 : DUT_MotionStage;
-	//stILMZMotor : DUT_MotionStage;
+	{attribute 'pytmc' := 'pv: CRIX:ILM:MMS:X'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 65 (EL1084)^Channel 1^Input;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 65 (EL1084)^Channel 2^Input'}
+	M9 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION); //stILMXMotor : DUT_MotionStage;
+	
+	{attribute 'pytmc' := 'pv: CRIX:ILM:MMS:Y'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 65 (EL1084)^Channel 3^Input;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 65 (EL1084)^Channel 4^Input'}
+	M10 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION); //stILMYMotor : DUT_MotionStage;
+	
+	{attribute 'pytmc' := 'pv: CRIX:ILM:MMS:Z'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 68 (EL1084)^Channel 1^Input;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 68 (EL1084)^Channel 2^Input'}
+	M11 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION); //stILMZMotor : DUT_MotionStage;
 
 	{attribute 'pytmc' := 'pv: CRIX:QSTR:MMS:X'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E17 (EL7031)^STM Status^Status^Digital input 1;
