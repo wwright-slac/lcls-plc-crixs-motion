@@ -83,8 +83,8 @@ VAR_GLOBAL
 	M13 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION);
 	//stQSTYMotor : DUT_MotionStage;
 	
-	M14 : DUT_MotionStage; // Cryopump 1
-	M15 : DUT_MotionStage; // Cryopump 2
+	M14 : DUT_MotionStage; // SPARE 1
+	M15 : DUT_MotionStage; // SPARE 2
 	
 	{attribute 'pytmc' := 'pv: CRIX:SDS:MMS:X'}
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 82 (EL1084)^Channel 1^Input;
@@ -277,14 +277,14 @@ VAR_GLOBAL
 	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[DRL02-E21 (EL7041)]^STM Status^Status^Digital input 1;
 								.bLimitBackwardEnable:=TIIB[DRL02-E21 (EL7041)]^STM Status^Status^Digital input 2'}
     {attribute 'pytmc' := '
-        pv:  CRIX:PTC:MMS:10
+        pv:  CRIX:PTC:Y:MMS:10
         field:Cryo Pump Y stage 10
     '}
 	M48: DUT_MotionStage; 
 	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[DRL02-E23 (EL7041)]^STM Status^Status^Digital input 1;
 								.bLimitBackwardEnable:=TIIB[DRL02-E23 (EL7041)]^STM Status^Status^Digital input 2'}
     {attribute 'pytmc' := '
-        pv:  CRIX:PTC:MMS:11
+        pv:  CRIX:PTC:Y:MMS:11
         field:Cryo Pump Y stage 11
     '}
 	M49: DUT_MotionStage;
