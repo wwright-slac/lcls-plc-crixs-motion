@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_CryoPump" Id="{00a70b15-989b-46ed-bbf4-cb0cdca5404b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_CryoPump
+VAR
+	fbCryoPump_Motor_Y_10 : FB_MotionStage;
+	fbCryoPump_Motor_Y_11 : FB_MotionStage;
+	
+	bEPS_OK_Y_10: BOOL; //Valve is in the Open State And communication ok
+	bEPS_OK_Y_11: BOOL; //Valve is in the Open State And communication ok
+	
+	bInit : BOOl := TRUE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF ( bInit) THEN
+	bInit := FALSE;
+	Main.M48.bHardwareEnable := False; //Linked to valve state
+	//Main.M48.bPowerSelf := TRUE;
+	Main.M48.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+	Main.M48.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+	Main.M49.bHardwareEnable := False; //Linked to valve state
+	//Main.M49.bPowerSelf := TRUE;
+	Main.M49.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+	Main.M49.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+	
+	//Homing routine parameters
+	Main.M48.fHomePosition:= 0;
+	Main.M48.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+	Main.M49.fHomePosition:= 0;
+	Main.M49.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+END_IF
+
+fbCryoPump_Motor_Y_10(stMotionStage:=Main.M48);
+fbCryoPump_Motor_Y_11(stMotionStage:=Main.M49);
+
+//Handle EPS
+Main.M48.bAllBackwardEnable := bEPS_OK_Y_10;
+Main.M49.bAllBackwardEnable := bEPS_OK_Y_11;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

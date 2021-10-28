@@ -272,6 +272,23 @@ VAR_GLOBAL
         field: DESC VLS Camera Translation
     '}
     M47: DUT_MotionStage;
+	
+	//Cryo pump
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[DRL02-E21 (EL7041)]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[DRL02-E21 (EL7041)]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv:  CRIX:PTC:MMS:10
+        field:Cryo Pump Y stage 10
+    '}
+	M48: DUT_MotionStage; 
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[DRL02-E23 (EL7041)]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[DRL02-E23 (EL7041)]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv:  CRIX:PTC:MMS:11
+        field:Cryo Pump Y stage 11
+    '}
+	M49: DUT_MotionStage;
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

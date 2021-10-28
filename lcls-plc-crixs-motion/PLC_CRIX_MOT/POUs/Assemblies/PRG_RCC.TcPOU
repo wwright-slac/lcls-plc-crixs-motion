@@ -14,12 +14,15 @@ END_VAR
       <ST><![CDATA[IF ( bInit) THEN
 	bInit := FALSE;
 	Main.M37.bHardwareEnable := TRUE;
+	Main.M37.bPowerSelf := TRUE;
 	Main.M37.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M37.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	Main.M38.bHardwareEnable := TRUE;
+	Main.M38.bPowerSelf := TRUE;
 	Main.M38.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M38.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 	Main.M39.bHardwareEnable := TRUE;
+	Main.M39.bPowerSelf := TRUE;
 	Main.M39.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
 	Main.M39.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 END_IF

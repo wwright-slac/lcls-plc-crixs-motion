@@ -22,6 +22,7 @@
 		<AxisFolder Name="Camera"/>
 		<AxisFolder Name="Catcher"/>
 		<AxisFolder Name="VLS"/>
+		<AxisFolder Name="CryoPump"/>
 		<Axis File="Cryo X.xti" Id="22"/>
 		<Axis File="Cryo Y.xti" Id="23"/>
 		<Axis File="Cryo Z.xti" Id="24"/>
@@ -46,6 +47,8 @@
 		<Axis File="M45-VLS-Grating-Pitch.xti" Id="45"/>
 		<Axis File="M46-VLS-Camera-Pitch.xti" Id="46"/>
 		<Axis File="M47-VLS-Camera-Dist.xti" Id="47"/>
+		<Axis File="M48- Cryopump Y11.xti" Id="48"/>
+		<Axis File="M49- Cryopump Y12.xti" Id="49"/>
 		<Axis File="Axis 1 - Diagnostic Paddle X.xti" Id="1"/>
 		<Axis File="Axis 2 - Diagnostic Paddle Y.xti" Id="2"/>
 		<Axis File="Axis 3 - Diagnostic Paddle Z.xti" Id="3"/>
