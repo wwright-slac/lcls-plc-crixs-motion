@@ -274,13 +274,13 @@ VAR_GLOBAL
     M47: DUT_MotionStage;
 	
 	//Cryo pump
-	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[DRL02-E21 (EL7041)]^STM Status^Status^Digital input 2'}
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[DRL02-E23 (EL7041)]^STM Status^Status^Digital input 2'}
     {attribute 'pytmc' := '
         pv:  CRIX:PTC:Y:MMS:10
         field:Cryo Pump Y stage 10
     '}
 	M48: DUT_MotionStage; 
-	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[DRL02-E23 (EL7041)]^STM Status^Status^Digital input 2'}
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[DRL02-E21 (EL7041)]^STM Status^Status^Digital input 2'}
     {attribute 'pytmc' := '
         pv:  CRIX:PTC:Y:MMS:11
         field:Cryo Pump Y stage 11
