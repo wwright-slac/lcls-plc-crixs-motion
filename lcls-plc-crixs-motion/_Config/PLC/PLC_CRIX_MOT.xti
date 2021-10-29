@@ -7920,6 +7920,17 @@ External Setpoint Generation:
 					</Comment>
 					<Type>INT</Type>
 				</Var>
+				<Var>
+					<Name>PRG_CryoPump.bLimitBackwardEnable_Y_10</Name>
+					<Comment>
+						<![CDATA[Limit switches]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_CryoPump.bLimitBackwardEnable_Y_11</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -9101,12 +9112,12 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M13.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E21 (EL7041)">
-				<Link VarA="PlcTask Inputs^Main.M48.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^Main.M48.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M48.bLimitForwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_CryoPump.bLimitBackwardEnable_Y_10" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E23 (EL7041)">
-				<Link VarA="PlcTask Inputs^Main.M49.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^Main.M49.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M49.bLimitForwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_CryoPump.bLimitBackwardEnable_Y_11" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E26 (EL7031)">
 				<Link VarA="PlcTask Inputs^Main.M17.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
@@ -9404,11 +9415,11 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M47.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^Main.M47.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M48- Cryopump Y11">
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M48- Cryopump Y10">
 				<Link VarA="PlcTask Inputs^Main.M48.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^Main.M48.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M49- Cryopump Y12">
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M49- Cryopump Y11">
 				<Link VarA="PlcTask Inputs^Main.M49.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^Main.M49.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
