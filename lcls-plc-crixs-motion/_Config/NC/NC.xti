@@ -22,6 +22,7 @@
 		<AxisFolder Name="Camera"/>
 		<AxisFolder Name="Catcher"/>
 		<AxisFolder Name="VLS"/>
+		<AxisFolder Name="CryoPump"/>
 		<Axis File="Cryo X.xti" Id="22"/>
 		<Axis File="Cryo Y.xti" Id="23"/>
 		<Axis File="Cryo Z.xti" Id="24"/>
@@ -46,6 +47,8 @@
 		<Axis File="M45-VLS-Grating-Pitch.xti" Id="45"/>
 		<Axis File="M46-VLS-Camera-Pitch.xti" Id="46"/>
 		<Axis File="M47-VLS-Camera-Dist.xti" Id="47"/>
+		<Axis File="M48- Cryopump Y10.xti" Id="48"/>
+		<Axis File="M49- Cryopump Y11.xti" Id="49"/>
 		<Axis File="Axis 1 - Diagnostic Paddle X.xti" Id="1"/>
 		<Axis File="Axis 2 - Diagnostic Paddle Y.xti" Id="2"/>
 		<Axis File="Axis 3 - Diagnostic Paddle Z.xti" Id="3"/>
@@ -59,8 +62,8 @@
 		<Axis File="Axis 11 - Illumination Z.xti" Id="11"/>
 		<Axis File="Axis 12 - Questar X.xti" Id="12"/>
 		<Axis File="Axis 13 - Questar Y.xti" Id="13"/>
-		<Axis File="Axis 14 - Cryopump 1.xti" Id="14"/>
-		<Axis File="Axis 15 - Cryopump 2.xti" Id="15"/>
+		<Axis File="Axis 14 - SPARE 1.xti" Id="14"/>
+		<Axis File="Axis 15 - SPARE 2.xti" Id="15"/>
 		<Axis File="Axis 16 - SDS Injector X.xti" Id="16"/>
 		<Axis File="Axis 17 - SDS Injectory Y.xti" Id="17"/>
 		<Axis File="Axis 18 - SDS Injector Z.xti" Id="18"/>

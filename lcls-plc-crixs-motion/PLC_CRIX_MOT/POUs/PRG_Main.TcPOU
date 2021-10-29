@@ -42,7 +42,7 @@ PRG_RCC();
 PRG_VLS();
 PRG_InjectorMotors();
 PRG_Illumination();
-
+PRG_CryoPump();
 ]]></ST>
     </Implementation>
   </POU>

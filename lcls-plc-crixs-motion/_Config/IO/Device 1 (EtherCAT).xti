@@ -44,10 +44,11 @@
 		<Box File="Term 5 (EK1200).xti" Id="5">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
 		</Box>
-		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="2" MaxSwitchFrames="120">
+		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="3" MaxSwitchFrames="140">
 			<SyncUnit Name="hot connect" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="VLS" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="Catcher" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="CRIX_VAC_PLC" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>
