@@ -43,6 +43,8 @@ PRG_VLS();
 PRG_InjectorMotors();
 PRG_Illumination();
 PRG_CryoPump();
+
+PRG_PMPS();
 ]]></ST>
     </Implementation>
   </POU>
