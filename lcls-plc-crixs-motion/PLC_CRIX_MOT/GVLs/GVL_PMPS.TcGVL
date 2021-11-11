@@ -8,13 +8,13 @@ VAR_GLOBAL
     pv: PLC:CRIX:MOT:FFO:01
     '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
-    g_FastFaultOutput1  :   FB_HardwareFFOutput :=(i_sNetID:='172.21.92.73.1.1');
+    g_FastFaultOutput1  :   FB_HardwareFFOutput :=(i_sNetID:='172.21.42.126.1.1');
 	
 	{attribute 'pytmc' := '
     pv: PLC:CRIX:MOT:FFO:02
     '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
-    g_FastFaultOutput2  :   FB_HardwareFFOutput :=(i_sNetID:='172.21.92.73.1.1');
+    g_FastFaultOutput2  :   FB_HardwareFFOutput :=(i_sNetID:='172.21.42.126.1.1');
 	
 	
 		{attribute 'pytmc' := '
