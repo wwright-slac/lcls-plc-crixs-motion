@@ -9,6 +9,7 @@
 		<EtherCAT SlaveType="1" PdiType="#x0d04" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x044d2c52" RevisionNo="#x00120050" PortPhys="1076" IdentificationAdo="4096" TimeoutOpenLink2="150" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1101-0080 EtherCAT Coupler (2A E-Bus, ID switch, Fast Hot Connect)" Desc="EK1101-0080">
 			<SyncMan>001002000000010004000000000000000000001000000000</SyncMan>
 			<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+			<SuName>hot connect</SuName>
 			<Pdo Name="ID" Index="#x1a00" Flags="#x0010" SyncMan="0">
 				<Entry Name="ID" Index="#x6000" Sub="#x01">
 					<Type>UINT</Type>
