@@ -45,6 +45,7 @@
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
 		</Box>
 		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="4" MaxSwitchFrames="160">
+			<SuNamePreDef>VLS</SuNamePreDef>
 			<SyncUnit Name="hot connect" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="VLS" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="Catcher" NoDeleteIfUnused="true"/>
