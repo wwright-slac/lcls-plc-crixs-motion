@@ -43,7 +43,7 @@ PRG_VLS();
 PRG_InjectorMotors();
 PRG_Illumination();
 PRG_CryoPump();
-//PRG_SL2K2_SCATTER();
+PRG_SL2K2_SCATTER();
 
 PRG_PMPS();
 ]]></ST>
