@@ -23,6 +23,7 @@
 		<AxisFolder Name="Catcher"/>
 		<AxisFolder Name="VLS"/>
 		<AxisFolder Name="CryoPump"/>
+		<AxisFolder Name="SL2K2-SCATTER"/>
 		<Axis File="Cryo X.xti" Id="22"/>
 		<Axis File="Cryo Y.xti" Id="23"/>
 		<Axis File="Cryo Z.xti" Id="24"/>
@@ -49,6 +50,10 @@
 		<Axis File="M47-VLS-Camera-Dist.xti" Id="47"/>
 		<Axis File="M48- Cryopump Y10.xti" Id="48"/>
 		<Axis File="M49- Cryopump Y11.xti" Id="49"/>
+		<Axis File="SL2K2-BOTTOM-M50.xti" Id="50"/>
+		<Axis File="SL2K2-TOP-M51.xti" Id="51"/>
+		<Axis File="SL2K2-NORTH-M52.xti" Id="52"/>
+		<Axis File="SL2K2-SOUTH-M53.xti" Id="53"/>
 		<Axis File="Axis 1 - Diagnostic Paddle X.xti" Id="1"/>
 		<Axis File="Axis 2 - Diagnostic Paddle Y.xti" Id="2"/>
 		<Axis File="Axis 3 - Diagnostic Paddle Z.xti" Id="3"/>
