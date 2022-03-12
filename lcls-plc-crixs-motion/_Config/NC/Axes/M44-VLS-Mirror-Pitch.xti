@@ -1322,10 +1322,11 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Axis Id="44" CreateSymbols="true" AxisType="1" AxisFolder="VLS">
-		<Name>__FILENAME__</Name>
+		<Name>M44-VLS-Mirror-Pitch</Name>
 		<AxisPara>
 			<Dynamic AccelerationMaximum="4" DecelerationMaximum="4" Acceleration="1.92472" Deceleration="1.92472" Jerk="18.5227"/>
 			<Velo RefSearch="0.01" RefSync="0.01" SlowManual="0.05" FastManual="0.1" Maximum="0.4"/>
+			<TargetPosControl Range="0.01" Time="3"/>
 			<OtherSettings AllowMotionCmdToSlave="true" PulseDistancePos="0.1" PulseDistanceNeg="0.1"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
@@ -1492,7 +1493,7 @@ Drive Status 4 (manually linked):
 		<Controller Name="Ctrl" CtrType="2">
 			<CtrPara PriorControlFactor="1">
 				<PosDiffControl Range="0.2"/>
-				<PID DeadBandPosition="0.1"/>
+				<PID PosKp="50" DeadBandPosition="0.0001"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
