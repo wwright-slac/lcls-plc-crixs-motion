@@ -97,7 +97,7 @@ VAR_GLOBAL
 	M17 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION); //stSDSYMotor : DUT_MotionStage;
 	
 	{attribute 'pytmc' := 'pv: CRIX:SDS:MMS:Z'}
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E27 (EL7031)^STM Status^Status^Digital input 1;}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E27 (EL7031)^STM Status^Status^Digital input 1'}
 	M18 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION); //stSDSZMotor : DUT_MotionStage;
 	
 	{attribute 'pytmc' := 'pv: CRIX:SDS:MMS:RY'}
