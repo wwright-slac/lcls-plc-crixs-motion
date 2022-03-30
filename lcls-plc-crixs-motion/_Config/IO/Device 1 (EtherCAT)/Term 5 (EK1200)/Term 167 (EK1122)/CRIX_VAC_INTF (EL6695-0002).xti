@@ -38,8 +38,8 @@
 		<EtherCAT SlaveType="3" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" EoeType="1" FoeType="1" VendorId="#x00000002" ProductCode="#x1a273052" RevisionNo="#x00050002" InfoDataAddr="true" InfoDataNetId="true" TimeoutMailbox2="2000" GenerateOwnNetId="true" CheckRevisionNoType="3" PortPhys="17" DcTimeLoopControlOnly="true" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL6695 EtherCAT Bridge terminal (Secondary)" Desc="EL6695-0002">
 			<SyncMan>0010000426000100010000008000da050004001026010000</SyncMan>
 			<SyncMan>0016000422000100020000008000da050004001622010000</SyncMan>
-			<SyncMan>001c04006400010003000000000000000000001c64010000</SyncMan>
-			<SyncMan>008e06002000010004000000000000000200008e20010000</SyncMan>
+			<SyncMan>001c06006400010003000000000000000000001c64010000</SyncMan>
+			<SyncMan>008e08002000010004000000000000000200008e20010000</SyncMan>
 			<Fmmu>0000000000000000001c00020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000008e00010100000002000000000000000000000000000000</Fmmu>
 			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
@@ -196,6 +196,12 @@
 				<Entry Name="bVGC11_OPN" Index="#x6000" Sub="#x04">
 					<Type>BOOL</Type>
 				</Entry>
+				<Entry Name="bVGC16_CLS" Index="#x6000" Sub="#x05">
+					<Type>BOOL</Type>
+				</Entry>
+				<Entry Name="bVGC16_OPN" Index="#x6000" Sub="#x06">
+					<Type>BOOL</Type>
+				</Entry>
 			</Pdo>
 			<Pdo Name="IO Outputs" Index="#x1608" InOut="1" Flags="#x0020" SyncMan="2">
 				<Entry Name="bMOTY10_IN" Index="#x7000" Sub="#x01">
@@ -208,6 +214,12 @@
 					<Type>BOOL</Type>
 				</Entry>
 				<Entry Name="bMOTY11_OUT" Index="#x7000" Sub="#x04">
+					<Type>BOOL</Type>
+				</Entry>
+				<Entry Name="bMOTSDSZ18_IN" Index="#x7000" Sub="#x05">
+					<Type>BOOL</Type>
+				</Entry>
+				<Entry Name="bMOTSDSZ18_OUT" Index="#x7000" Sub="#x06">
 					<Type>BOOL</Type>
 				</Entry>
 			</Pdo>

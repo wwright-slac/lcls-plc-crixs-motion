@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="PRG_InjectorMotors" Id="{2a2472be-f71c-4242-a186-8db1946207b0}" SpecialFunc="None">
+  <POU Name="PRG_InjectorMotors" Id="{e6efc8ef-ea1b-475f-9cc6-7f2954d7d94d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_InjectorMotors
 VAR
 	fbSDSX_Motor : FB_MotionStage;
@@ -10,7 +10,24 @@ VAR
 	fbSDSShroud_Motor : FB_MotionStage;
 	fbSDSZEncoder: FB_MotionStage;
 	
+	bEPS_OK_SDSZ_18: BOOL; //Valve is in the Open State And communication ok
+	
 	bInit : BOOL := TRUE;
+	
+	//Limit Switch
+	{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E27 (EL7031)^STM Status^Status^Digital input 2'}
+	bLimitBackwardEnable_SDSZ_18 AT %I* : BOOL;
+	
+	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bVGC16_CLS'}
+	bVGC16_CLS AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bVGC16_OPN'}
+	bVGC16_OPN AT %I* : BOOL;
+
+	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTSDSZ18_IN'}
+	bMOTSDSZ18_IN AT %Q* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTSDSZ18_OUT'}
+	bMOTSDSZ18_OUT AT %Q* : BOOL;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -37,7 +54,15 @@ fbSDSY_Motor(stMotionStage:=Main.M17);
 fbSDSZ_Motor(stMotionStage:=Main.M18);
 fbSDSRY_Motor(stMotionStage:=Main.M19);
 fbSDSShroud_Motor(stMotionStage:=Main.M20);
-fbSDSZEncoder(stMotionStage:=Main.M36);]]></ST>
+fbSDSZEncoder(stMotionStage:=Main.M36);
+
+
+bMOTSDSZ18_OUT := NOT Main.M18.bLimitForwardEnable;
+bMOTSDSZ18_IN := NOT bLimitBackwardEnable_SDSZ_18;
+bEPS_OK_SDSZ_18 := (NOT bVGC16_CLS) AND bVGC16_OPN AND NOT (PRG_CryoPump.xEcatBridge_External_device_not_connected) AND NOT (PRG_CryoPump.xEcatBridge_WcState) AND NOT (PRG_CryoPump.xEcatBridge_TxPDO_state);
+
+
+Main.M18.bLimitBackwardEnable := bEPS_OK_SDSZ_18 AND bLimitBackwardEnable_SDSZ_18;]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

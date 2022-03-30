@@ -2502,6 +2502,21 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
+					<Name>PRG_InjectorMotors.bLimitBackwardEnable_SDSZ_18</Name>
+					<Comment>
+						<![CDATA[Limit Switch]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_InjectorMotors.bVGC16_CLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_InjectorMotors.bVGC16_OPN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PRG_VLS.fbVLS_SLITS_TOP.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
@@ -3188,6 +3203,17 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
+					<Name>PRG_CryoPump.bLimitBackwardEnable_Y_10</Name>
+					<Comment>
+						<![CDATA[Limit switches]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_CryoPump.bLimitBackwardEnable_Y_11</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PRG_CryoPump.fbCryoPump_Motor_Y_10.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
@@ -3284,17 +3310,6 @@ External Setpoint Generation:
 ]]>
 						</Comment>
 					</SubVar>
-				</Var>
-				<Var>
-					<Name>PRG_CryoPump.bLimitBackwardEnable_Y_10</Name>
-					<Comment>
-						<![CDATA[Limit switches]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PRG_CryoPump.bLimitBackwardEnable_Y_11</Name>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_CryoPump.xEcatBridge_TxPDO_state</Name>
@@ -9053,6 +9068,10 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
+					<Name>PRG_InjectorMotors.bMOTSDSZ18_IN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PRG_VLS.fbVLS_SLITS_TOP.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
@@ -9107,6 +9126,10 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_InjectorMotors.fbSDSZEncoder.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>PRG_InjectorMotors.bMOTSDSZ18_OUT</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_CryoPump.fbCryoPump_Motor_Y_10.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -10299,10 +10322,14 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^PRG_CryoPump.bVGC11_OPN" VarB="IO Inputs^bVGC11_OPN" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_CryoPump.xEcatBridge_TxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_CryoPump.xEcatBridge_WcState" VarB="WcState^WcState" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_InjectorMotors.bVGC16_CLS" VarB="IO Inputs^bVGC16_CLS" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_InjectorMotors.bVGC16_OPN" VarB="IO Inputs^bVGC16_OPN" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_CryoPump.bMOTY10_IN" VarB="IO Outputs^bMOTY10_IN" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_CryoPump.bMOTY10_OUT" VarB="IO Outputs^bMOTY10_OUT" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_CryoPump.bMOTY11_IN" VarB="IO Outputs^bMOTY11_IN" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_CryoPump.bMOTY11_OUT" VarB="IO Outputs^bMOTY11_OUT" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PRG_InjectorMotors.bMOTSDSZ18_IN" VarB="IO Outputs^bMOTSDSZ18_IN" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PRG_InjectorMotors.bMOTSDSZ18_OUT" VarB="IO Outputs^bMOTSDSZ18_OUT" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E1 (EL7031)">
 				<Link VarA="PlcTask Inputs^Main.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
@@ -10337,8 +10364,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M17.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E27 (EL7031)">
-				<Link VarA="PlcTask Inputs^Main.M18.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^Main.M18.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_InjectorMotors.bLimitBackwardEnable_SDSZ_18" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E3 (EL7031)">
 				<Link VarA="PlcTask Inputs^Main.M2.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
