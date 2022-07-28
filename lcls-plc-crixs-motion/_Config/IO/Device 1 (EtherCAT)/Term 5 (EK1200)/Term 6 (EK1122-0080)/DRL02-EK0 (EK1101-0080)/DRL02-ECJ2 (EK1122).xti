@@ -10,8 +10,5 @@
 		<Box File="Catcher (EK1100).xti" Id="149">
 			<EtherCAT PortABoxInfo="#x03000094"/>
 		</Box>
-		<Box File="X2 SL2K2-SCATTER.xti" Id="21">
-			<EtherCAT PortABoxInfo="#x01000094"/>
-		</Box>
 	</Box>
 </TcSmItem>

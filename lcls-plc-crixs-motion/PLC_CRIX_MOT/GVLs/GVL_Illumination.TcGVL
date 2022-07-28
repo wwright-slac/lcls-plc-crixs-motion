@@ -47,7 +47,7 @@ VAR_GLOBAL
 	fbILMZStage : FB_MotionStage;
 	
 	//Fiber-Lite Control
-	{attribute 'TcLinkTo' := '.iIlluminatorINT := TIIB[LED_CH1-2_EL2502]^PWM Outputs Channel 1^PWM output'}
+	{attribute 'TcLinkTo' := '.iIlluminatorINT := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^Term 158 (EL4004)^AO Outputs Channel 1^Analog output'}
     {attribute 'pytmc' := '
 		pv: RIX:CRIX:LED:01
 		io: io
