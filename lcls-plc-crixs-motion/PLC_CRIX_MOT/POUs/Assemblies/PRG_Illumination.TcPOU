@@ -22,17 +22,10 @@ END_IF
 
 fbILMXStage(stMotionStage := Main.M9);
 fbILMYStage(stMotionStage := Main.M10);
-fbILMZStage(stMotionStage := Main.M11);
-
-// Set LED output scaling (Fiber-Lite)
-bLedOutput1.iTermBits := 14;
-bLedOutput1(fbSetIllPercent=>);]]></ST>
+fbILMZStage(stMotionStage := Main.M11);]]></ST>
     </Implementation>
     <LineIds Name="PRG_Illumination">
-      <LineId Id="3" Count="12" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="2" Count="0" />
-      <LineId Id="33" Count="0" />
+      <LineId Id="3" Count="11" />
     </LineIds>
   </POU>
 </TcPlcObject>

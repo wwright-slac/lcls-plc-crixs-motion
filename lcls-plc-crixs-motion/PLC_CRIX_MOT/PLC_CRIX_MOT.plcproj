@@ -54,6 +54,10 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="GVLs\GVL_FiberLite.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\GVL_Illumination.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -103,6 +107,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Assemblies\PRG_DiagnosticPaddleMotors.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Assemblies\PRG_FiberLite.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Assemblies\PRG_Illumination.TcPOU">
