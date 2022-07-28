@@ -22,9 +22,10 @@ END_IF
 
 fbILMXStage(stMotionStage := Main.M9);
 fbILMYStage(stMotionStage := Main.M10);
-fbILMZStage(stMotionStage := Main.M11);
-
-]]></ST>
+fbILMZStage(stMotionStage := Main.M11);]]></ST>
     </Implementation>
+    <LineIds Name="PRG_Illumination">
+      <LineId Id="3" Count="11" />
+    </LineIds>
   </POU>
 </TcPlcObject>

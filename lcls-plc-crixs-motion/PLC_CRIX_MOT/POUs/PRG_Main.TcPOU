@@ -43,10 +43,16 @@ PRG_VLS();
 PRG_InjectorMotors();
 PRG_Illumination();
 PRG_CryoPump();
-PRG_SL2K2_SCATTER();
+PRG_FiberLite();
 
 PRG_PMPS();
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_Main">
+      <LineId Id="3" Count="29" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="34" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

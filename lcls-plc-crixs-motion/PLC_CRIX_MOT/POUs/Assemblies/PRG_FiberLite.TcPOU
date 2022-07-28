@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_FiberLite" Id="{f77f6f57-8f90-4848-b1bb-153be6bbff26}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_FiberLite
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Set LED output scaling (Fiber-Lite)
+bLedOutput1.iTermBits := 14;
+bLedOutput1(fbSetIllPercent=>);]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_FiberLite">
+      <LineId Id="6" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
