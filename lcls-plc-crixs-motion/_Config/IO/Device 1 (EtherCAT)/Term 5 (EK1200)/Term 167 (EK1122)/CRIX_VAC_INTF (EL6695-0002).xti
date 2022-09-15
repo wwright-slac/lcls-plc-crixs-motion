@@ -190,10 +190,10 @@
 				<Entry Name="bCRYO_VGC_01_OPN" Index="#x6000" Sub="#x02">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry Name="bCRYO_VGC_02_OPN" Index="#x6000" Sub="#x03">
+				<Entry Name="bCRYO_VGC_02_CLS" Index="#x6000" Sub="#x03">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry Name="bCRYO_VGC_02_CLS" Index="#x6000" Sub="#x04">
+				<Entry Name="bCRYO_VGC_02_OPN" Index="#x6000" Sub="#x04">
 					<Type>BOOL</Type>
 				</Entry>
 				<Entry Name="bSDS_VGC_01_CLS" Index="#x6000" Sub="#x05">
