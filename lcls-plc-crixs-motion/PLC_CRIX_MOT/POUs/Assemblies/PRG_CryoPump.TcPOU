@@ -34,14 +34,14 @@ VAR
 	xEcatBridge_WcState AT %I* : BOOL;
 	
 	//Inputs
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bVGC10_CLS'}
-	bVGC10_CLS AT %I* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bVGC10_OPN'}
-	bVGC10_OPN AT %I* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bVGC11_CLS'}
-	bVGC11_CLS AT %I* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bVGC11_OPN'}
-	bVGC11_OPN AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_01_CLS'}
+	bCRYO_VGC_01_CLS AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_01_OPN'}
+	bCRYO_VGC_01_OPN AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_02_CLS'}
+	bCRYO_VGC_02_CLS AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_02_OPN'}
+	bCRYO_VGC_02_OPN AT %I* : BOOL;
 	
 	//Outputs
 	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTY10_IN'}
@@ -81,8 +81,8 @@ bMOTY10_IN := NOT bLimitBackwardEnable_Y_10;
 bMOTY10_OUT := NOT Main.M48.bLimitForwardEnable;
 bMOTY11_IN := NOT bLimitBackwardEnable_Y_11;
 bMOTY11_OUT := NOT Main.M49.bLimitForwardEnable;
-bEPS_OK_Y_10 := (NOT bVGC10_CLS) AND bVGC10_OPN AND NOT (xEcatBridge_External_device_not_connected) AND NOT (xEcatBridge_WcState) AND NOT (xEcatBridge_TxPDO_state);
-bEPS_OK_Y_11 := (NOT bVGC11_CLS) AND bVGC11_OPN AND NOT (xEcatBridge_External_device_not_connected) AND NOT (xEcatBridge_WcState) AND NOT (xEcatBridge_TxPDO_state);
+bEPS_OK_Y_10 := (NOT bCRYO_VGC_01_CLS) AND bCRYO_VGC_01_OPN AND NOT (xEcatBridge_External_device_not_connected) AND NOT (xEcatBridge_WcState) AND NOT (xEcatBridge_TxPDO_state);
+bEPS_OK_Y_11 := (NOT bCRYO_VGC_02_CLS) AND bCRYO_VGC_02_OPN AND NOT (xEcatBridge_External_device_not_connected) AND NOT (xEcatBridge_WcState) AND NOT (xEcatBridge_TxPDO_state);
 
 
 //Handle EPS
@@ -90,5 +90,9 @@ Main.M48.bLimitBackwardEnable := bEPS_OK_Y_10 AND bLimitBackwardEnable_Y_10;
 Main.M49.bLimitBackwardEnable := bEPS_OK_Y_11 AND bLimitBackwardEnable_Y_11;
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_CryoPump">
+      <LineId Id="3" Count="32" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

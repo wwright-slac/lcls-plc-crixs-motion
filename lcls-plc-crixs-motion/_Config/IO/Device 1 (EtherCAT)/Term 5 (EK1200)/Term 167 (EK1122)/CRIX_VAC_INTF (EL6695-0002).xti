@@ -184,22 +184,22 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="IO Inputs" Index="#x1a08" Flags="#x0020" SyncMan="3">
-				<Entry Name="bVGC10_CLS" Index="#x6000" Sub="#x01">
+				<Entry Name="bCRYO_VGC_01_CLS" Index="#x6000" Sub="#x01">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry Name="bVGC10_OPN" Index="#x6000" Sub="#x02">
+				<Entry Name="bCRYO_VGC_01_OPN" Index="#x6000" Sub="#x02">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry Name="bVGC11_CLS" Index="#x6000" Sub="#x03">
+				<Entry Name="bCRYO_VGC_02_OPN" Index="#x6000" Sub="#x03">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry Name="bVGC11_OPN" Index="#x6000" Sub="#x04">
+				<Entry Name="bCRYO_VGC_02_CLS" Index="#x6000" Sub="#x04">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry Name="bVGC16_CLS" Index="#x6000" Sub="#x05">
+				<Entry Name="bSDS_VGC_01_CLS" Index="#x6000" Sub="#x05">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry Name="bVGC16_OPN" Index="#x6000" Sub="#x06">
+				<Entry Name="bSDS_VGC_01_OPN" Index="#x6000" Sub="#x06">
 					<Type>BOOL</Type>
 				</Entry>
 			</Pdo>
