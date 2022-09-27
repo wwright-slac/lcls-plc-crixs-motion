@@ -18,10 +18,10 @@ VAR
 	{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E27 (EL7031)^STM Status^Status^Digital input 2'}
 	bLimitBackwardEnable_SDSZ_18 AT %I* : BOOL;
 	
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bVGC16_CLS'}
-	bVGC16_CLS AT %I* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bVGC16_OPN'}
-	bVGC16_OPN AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bSDS_VGC_01_CLS'}
+	bSDS_VGC_01_CLS AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bSDS_VGC_01_OPN'}
+	bSDS_VGC_01_OPN AT %I* : BOOL;
 
 	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTSDSZ18_IN'}
 	bMOTSDSZ18_IN AT %Q* : BOOL;
@@ -59,10 +59,14 @@ fbSDSZEncoder(stMotionStage:=Main.M36);
 
 bMOTSDSZ18_OUT := NOT Main.M18.bLimitForwardEnable;
 bMOTSDSZ18_IN := NOT bLimitBackwardEnable_SDSZ_18;
-bEPS_OK_SDSZ_18 := (NOT bVGC16_CLS) AND bVGC16_OPN AND NOT (PRG_CryoPump.xEcatBridge_External_device_not_connected) AND NOT (PRG_CryoPump.xEcatBridge_WcState) AND NOT (PRG_CryoPump.xEcatBridge_TxPDO_state);
+bEPS_OK_SDSZ_18 := (NOT bSDS_VGC_01_CLS) AND bSDS_VGC_01_OPN AND NOT (PRG_CryoPump.xEcatBridge_External_device_not_connected) AND NOT (PRG_CryoPump.xEcatBridge_WcState) AND NOT (PRG_CryoPump.xEcatBridge_TxPDO_state);
 
 
 Main.M18.bLimitBackwardEnable := bEPS_OK_SDSZ_18 AND bLimitBackwardEnable_SDSZ_18;]]></ST>
     </Implementation>
+    <LineIds Name="PRG_InjectorMotors">
+      <LineId Id="3" Count="30" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
