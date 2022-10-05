@@ -40,13 +40,13 @@
 			<MBoxUserCmdData>004003000a00000000000000030010000000000000000000000000000000000020f3100502000000010000</MBoxUserCmdData>
 			<Pdo Name="FB Inputs Channel 1" Index="#x1a00" Flags="#x0010" SyncMan="3">
 				<ExcludePdo>#x1a02</ExcludePdo>
-				<Entry Name="Status__Warning" Index="#x6000" Sub="#x01">
+				<Entry Name="Status__Warning" Index="#x6000" Sub="#x01" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Status__Error" Index="#x6000" Sub="#x02">
+				<Entry Name="Status__Error" Index="#x6000" Sub="#x02" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Status__Ready" Index="#x6000" Sub="#x03">
+				<Entry Name="Status__Ready" Index="#x6000" Sub="#x03" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
 				<Entry Name="Status__">
@@ -55,13 +55,13 @@
 				<Entry Name="Status__">
 					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
 				</Entry>
-				<Entry Name="Status__Diag" Index="#x6000" Sub="#x0d">
+				<Entry Name="Status__Diag" Index="#x6000" Sub="#x0d" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Status__TxPDO State" Index="#x6000" Sub="#x0e">
+				<Entry Name="Status__TxPDO State" Index="#x6000" Sub="#x0e" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Status__Input cycle counter" Index="#x6000" Sub="#x0f">
+				<Entry Name="Status__Input cycle counter" Index="#x6000" Sub="#x0f" Flags="#x00008020">
 					<Type>BIT2</Type>
 				</Entry>
 				<Entry Name="Position" Index="#x6000" Sub="#x11">
@@ -70,13 +70,13 @@
 			</Pdo>
 			<Pdo Name="FB Inputs Channel 2" Index="#x1a01" Flags="#x0010" SyncMan="3">
 				<ExcludePdo>#x1a03</ExcludePdo>
-				<Entry Name="Status__Warning" Index="#x6010" Sub="#x01">
+				<Entry Name="Status__Warning" Index="#x6010" Sub="#x01" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Status__Error" Index="#x6010" Sub="#x02">
+				<Entry Name="Status__Error" Index="#x6010" Sub="#x02" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Status__Ready" Index="#x6010" Sub="#x03">
+				<Entry Name="Status__Ready" Index="#x6010" Sub="#x03" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
 				<Entry Name="Status__">
@@ -85,13 +85,13 @@
 				<Entry Name="Status__">
 					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
 				</Entry>
-				<Entry Name="Status__Diag" Index="#x6010" Sub="#x0d">
+				<Entry Name="Status__Diag" Index="#x6010" Sub="#x0d" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Status__TxPDO State" Index="#x6010" Sub="#x0e">
+				<Entry Name="Status__TxPDO State" Index="#x6010" Sub="#x0e" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Status__Input cycle counter" Index="#x6010" Sub="#x0f">
+				<Entry Name="Status__Input cycle counter" Index="#x6010" Sub="#x0f" Flags="#x00008020">
 					<Type>BIT2</Type>
 				</Entry>
 				<Entry Name="Position" Index="#x6010" Sub="#x11">
