@@ -87,8 +87,12 @@ END_IF
 
 
 //Calculate the mirror and grating pitch values
+//OLD EQUATION:
 //Mirror Pitch (x)  =   33.85 + 18.09x  - 0.2479x2
-rMirror_Pitch :=33.85 + (18.09*Main.M44.stAxisStatus.fActPosition(*mm*)  )- (0.2479 * EXPT(Main.M44.stAxisStatus.fActPosition,2));
+//rMirror_Pitch :=33.85 + (18.09*Main.M44.stAxisStatus.fActPosition(*mm*)  )- (0.2479 * EXPT(Main.M44.stAxisStatus.fActPosition,2));
+
+//NEW EQUATION:
+rMirror_Pitch :=27.733 + (18.204*Main.M44.stAxisStatus.fActPosition(*mm*)  )+ (-0.7348 * EXPT(Main.M44.stAxisStatus.fActPosition,2));
 
 //Grating Pitch (x) =  22.56 - 16.25x + 0.334x2
 rGrating_Pitch := 22.56 - (16.25*Main.M45.stAxisStatus.fActPosition(*mm*)  )+ (0.334 * EXPT(Main.M45.stAxisStatus.fActPosition,2));
@@ -107,5 +111,16 @@ fbVLS_CAM_D(stMotionStage:=Main.M47);
 
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_VLS">
+      <LineId Id="3" Count="65" />
+      <LineId Id="105" Count="0" />
+      <LineId Id="69" Count="1" />
+      <LineId Id="126" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="72" Count="14" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
