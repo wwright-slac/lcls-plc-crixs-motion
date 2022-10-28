@@ -92,7 +92,7 @@ END_IF
 //rMirror_Pitch :=33.85 + (18.09*Main.M44.stAxisStatus.fActPosition(*mm*)  )- (0.2479 * EXPT(Main.M44.stAxisStatus.fActPosition,2));
 
 //NEW EQUATION:
-rMirror_Pitch :=27.733 + (18.204*Main.M44.stAxisStatus.fActPosition(*mm*)  )+ (-0.7348 * EXPT(Main.M44.stAxisStatus.fActPosition,2));
+rMirror_Pitch :=27.667 + (18.1*Main.M44.stAxisStatus.fActPosition(*mm*)  )+ (-0.7569 * EXPT(Main.M44.stAxisStatus.fActPosition,2));
 
 //Grating Pitch (x) =  22.56 - 16.25x + 0.334x2
 rGrating_Pitch := 22.56 - (16.25*Main.M45.stAxisStatus.fActPosition(*mm*)  )+ (0.334 * EXPT(Main.M45.stAxisStatus.fActPosition,2));
