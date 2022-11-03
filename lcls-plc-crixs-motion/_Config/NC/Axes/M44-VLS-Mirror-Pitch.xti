@@ -1322,7 +1322,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Axis Id="44" CreateSymbols="true" AxisType="1" AxisFolder="VLS">
-		<Name>M44-VLS-Mirror-Pitch</Name>
+		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<Dynamic AccelerationMaximum="4" DecelerationMaximum="4" Acceleration="1.92472" Deceleration="1.92472" Jerk="18.5227"/>
 			<Velo RefSearch="0.01" RefSync="0.01" SlowManual="0.05" FastManual="0.1" Maximum="0.4"/>
@@ -1330,9 +1330,9 @@ External Setpoint Generation:
 			<OtherSettings AllowMotionCmdToSlave="true" PulseDistancePos="0.1" PulseDistanceNeg="0.1"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
-			<EncPara ScaleFactorDenominator="4" MaxCount="#x0000ffff">
-				<SoftEndMinControl Enable="true" Range="-3.474"/>
-				<SoftEndMaxControl Enable="true" Range="0.4209"/>
+			<EncPara ScaleFactorNumerator="7.914e-05" ScaleFactorDenominator="4" MaxCount="#x0000ffff">
+				<SoftEndMinControl Enable="true" Range="-0.2288"/>
+				<SoftEndMaxControl Enable="true" Range="1.763"/>
 				<Inc RefMode="2" RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
@@ -1340,7 +1340,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>In</Name>
 					<Type GUID="{901C2423-655B-45CE-B7E3-21F174F0F99F}" Namespace="MC">NCENCODERSTRUCT_IN2B</Type>
-					<BitOffs>38784</BitOffs>
+					<BitOffs>39104</BitOffs>
 					<SubVar TypeFormatIndex="2">
 						<Name>nDataIn1</Name>
 					</SubVar>
@@ -1378,7 +1378,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Out</Name>
 					<Type GUID="{9CC50AB2-5D79-4869-A3C2-1FA7761BAFEA}" Namespace="MC">NCENCODERSTRUCT_OUT2</Type>
-					<BitOffs>60288</BitOffs>
+					<BitOffs>60608</BitOffs>
 					<SubVar TypeFormatIndex="2">
 						<Name>nDataOut1</Name>
 					</SubVar>
@@ -1410,7 +1410,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>In</Name>
 					<Type GUID="{F95C7C69-0C87-46C4-9559-1285CCA5B23A}" Namespace="MC">NCDRIVESTRUCT_IN2</Type>
-					<BitOffs>39104</BitOffs>
+					<BitOffs>39424</BitOffs>
 					<SubVar TypeFormatIndex="2">
 						<Name>nDataIn1</Name>
 					</SubVar>
@@ -1448,7 +1448,7 @@ Drive Status 4 (manually linked):
 				<Var>
 					<Name>Out</Name>
 					<Type GUID="{644DC4BD-3D15-4DCB-94C7-24F3A5D579AA}" Namespace="MC">NCDRIVESTRUCT_OUT2</Type>
-					<BitOffs>60608</BitOffs>
+					<BitOffs>60928</BitOffs>
 					<SubVar TypeFormatIndex="2">
 						<Name>nDataOut1</Name>
 					</SubVar>
@@ -1492,7 +1492,7 @@ Drive Status 4 (manually linked):
 		</Drive>
 		<Controller Name="Ctrl" CtrType="2">
 			<CtrPara PriorControlFactor="1">
-				<PosDiffControl Range="0.2"/>
+				<PosDiffControl Range="0.02"/>
 				<PID PosKp="50" DeadBandPosition="0.0001"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
@@ -1502,7 +1502,7 @@ Drive Status 4 (manually linked):
 			<Var>
 				<Name>FromPlc</Name>
 				<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				<BitOffs>37760</BitOffs>
+				<BitOffs>38080</BitOffs>
 			</Var>
 		</Vars>
 		<Vars VarGrpType="2" InsertType="1">
@@ -1510,7 +1510,7 @@ Drive Status 4 (manually linked):
 			<Var>
 				<Name>ToPlc</Name>
 				<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				<BitOffs>58240</BitOffs>
+				<BitOffs>58560</BitOffs>
 				<SubVar>
 					<Name>AxisState</Name>
 					<Comment>
