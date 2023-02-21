@@ -28,7 +28,7 @@ ff2_ff1_link(
 	io_fbFFHWO := GVL_PMPS.g_FastFaultOutput2,
     i_xOK := GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut);
 	
-GVL_PMPS.fbArbiter1.AddRequest(nReqID := 44, stReqBp := PMPS_GVL.cstFullBeam, sDevName :='plc-crix-mot');
+GVL_PMPS.fbArbiter1.AddRequest(nReqID := 16#FAFA, stReqBp := PMPS_GVL.cstFullBeam, sDevName :='plc-crix-mot');
 
 ]]></ST>
     </Implementation>
