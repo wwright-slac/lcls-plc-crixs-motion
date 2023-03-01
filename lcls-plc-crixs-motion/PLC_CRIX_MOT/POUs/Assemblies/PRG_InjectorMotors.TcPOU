@@ -14,7 +14,7 @@ VAR
 	
 	bInit : BOOL := TRUE;
 	
-	//Limit Switch
+	//Limit Switches
 	{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E27 (EL7031)^STM Status^Status^Digital input 2'}
 	bLimitBackwardEnable_SDSZ_18 AT %I* : BOOL;
 	
@@ -27,6 +27,12 @@ VAR
 	bMOTSDSZ18_IN AT %Q* : BOOL;
 	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTSDSZ18_OUT'}
 	bMOTSDSZ18_OUT AT %Q* : BOOL;
+	
+	//SDS X Limit Switches (fixes groundswitching issue)
+	{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 82 (EL1124)^Channel 1^Input'}
+	bX_Forward_Limit AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 82 (EL1124)^Channel 2^Input'}
+	bX_Backward_Limit AT %I* : BOOL;
 	
 END_VAR
 ]]></Declaration>
@@ -61,12 +67,11 @@ bMOTSDSZ18_OUT := NOT Main.M18.bLimitForwardEnable;
 bMOTSDSZ18_IN := NOT bLimitBackwardEnable_SDSZ_18;
 bEPS_OK_SDSZ_18 := (NOT bSDS_VGC_01_CLS) AND bSDS_VGC_01_OPN AND NOT (PRG_CryoPump.xEcatBridge_External_device_not_connected) AND NOT (PRG_CryoPump.xEcatBridge_WcState) AND NOT (PRG_CryoPump.xEcatBridge_TxPDO_state);
 
+//X groundswitching limit logic
+Main.M16.bLimitForwardEnable := NOT bX_Forward_Limit;
+Main.M16.bLimitBackwardEnable := NOT bX_Backward_Limit;
 
 Main.M18.bLimitBackwardEnable := bEPS_OK_SDSZ_18 AND bLimitBackwardEnable_SDSZ_18;]]></ST>
     </Implementation>
-    <LineIds Name="PRG_InjectorMotors">
-      <LineId Id="3" Count="30" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

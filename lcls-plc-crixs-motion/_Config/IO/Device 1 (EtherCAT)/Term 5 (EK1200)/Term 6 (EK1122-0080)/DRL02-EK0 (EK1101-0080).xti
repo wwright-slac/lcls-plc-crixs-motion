@@ -99,11 +99,11 @@
 		<Box File="DRL02-E24 (EL7031).xti" Id="31">
 			<EtherCAT PortABoxInfo="#x0100001e"/>
 		</Box>
-		<Box File="Term 82 (EL1084).xti" Id="82">
+		<Box File="Term 98 (EL1124).xti" Id="98">
 			<EtherCAT PortABoxInfo="#x0100001f"/>
 		</Box>
 		<Box File="Term 91 (EL5112).xti" Id="91">
-			<EtherCAT PortABoxInfo="#x01000052"/>
+			<EtherCAT PortABoxInfo="#x01000062"/>
 		</Box>
 		<Box File="DRL02-E25 (EL5042).xti" Id="32">
 			<EtherCAT PortABoxInfo="#x0100005b"/>
