@@ -87,8 +87,6 @@ VAR_GLOBAL
 	M15 : DUT_MotionStage; // SPARE 2
 	
 	{attribute 'pytmc' := 'pv: CRIX:SDS:MMS:X'}
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 82 (EL1084)^Channel 1^Input;
-							  .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 82 (EL1084)^Channel 2^Input'}
 	M16 : DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION); //stSDSXMotor : DUT_MotionStage;
 	
 	{attribute 'pytmc' := 'pv: CRIX:SDS:MMS:Y'}

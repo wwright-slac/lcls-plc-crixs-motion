@@ -28,6 +28,18 @@ VAR
 	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTSDSZ18_OUT'}
 	bMOTSDSZ18_OUT AT %Q* : BOOL;
 	
+	// Hall Effect Limits for SDS X Stage
+	{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 173 (EL1124)^Channel 3^Input'}
+	bHall_Forward AT %I* : BOOL;
+	nHall_Forward_Cycles: UINT;
+	//bHall_Forward_Limit : BOOL;
+	{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 173 (EL1124)^Channel 4^Input'}
+	bHall_Backward AT %I*: BOOL;
+	nHall_Backward_Cycles: UINT;
+	//bHall_Backward_Limit : BOOL;
+	
+	nNumCyclesNeeded: UINT := 10;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -62,11 +74,28 @@ bMOTSDSZ18_IN := NOT bLimitBackwardEnable_SDSZ_18;
 bEPS_OK_SDSZ_18 := (NOT bSDS_VGC_01_CLS) AND bSDS_VGC_01_OPN AND NOT (PRG_CryoPump.xEcatBridge_External_device_not_connected) AND NOT (PRG_CryoPump.xEcatBridge_WcState) AND NOT (PRG_CryoPump.xEcatBridge_TxPDO_state);
 
 
-Main.M18.bLimitBackwardEnable := bEPS_OK_SDSZ_18 AND bLimitBackwardEnable_SDSZ_18;]]></ST>
+Main.M18.bLimitBackwardEnable := bEPS_OK_SDSZ_18 AND bLimitBackwardEnable_SDSZ_18;
+
+// X Stage Groundswitching Limits Logic
+
+// Negate Limits
+//bHall_Forward_Limit := NOT bHall_Forward;
+//bHall_Backward_Limit:= NOT bHall_Backward;
+
+//Cycle counting code for dealing with interference
+IF bHall_Forward THEN
+    nHall_Forward_Cycles := MIN(nHall_Forward_Cycles + 1, nNumCyclesNeeded);
+ELSE
+    nHall_Forward_Cycles := 0;
+END_IF
+IF bHall_Backward THEN
+    nHall_Backward_Cycles := MIN(nHall_Backward_Cycles + 1, nNumCyclesNeeded);
+ELSE
+    nHall_Backward_Cycles := 0;
+END_IF
+
+Main.M16.bLimitForwardEnable := nHall_Forward_Cycles < nNumCyclesNeeded;
+Main.M16.bLimitBackwardEnable := nHall_Backward_Cycles < nNumCyclesNeeded;]]></ST>
     </Implementation>
-    <LineIds Name="PRG_InjectorMotors">
-      <LineId Id="3" Count="30" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
