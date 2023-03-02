@@ -3255,9 +3255,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>PRG_InjectorMotors.bHall_Backward</Name>
-					<Comment>
-						<![CDATA[bHall_Forward_Limit : BOOL;]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>

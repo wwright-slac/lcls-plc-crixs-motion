@@ -32,11 +32,9 @@ VAR
 	{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 173 (EL1124)^Channel 3^Input'}
 	bHall_Forward AT %I* : BOOL;
 	nHall_Forward_Cycles: UINT;
-	//bHall_Forward_Limit : BOOL;
 	{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 173 (EL1124)^Channel 4^Input'}
 	bHall_Backward AT %I*: BOOL;
 	nHall_Backward_Cycles: UINT;
-	//bHall_Backward_Limit : BOOL;
 	
 	nNumCyclesNeeded: UINT := 10;
 	
@@ -77,10 +75,6 @@ bEPS_OK_SDSZ_18 := (NOT bSDS_VGC_01_CLS) AND bSDS_VGC_01_OPN AND NOT (PRG_CryoPu
 Main.M18.bLimitBackwardEnable := bEPS_OK_SDSZ_18 AND bLimitBackwardEnable_SDSZ_18;
 
 // X Stage Groundswitching Limits Logic
-
-// Negate Limits
-//bHall_Forward_Limit := NOT bHall_Forward;
-//bHall_Backward_Limit:= NOT bHall_Backward;
 
 //Cycle counting code for dealing with interference
 IF bHall_Forward THEN
