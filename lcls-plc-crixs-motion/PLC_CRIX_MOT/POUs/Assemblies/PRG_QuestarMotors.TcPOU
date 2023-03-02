@@ -3,7 +3,7 @@
   <POU Name="PRG_QuestarMotors" Id="{b808132d-7d95-489d-997e-88ecb08bbdf8}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_QuestarMotors
 VAR
-	fbQSTX_Motor : FB_MotionStage;
+    fbQSTX_Motor : FB_MotionStage;
     fbQSTY_Motor : FB_MotionStage;
 END_VAR
 ]]></Declaration>

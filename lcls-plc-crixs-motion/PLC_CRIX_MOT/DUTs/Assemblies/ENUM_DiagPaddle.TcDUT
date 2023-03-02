@@ -5,16 +5,16 @@
 {attribute 'strict'}
 TYPE ENUM_DiagPaddle :
 (
-	UNKNOWN := 0,
-	PARK :=1,
-	UP := 2,
-	CENTER := 3,
-	PINHOLE := 4,
-	DIODE := 5,
-	YAG1 := 6,
-	YAG2 := 7,
-	YAG3 := 8,
-	KNIFE := 9
+    UNKNOWN := 0,
+    PARK :=1,
+    UP := 2,
+    CENTER := 3,
+    PINHOLE := 4,
+    DIODE := 5,
+    YAG1 := 6,
+    YAG2 := 7,
+    YAG3 := 8,
+    KNIFE := 9
 );
 END_TYPE
 ]]></Declaration>

@@ -3,74 +3,74 @@
   <POU Name="PRG_CryoPump" Id="{00a70b15-989b-46ed-bbf4-cb0cdca5404b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_CryoPump
 VAR
-	fbCryoPump_Motor_Y_10 : FB_MotionStage;
-	fbCryoPump_Motor_Y_11 : FB_MotionStage;
-	
-	bEPS_OK_Y_10: BOOL; //Valve is in the Open State And communication ok
-	bEPS_OK_Y_11: BOOL; //Valve is in the Open State And communication ok
-	
-	bInit : BOOl := TRUE;
-	
-	(*Limit switches*)
-	{attribute 'TcLinkTo' := 'TIIB[DRL02-E23 (EL7041)]^STM Status^Status^Digital input 1'}
-	bLimitBackwardEnable_Y_10 AT %I* :BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[DRL02-E21 (EL7041)]^STM Status^Status^Digital input 1'}
-	bLimitBackwardEnable_Y_11 AT %I* :BOOL;
-	
-	(*ETHERCAT BRRIDGE COM STATUS*)
-	//0: Other side is in OP state, >0: Error
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^TxPDO state
-	'}
-	xEcatBridge_TxPDO_state AT %I* :BOOL;
-	
-	//0: External device connectd, 1: External device not connected
-	{attribute := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^External device not connected
-	'}
-	xEcatBridge_External_device_not_connected AT %I* : BOOL;
-	
-	//0 = Data valid, 1 = Data invalid
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^WcState^WcState
-	'}
-	xEcatBridge_WcState AT %I* : BOOL;
-	
-	//Inputs
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_01_CLS'}
-	bCRYO_VGC_01_CLS AT %I* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_01_OPN'}
-	bCRYO_VGC_01_OPN AT %I* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_02_CLS'}
-	bCRYO_VGC_02_CLS AT %I* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_02_OPN'}
-	bCRYO_VGC_02_OPN AT %I* : BOOL;
-	
-	//Outputs
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTY10_IN'}
-	bMOTY10_IN AT %Q* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTY10_OUT'}
-	bMOTY10_OUT AT %Q* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTY11_IN'}
-	bMOTY11_IN AT %Q* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTY11_OUT'}
-	bMOTY11_OUT AT %Q* : BOOL;
+    fbCryoPump_Motor_Y_10 : FB_MotionStage;
+    fbCryoPump_Motor_Y_11 : FB_MotionStage;
+
+    bEPS_OK_Y_10: BOOL; //Valve is in the Open State And communication ok
+    bEPS_OK_Y_11: BOOL; //Valve is in the Open State And communication ok
+
+    bInit : BOOl := TRUE;
+
+    (*Limit switches*)
+    {attribute 'TcLinkTo' := 'TIIB[DRL02-E23 (EL7041)]^STM Status^Status^Digital input 1'}
+    bLimitBackwardEnable_Y_10 AT %I* :BOOL;
+    {attribute 'TcLinkTo' := 'TIIB[DRL02-E21 (EL7041)]^STM Status^Status^Digital input 1'}
+    bLimitBackwardEnable_Y_11 AT %I* :BOOL;
+
+    (*ETHERCAT BRRIDGE COM STATUS*)
+    //0: Other side is in OP state, >0: Error
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^TxPDO state
+    '}
+    xEcatBridge_TxPDO_state AT %I* :BOOL;
+
+    //0: External device connectd, 1: External device not connected
+    {attribute := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^External device not connected
+    '}
+    xEcatBridge_External_device_not_connected AT %I* : BOOL;
+
+    //0 = Data valid, 1 = Data invalid
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^WcState^WcState
+    '}
+    xEcatBridge_WcState AT %I* : BOOL;
+
+    //Inputs
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_01_CLS'}
+    bCRYO_VGC_01_CLS AT %I* : BOOL;
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_01_OPN'}
+    bCRYO_VGC_01_OPN AT %I* : BOOL;
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_02_CLS'}
+    bCRYO_VGC_02_CLS AT %I* : BOOL;
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_02_OPN'}
+    bCRYO_VGC_02_OPN AT %I* : BOOL;
+
+    //Outputs
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTY10_IN'}
+    bMOTY10_IN AT %Q* : BOOL;
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTY10_OUT'}
+    bMOTY10_OUT AT %Q* : BOOL;
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTY11_IN'}
+    bMOTY11_IN AT %Q* : BOOL;
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTY11_OUT'}
+    bMOTY11_OUT AT %Q* : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF ( bInit) THEN
-	bInit := FALSE;
-	Main.M48.bHardwareEnable := TRUE; //Linked to valve state
-	Main.M48.bPowerSelf := TRUE;
-	Main.M48.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
-	Main.M48.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
-	Main.M49.bHardwareEnable := TRUE; //Linked to valve state
-	Main.M49.bPowerSelf := TRUE;
-	Main.M49.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
-	Main.M49.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
-	
-	//Homing routine parameters
-	Main.M48.fHomePosition:= 0;
-	Main.M48.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
-	Main.M49.fHomePosition:= 0;
-	Main.M49.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+    bInit := FALSE;
+    Main.M48.bHardwareEnable := TRUE; //Linked to valve state
+    Main.M48.bPowerSelf := TRUE;
+    Main.M48.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+    Main.M48.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+    Main.M49.bHardwareEnable := TRUE; //Linked to valve state
+    Main.M49.bPowerSelf := TRUE;
+    Main.M49.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+    Main.M49.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+
+    //Homing routine parameters
+    Main.M48.fHomePosition:= 0;
+    Main.M48.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+    Main.M49.fHomePosition:= 0;
+    Main.M49.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
 END_IF
 
 fbCryoPump_Motor_Y_10(stMotionStage:=Main.M48);
@@ -90,9 +90,5 @@ Main.M48.bLimitBackwardEnable := bEPS_OK_Y_10 AND bLimitBackwardEnable_Y_10;
 Main.M49.bLimitBackwardEnable := bEPS_OK_Y_11 AND bLimitBackwardEnable_Y_11;
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_CryoPump">
-      <LineId Id="3" Count="32" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

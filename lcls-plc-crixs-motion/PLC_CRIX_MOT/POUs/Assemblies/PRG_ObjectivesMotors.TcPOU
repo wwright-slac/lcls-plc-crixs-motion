@@ -5,7 +5,7 @@
 VAR
     fbOBJX_Motor : FB_MotionStage;
     fbOBJY_Motor : FB_MotionStage;
-	fbOBJZ_Motor : FB_MotionStage;
+    fbOBJZ_Motor : FB_MotionStage;
 END_VAR
 ]]></Declaration>
     <Implementation>

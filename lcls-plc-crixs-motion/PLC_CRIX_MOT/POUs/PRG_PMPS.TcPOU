@@ -3,9 +3,9 @@
   <POU Name="PRG_PMPS" Id="{c0394586-ec07-4cb6-8556-b8d523a91d95}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_PMPS
 VAR
-	 fbArbiterIO : FB_SubSysToArbiter_IO;
+     fbArbiterIO : FB_SubSysToArbiter_IO;
 
-	ff2_ff1_link: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF2 to FF1 Link', i_Desc := 'This is virtual FF2 fault, Please check the faulting device below', i_TypeCode := 16#9999);
+    ff2_ff1_link: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF2 to FF1 Link', i_Desc := 'This is virtual FF2 fault, Please check the faulting device below', i_TypeCode := 16#9999);
 
 END_VAR
 ]]></Declaration>
@@ -13,21 +13,21 @@ END_VAR
       <ST><![CDATA[(*Fast Fault instantiation*)
 GVL_PMPS.g_FastFaultOutput1.bAutoReset :=TRUE;
 GVL_PMPS.g_FastFaultOutput2.bAutoReset :=TRUE;
-GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] 
+GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]
                                       AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN])
                                        OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST1K2]);
-GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] 
+GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]
                                       AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN])
                                        OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST1K2]);
 (* Arbiter Instantiation*)
-fbArbiterIO(Arbiter := GVL_PMPS.fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1, i_bVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] 
+fbArbiterIO(Arbiter := GVL_PMPS.fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1, i_bVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]
                                       AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN])
                                        OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST1K2]);
-//routed to the arbiter							   
+//routed to the arbiter
 ff2_ff1_link(
-	io_fbFFHWO := GVL_PMPS.g_FastFaultOutput2,
+    io_fbFFHWO := GVL_PMPS.g_FastFaultOutput2,
     i_xOK := GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut);
-	
+
 GVL_PMPS.fbArbiter1.AddRequest(nReqID := 16#FAFA, stReqBp := PMPS_GVL.cstFullBeam, sDevName :='plc-crix-mot');
 
 ]]></ST>

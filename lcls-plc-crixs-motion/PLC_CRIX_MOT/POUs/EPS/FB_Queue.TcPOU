@@ -3,7 +3,7 @@
   <POU Name="FB_Queue" Id="{6ea040ae-b7bd-4416-9d38-5e0a8bf09ce2}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Queue
 VAR_INPUT
-	stQ : ST_Queue;
+    stQ : ST_Queue;
 END_VAR
 VAR_OUTPUT
 END_VAR
@@ -19,10 +19,10 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF NOT THIS^.Queue_Is_Empty() THEN	
-	Dequeue := stQ.arrQueue[stQ.iFront];
-	stQ.iFront := stQ.iFront + 1;
-	stQ.iCount := stQ.iCount - 1;
+        <ST><![CDATA[IF NOT THIS^.Queue_Is_Empty() THEN
+    Dequeue := stQ.arrQueue[stQ.iFront];
+    stQ.iFront := stQ.iFront + 1;
+    stQ.iCount := stQ.iCount - 1;
 END_IF]]></ST>
       </Implementation>
     </Method>
@@ -41,24 +41,24 @@ stQ.iFront := 0;]]></ST>
     <Method Name="Enqueue" Id="{bf782b57-4eaa-4663-9536-f545bd3bedb6}">
       <Declaration><![CDATA[METHOD PUBLIC Enqueue : BOOL
 VAR_INPUT
-	element : ST_BFSAssemblyState;
+    element : ST_BFSAssemblyState;
 END_VAR
 
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF 	NOT THIS^.Queue_Is_Full() THEN
-	IF stQ.iBack = stQ.iLength THEN
-		stQ.iBack := -1;
-	END_IF
-	stQ.iBack := stQ.iBack + 1;
-	stQ.arrQueue[stQ.iBack] := element;
-	stQ.iCount := stQ.iCount + 1;
-	Enqueue := TRUE;
+    IF stQ.iBack = stQ.iLength THEN
+        stQ.iBack := -1;
+    END_IF
+    stQ.iBack := stQ.iBack + 1;
+    stQ.arrQueue[stQ.iBack] := element;
+    stQ.iCount := stQ.iCount + 1;
+    Enqueue := TRUE;
 ELSE
-	Enqueue := FALSE;
+    Enqueue := FALSE;
 END_IF
 
-	]]></ST>
+    ]]></ST>
       </Implementation>
     </Method>
     <Method Name="Queue_Is_Empty" Id="{dd83904e-af9e-482d-b671-297e3bf944be}">
@@ -68,9 +68,9 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF stQ.iCount = 0 THEN
-	Queue_Is_Empty := TRUE;
+    Queue_Is_Empty := TRUE;
 ELSE
-	Queue_Is_Empty := FALSE;	
+    Queue_Is_Empty := FALSE;
 END_IF
 ]]></ST>
       </Implementation>
@@ -82,9 +82,9 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF stQ.iCount = stQ.iLength THEN
-	Queue_Is_Full := TRUE;
+    Queue_Is_Full := TRUE;
 ELSE
-	Queue_Is_Full := FALSE;
+    Queue_Is_Full := FALSE;
 END_IF]]></ST>
       </Implementation>
     </Method>
