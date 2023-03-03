@@ -3,24 +3,24 @@
   <GVL Name="GVL_PMPS" Id="{b3cd1d1a-66f4-4e70-8022-24174ba1efde}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	//MPS
-	{attribute 'pytmc' := '
+    //MPS
+    {attribute 'pytmc' := '
     pv: PLC:CRIX:MOT:FFO:01
     '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
     g_FastFaultOutput1  :   FB_HardwareFFOutput :=(i_sNetID:='172.21.42.126.1.1');
-	
-	{attribute 'pytmc' := '
+
+    {attribute 'pytmc' := '
     pv: PLC:CRIX:MOT:FFO:02
     '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
     g_FastFaultOutput2  :   FB_HardwareFFOutput :=(i_sNetID:='172.21.42.126.1.1');
-	
-	
-		{attribute 'pytmc' := '
+
+
+        {attribute 'pytmc' := '
     pv: PLC:CRIX:MOT:ARB:01
     '}
-	fbArbiter1   :   FB_Arbiter(1);
+    fbArbiter1   :   FB_Arbiter(1);
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

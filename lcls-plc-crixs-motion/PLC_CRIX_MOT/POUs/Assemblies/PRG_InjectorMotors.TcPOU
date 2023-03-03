@@ -3,50 +3,60 @@
   <POU Name="PRG_InjectorMotors" Id="{e6efc8ef-ea1b-475f-9cc6-7f2954d7d94d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_InjectorMotors
 VAR
-	fbSDSX_Motor : FB_MotionStage;
+    fbSDSX_Motor : FB_MotionStage;
     fbSDSY_Motor : FB_MotionStage;
-	fbSDSZ_Motor : FB_MotionStage;
-	fbSDSRY_Motor : FB_MotionStage;
-	fbSDSShroud_Motor : FB_MotionStage;
-	fbSDSZEncoder: FB_MotionStage;
-	
-	bEPS_OK_SDSZ_18: BOOL; //Valve is in the Open State And communication ok
-	
-	bInit : BOOL := TRUE;
-	
-	//Limit Switch
-	{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E27 (EL7031)^STM Status^Status^Digital input 2'}
-	bLimitBackwardEnable_SDSZ_18 AT %I* : BOOL;
-	
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bSDS_VGC_01_CLS'}
-	bSDS_VGC_01_CLS AT %I* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bSDS_VGC_01_OPN'}
-	bSDS_VGC_01_OPN AT %I* : BOOL;
+    fbSDSZ_Motor : FB_MotionStage;
+    fbSDSRY_Motor : FB_MotionStage;
+    fbSDSShroud_Motor : FB_MotionStage;
+    fbSDSZEncoder: FB_MotionStage;
 
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTSDSZ18_IN'}
-	bMOTSDSZ18_IN AT %Q* : BOOL;
-	{attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTSDSZ18_OUT'}
-	bMOTSDSZ18_OUT AT %Q* : BOOL;
-	
+    bEPS_OK_SDSZ_18: BOOL; //Valve is in the Open State And communication ok
+
+    bInit : BOOL := TRUE;
+
+    //Limit Switch
+    {attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-E27 (EL7031)^STM Status^Status^Digital input 2'}
+    bLimitBackwardEnable_SDSZ_18 AT %I* : BOOL;
+
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bSDS_VGC_01_CLS'}
+    bSDS_VGC_01_CLS AT %I* : BOOL;
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bSDS_VGC_01_OPN'}
+    bSDS_VGC_01_OPN AT %I* : BOOL;
+
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTSDSZ18_IN'}
+    bMOTSDSZ18_IN AT %Q* : BOOL;
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTSDSZ18_OUT'}
+    bMOTSDSZ18_OUT AT %Q* : BOOL;
+
+    // Hall Effect Limits for SDS X Stage
+    {attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 173 (EL1124)^Channel 3^Input'}
+    bHall_Forward AT %I* : BOOL;
+    nHall_Forward_Cycles: UINT;
+    {attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^Term 173 (EL1124)^Channel 4^Input'}
+    bHall_Backward AT %I*: BOOL;
+    nHall_Backward_Cycles: UINT;
+
+    nNumCyclesNeeded: UINT := 10;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[if (bInit) THEN
-	// X Motor
-	Main.M16.bHardwareEnable := TRUE;
-	Main.M16.nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET;
-	// Y motor
-	Main.M17.bHardwareEnable := TRUE;
-	// Z Motor
-	Main.M18.bHardwareEnable := TRUE;
-	// Y Rotation Motor
-	Main.M19.bHardwareEnable := TRUE;
-	Main.M19.bLimitForwardEnable := TRUE;
-	Main.M19.bLimitBackwardEnable := TRUE;
-	// Shroud Motor
-	Main.M20.bHardwareEnable := TRUE;
-	Main.M20.bLimitForwardEnable := TRUE;
-	Main.M20.bLimitBackwardEnable := TRUE;
+    // X Motor
+    Main.M16.bHardwareEnable := TRUE;
+    Main.M16.nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET;
+    // Y motor
+    Main.M17.bHardwareEnable := TRUE;
+    // Z Motor
+    Main.M18.bHardwareEnable := TRUE;
+    // Y Rotation Motor
+    Main.M19.bHardwareEnable := TRUE;
+    Main.M19.bLimitForwardEnable := TRUE;
+    Main.M19.bLimitBackwardEnable := TRUE;
+    // Shroud Motor
+    Main.M20.bHardwareEnable := TRUE;
+    Main.M20.bLimitForwardEnable := TRUE;
+    Main.M20.bLimitBackwardEnable := TRUE;
 END_IF
 
 fbSDSX_Motor(stMotionStage:=Main.M16);
@@ -62,11 +72,24 @@ bMOTSDSZ18_IN := NOT bLimitBackwardEnable_SDSZ_18;
 bEPS_OK_SDSZ_18 := (NOT bSDS_VGC_01_CLS) AND bSDS_VGC_01_OPN AND NOT (PRG_CryoPump.xEcatBridge_External_device_not_connected) AND NOT (PRG_CryoPump.xEcatBridge_WcState) AND NOT (PRG_CryoPump.xEcatBridge_TxPDO_state);
 
 
-Main.M18.bLimitBackwardEnable := bEPS_OK_SDSZ_18 AND bLimitBackwardEnable_SDSZ_18;]]></ST>
+Main.M18.bLimitBackwardEnable := bEPS_OK_SDSZ_18 AND bLimitBackwardEnable_SDSZ_18;
+
+// X Stage Groundswitching Limits Logic
+
+//Cycle counting code for dealing with interference
+IF bHall_Forward THEN
+    nHall_Forward_Cycles := MIN(nHall_Forward_Cycles + 1, nNumCyclesNeeded);
+ELSE
+    nHall_Forward_Cycles := 0;
+END_IF
+IF bHall_Backward THEN
+    nHall_Backward_Cycles := MIN(nHall_Backward_Cycles + 1, nNumCyclesNeeded);
+ELSE
+    nHall_Backward_Cycles := 0;
+END_IF
+
+Main.M16.bLimitForwardEnable := nHall_Forward_Cycles < nNumCyclesNeeded;
+Main.M16.bLimitBackwardEnable := nHall_Backward_Cycles < nNumCyclesNeeded;]]></ST>
     </Implementation>
-    <LineIds Name="PRG_InjectorMotors">
-      <LineId Id="3" Count="30" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

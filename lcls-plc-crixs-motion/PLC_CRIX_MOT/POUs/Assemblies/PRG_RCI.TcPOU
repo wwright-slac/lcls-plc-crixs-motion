@@ -7,17 +7,17 @@ VAR
     fbRCI_Motor_Y : FB_MotionStage;
     fbRCI_Motor_Z : FB_MotionStage;
     fbRCI_Motor_rX : FB_MotionStage;
-	
-	iMagnetOutINT AT %Q*: INT;
-	iMagnetInINT AT %I*: INT;
+
+    iMagnetOutINT AT %Q*: INT;
+    iMagnetInINT AT %I*: INT;
 
     {attribute 'pytmc' := '
         pv: CRIX:RCI:MAG_SET
         EGU: V
     '}
     fMagnetSet: LREAL;
-	
-	{attribute 'pytmc' := '
+
+    {attribute 'pytmc' := '
         pv: CRIX:RCI:MAG_GET
         EGU: V
     '}

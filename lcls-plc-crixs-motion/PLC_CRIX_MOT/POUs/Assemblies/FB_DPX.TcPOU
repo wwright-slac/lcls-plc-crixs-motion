@@ -10,8 +10,8 @@ VAR_IN_OUT
     stPark: DUT_PositionState;
     // Information about the center parameter
     stCenter: DUT_PositionState;
-	// Information about the knife edge parameter
-	stKnife: DUT_PositionState;
+    // Information about the knife edge parameter
+    stKnife: DUT_PositionState;
 END_VAR
 VAR_INPUT
     // If TRUE, the motor will be moved when enumSet is changed
@@ -22,7 +22,7 @@ VAR_INPUT
         io: io
     '}
     enumSet: ENUM_DPX;
-	bOverride: BOOL; // Override for state locking. If TRUE, do not lock states.
+    bOverride: BOOL; // Override for state locking. If TRUE, do not lock states.
 END_VAR
 VAR_OUTPUT
     // If TRUE, we are in an error state
@@ -53,22 +53,22 @@ VAR
     fbStateManager: FB_PositionStateManager; // NOTE: Please copy this pragma exactly to pick up the standard PVs
     fbLockPark: 	FB_PositionStateLock;
     fbLockCenter: 	FB_PositionStateLock;
-	fbLockKnife: 	FB_PositionStateLock;
+    fbLockKnife: 	FB_PositionStateLock;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Fist cycle setup
 IF NOT bInit THEN
     stPark.sName := 'PARK';
     stCenter.sName := 'CENTER';
-	stKnife.sName := 'KNIFE';
+    stKnife.sName := 'KNIFE';
     bInit := TRUE;
 END_IF
 
 // If any of these have bLocked = TRUE, do not allow user to change them
 IF NOT bOverride THEN
-	fbLockPark(stPositionState:=stPark);
-	fbLockCenter(stPositionState:=stCenter);
-	fbLockKnife(stPositionState:=stKnife);
+    fbLockPark(stPositionState:=stPark);
+    fbLockCenter(stPositionState:=stCenter);
+    fbLockKnife(stPositionState:=stKnife);
 END_IF
 
 // Stuff values into the 15 element array for the manager

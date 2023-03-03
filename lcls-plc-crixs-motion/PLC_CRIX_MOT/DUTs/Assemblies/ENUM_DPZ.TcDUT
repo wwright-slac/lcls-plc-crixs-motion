@@ -8,7 +8,7 @@ TYPE ENUM_DPZ :
 (
     UNKNOWN := 0, // UNKNOWN must be in slot 0 or the FB breaks
     PARK := 1,    // The parked position for the diagnostic paddle
-    CENTER := 2  // center positon for the diagnostic paddle. This should be 
+    CENTER := 2  // center positon for the diagnostic paddle. This should be
 );
 END_TYPE
 ]]></Declaration>

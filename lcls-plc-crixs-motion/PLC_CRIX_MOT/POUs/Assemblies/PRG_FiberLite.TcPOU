@@ -10,9 +10,5 @@ END_VAR
 bLedOutput1.iTermBits := 14;
 bLedOutput1(fbSetIllPercent=>);]]></ST>
     </Implementation>
-    <LineIds Name="PRG_FiberLite">
-      <LineId Id="6" Count="1" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

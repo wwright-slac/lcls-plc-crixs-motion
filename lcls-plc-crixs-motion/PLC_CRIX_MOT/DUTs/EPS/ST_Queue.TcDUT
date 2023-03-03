@@ -3,11 +3,11 @@
   <DUT Name="ST_Queue" Id="{5db988a0-6298-4ad2-8070-86dee10853d6}">
     <Declaration><![CDATA[TYPE ST_Queue :
 STRUCT
-	iLength : DINT := 100; // max number of elements in the queue
-	iFront	: DINT := 0; // oldest item index
-	iBack	: DINT := -1; // newest item index
-	iCount	: DINT := 0; // current item count
-	arrQueue: ARRAY[0..100] OF ST_BFSAssemblyState; // array to hold queued items
+    iLength : DINT := 100; // max number of elements in the queue
+    iFront	: DINT := 0; // oldest item index
+    iBack	: DINT := -1; // newest item index
+    iCount	: DINT := 0; // current item count
+    arrQueue: ARRAY[0..100] OF ST_BFSAssemblyState; // array to hold queued items
 END_STRUCT
 END_TYPE
 ]]></Declaration>

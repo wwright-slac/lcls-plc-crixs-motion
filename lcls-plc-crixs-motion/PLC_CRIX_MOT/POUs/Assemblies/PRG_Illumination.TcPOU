@@ -4,28 +4,25 @@
     <Declaration><![CDATA[PROGRAM PRG_Illumination
 (*	Program for the ChemRIXS illumination system. *)
 VAR_INPUT
-	xMoveOK : BOOL := FALSE; // External interlock. Applied to bEnable of all PositionStateManagers.
+    xMoveOK : BOOL := FALSE; // External interlock. Applied to bEnable of all PositionStateManagers.
 END_VAR
 VAR
-	bInit : BOOL := TRUE; // Initialization variable
+    bInit : BOOL := TRUE; // Initialization variable
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF ( bInit) THEN
-	bInit := FALSE;
+    bInit := FALSE;
 
-	Main.M9.bHardwareEnable := TRUE;
-	Main.M10.bHardwareEnable := TRUE;
-	Main.M11.bHardwareEnable := TRUE;
-	
+    Main.M9.bHardwareEnable := TRUE;
+    Main.M10.bHardwareEnable := TRUE;
+    Main.M11.bHardwareEnable := TRUE;
+
 END_IF
 
 fbILMXStage(stMotionStage := Main.M9);
 fbILMYStage(stMotionStage := Main.M10);
 fbILMZStage(stMotionStage := Main.M11);]]></ST>
     </Implementation>
-    <LineIds Name="PRG_Illumination">
-      <LineId Id="3" Count="11" />
-    </LineIds>
   </POU>
 </TcPlcObject>

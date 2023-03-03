@@ -8,65 +8,65 @@
 *)
 VAR_IN_OUT
 
-	// Array of bMoveEnables to, well, enable based on the assembly state.
+    // Array of bMoveEnables to, well, enable based on the assembly state.
     arrOutputs: ARRAY [*, *] OF DUT_PositionState;
-	// Array of allowed position state transitions. This is the adjacency matrix
-	arrTransitions : ARRAY [*, *] OF BOOL;
-	// Array of all axes in the assembly
-	arrAxes : ARRAY [*] OF DUT_MotionStage;
-	// Array of all assembly states
-	arrAssemblyStates : ARRAY [*] OF STRING;
+    // Array of allowed position state transitions. This is the adjacency matrix
+    arrTransitions : ARRAY [*, *] OF BOOL;
+    // Array of all axes in the assembly
+    arrAxes : ARRAY [*] OF DUT_MotionStage;
+    // Array of all assembly states
+    arrAssemblyStates : ARRAY [*] OF STRING;
 END_VAR
-VAR	
-	nAssemblyStates : DINT;
-	nAxes :DINT;
-	nOutputs :DINT;
-	bInit : BOOL := FALSE;
-	bAtState : BOOL;
-	iAxis : DINT;
-	stAxis : DUT_MotionStage;
-	stState : DUT_PositionState;
-	
-	currState : DINT;
-	nextState : DINT;
+VAR
+    nAssemblyStates : DINT;
+    nAxes :DINT;
+    nOutputs :DINT;
+    bInit : BOOL := FALSE;
+    bAtState : BOOL;
+    iAxis : DINT;
+    stAxis : DUT_MotionStage;
+    stState : DUT_PositionState;
+
+    currState : DINT;
+    nextState : DINT;
 END_VAR
 
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF NOT bInit THEN
-	bInit := TRUE;
-	//nAssemblyStates := UPPER_BOUND(arrAssemblyStates, 1);
-	nAssemblyStates := UPPER_BOUND(arrTransitions, 2); // take from # of columns in transition matrix
-	nAxes := UPPER_BOUND(arrAxes, 1);
-	nOutputs := UPPER_BOUND(arrOutputs, 1);
+    bInit := TRUE;
+    //nAssemblyStates := UPPER_BOUND(arrAssemblyStates, 1);
+    nAssemblyStates := UPPER_BOUND(arrTransitions, 2); // take from # of columns in transition matrix
+    nAxes := UPPER_BOUND(arrAxes, 1);
+    nOutputs := UPPER_BOUND(arrOutputs, 1);
 END_IF
 
 // Determine current assembly state
 currState := 0; // Start in the unknown state
 FOR nextState := 1 TO nOutputs DO // For each defined output state
-	bAtState := TRUE;
-	FOR iAxis := 1 TO UPPER_BOUND(arrAxes,1) DO // check each axis for a match with the assembly position state
-		bAtState := (bAtState AND F_AtPositionState(stMotionStage:=arrAxes[iAxis], stPositionState:=arrOutputs[nextState, iAxis]));
-	END_FOR
-	IF bAtState THEN
-		currState := nextState;
-	END_IF
+    bAtState := TRUE;
+    FOR iAxis := 1 TO UPPER_BOUND(arrAxes,1) DO // check each axis for a match with the assembly position state
+        bAtState := (bAtState AND F_AtPositionState(stMotionStage:=arrAxes[iAxis], stPositionState:=arrOutputs[nextState, iAxis]));
+    END_FOR
+    IF bAtState THEN
+        currState := nextState;
+    END_IF
 END_FOR
 
 // Reset logic before determining allowed moves
 FOR nextState := 1 TO UPPER_BOUND(arrAssemblyStates, 1) DO
-	FOR iAxis := 1 TO UPPER_BOUND(arrAxes, 1) DO
-		arrOutputs[nextState, iAxis].bMoveOk := FALSE;
-	END_FOR
+    FOR iAxis := 1 TO UPPER_BOUND(arrAxes, 1) DO
+        arrOutputs[nextState, iAxis].bMoveOk := FALSE;
+    END_FOR
 END_FOR
 
 // Update motion logic for next state based on current state
 FOR nextState := 1 TO nAssemblyStates DO
-	IF arrTransitions[currState, nextState] THEN
-		FOR iAxis :=1 TO UPPER_BOUND(arrAxes, 1) DO
-			arrOutputs[nextState, iAxis].bMoveOk := TRUE;
-		END_FOR
-	END_IF
+    IF arrTransitions[currState, nextState] THEN
+        FOR iAxis :=1 TO UPPER_BOUND(arrAxes, 1) DO
+            arrOutputs[nextState, iAxis].bMoveOk := TRUE;
+        END_FOR
+    END_IF
 END_FOR
 ]]></ST>
     </Implementation>

@@ -99,11 +99,8 @@
 		<Box File="DRL02-E24 (EL7031).xti" Id="31">
 			<EtherCAT PortABoxInfo="#x0100001e"/>
 		</Box>
-		<Box File="Term 82 (EL1084).xti" Id="82">
-			<EtherCAT PortABoxInfo="#x0100001f"/>
-		</Box>
 		<Box File="Term 91 (EL5112).xti" Id="91">
-			<EtherCAT PortABoxInfo="#x01000052"/>
+			<EtherCAT PortABoxInfo="#x0100001f"/>
 		</Box>
 		<Box File="DRL02-E25 (EL5042).xti" Id="32">
 			<EtherCAT PortABoxInfo="#x0100005b"/>
@@ -147,8 +144,14 @@
 		<Box File="DRL02-ECJ2 (EK1122).xti" Id="148">
 			<EtherCAT PortABoxInfo="#x02000027"/>
 		</Box>
-		<Box File="DRL02-E31 (EL9011).xti" Id="41">
+		<Box File="Term 172 (EL9505).xti" Id="172">
 			<EtherCAT PortABoxInfo="#x02000094"/>
+		</Box>
+		<Box File="Term 173 (EL1124).xti" Id="173">
+			<EtherCAT PortABoxInfo="#x010000ac"/>
+		</Box>
+		<Box File="DRL02-E31 (EL9011).xti" Id="41">
+			<EtherCAT PortABoxInfo="#x010000ad"/>
 		</Box>
 	</Box>
 </TcSmItem>
